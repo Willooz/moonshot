@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_many :shots, through: :shot_invites
   has_many :shot_invites
   has_many :memberships
+  has_many :accounts, through: :memberships
 
   has_attached_file :picture,
                     styles: { medium: "300x300>", thumb: "100x100>" },
