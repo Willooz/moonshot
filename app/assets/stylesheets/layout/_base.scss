@@ -4,3 +4,17 @@
  * Before writing in this file, look if there is not
  * already a Bootstrap SCSS variable that does the same job
  * ------------------------------------- */
+
+ body {
+  background: $blue;
+  color: $gray;
+ }
+
+.master-container {
+  margin: 10px auto;
+  width: 1000px;
+  position: relative;
+  padding: 10px;
+  background: white;
+  border-radius: $box-corner-radius;
+ }
