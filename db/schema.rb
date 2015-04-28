@@ -11,10 +11,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150428095437) do
+ActiveRecord::Schema.define(version: 20150428131005) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "accounts", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "memberships", force: :cascade do |t|
+    t.boolean  "owner"
+    t.string   "role"
+    t.string   "team"
+    t.integer  "account_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "memberships", ["account_id"], name: "index_memberships_on_account_id", using: :btree
+  add_index "memberships", ["user_id"], name: "index_memberships_on_user_id", using: :btree
+
+  create_table "shot_invites", force: :cascade do |t|
+    t.integer  "shot_id"
+    t.integer  "inviter_id"
+    t.integer  "invitee_id"
+    t.string   "state",      default: "pending"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
+
+  add_index "shot_invites", ["invitee_id"], name: "index_shot_invites_on_invitee_id", using: :btree
+  add_index "shot_invites", ["inviter_id"], name: "index_shot_invites_on_inviter_id", using: :btree
+  add_index "shot_invites", ["shot_id"], name: "index_shot_invites_on_shot_id", using: :btree
+
+  create_table "shots", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.integer  "baseline_value"
+    t.integer  "target_value"
+    t.boolean  "accomplished"
+    t.date     "deadline"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -34,4 +77,9 @@ ActiveRecord::Schema.define(version: 20150428095437) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "memberships", "accounts"
+  add_foreign_key "memberships", "users"
+  add_foreign_key "shot_invites", "shots"
+  add_foreign_key "shot_invites", "users", column: "invitee_id"
+  add_foreign_key "shot_invites", "users", column: "inviter_id"
 end
