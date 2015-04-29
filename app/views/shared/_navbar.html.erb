@@ -13,6 +13,14 @@
       </a>
     </div>
 
+    <div>
+      <ul class="unstyle">
+        <li><%= link_to "My shots", user_shots_path %></li>
+        <li><%= link_to "Shots", shots_path %></li>
+        <li><%= link_to "People", users_path %></li>
+      </ul>
+    </div>
+
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
@@ -23,7 +31,7 @@
             <% end %>
             <ul class="dropdown-menu" role="menu">
               <li>
-                <%= user.name %>
+                <!-- Add user name as header in dropdown -->
               </li>
               <li>
                 <%= link_to "#" do %>
