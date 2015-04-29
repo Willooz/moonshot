@@ -87,7 +87,7 @@ ActiveRecord::Schema.define(version: 20150429142455) do
 
   add_foreign_key "profiles", "accounts"
   add_foreign_key "profiles", "users"
+  add_foreign_key "shot_invites", "profiles", column: "invitee_id"
+  add_foreign_key "shot_invites", "profiles", column: "inviter_id"
   add_foreign_key "shot_invites", "shots"
-  add_foreign_key "shot_invites", "users", column: "invitee_id"
-  add_foreign_key "shot_invites", "users", column: "inviter_id"
 end
