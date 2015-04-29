@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   # before_action :configure_permitted_parameters, if: :devise_controller?
   # before_action :authenticate_user!, unless: :pages_controller?
-  before_action :set_account
 
   # after_action :verify_authorized, except:  :index, unless: :devise_or_pages_controller?
   # after_action :verify_policy_scoped, only: :index, unless: :devise_or_pages_controller?
@@ -14,9 +13,7 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def set_account
-    @account = Account.find(params[:account_id])
-  end
+
 
   def devise_or_pages_controller?
     devise_controller? || pages_controller?
