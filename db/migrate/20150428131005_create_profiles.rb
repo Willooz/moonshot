@@ -1,6 +1,6 @@
-class CreateMemberships < ActiveRecord::Migration
+class CreateProfiles < ActiveRecord::Migration
   def change
-    create_table :memberships do |t|
+    create_table :profiles do |t|
       t.boolean :owner
       t.string :role
       t.string :team
@@ -10,7 +10,7 @@ class CreateMemberships < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_foreign_key :memberships, :accounts
-    add_foreign_key :memberships, :users
+    add_foreign_key :profiles, :accounts
+    add_foreign_key :profiles, :users
   end
 end

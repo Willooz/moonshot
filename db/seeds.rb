@@ -10,9 +10,10 @@ Account.create(name: "Feer Enterprises")
 Account.create(name: "Acme Corp.")
 
 User.create(email: "hulk@marvel.com",
+            name: "Hulk",
             password: "12345678")
 
-Membership.create(account_id: 1,
+Profile.create(account_id: 1,
                   user_id:    1,
                   role:       "Supersmasher",
                   team:       "Avengers",

@@ -7,7 +7,7 @@ class RegistrationsController < Devise::RegistrationsController
     build_resource(sign_up_params)
     resource_saved = resource.save
     yield resource if block_given?
-    if resource_saved && create_membership(resource)
+    if resource_saved && create_profile(resource)
       if resource.active_for_authentication?
         set_flash_message :notice, :signed_up if is_flashing_format?
         sign_up(resource_name, resource)
@@ -27,10 +27,10 @@ class RegistrationsController < Devise::RegistrationsController
     end
   end
 
-  def create_membership(user)
+  def create_profile(user)
     account = Account.where(account_params).first_or_initialize
     if account.save
-      membership = user.memberships.create(account_id: account.id, user_id: user.id)
+      profile = user.profiles.create(account_id: account.id, user_id: user.id)
       return true
     else
       return false
