@@ -6,4 +6,5 @@ class Membership < ActiveRecord::Base
   validates_presence_of :user
 
   accepts_nested_attributes_for :account
+  accepts_nested_attributes_for :user
 end

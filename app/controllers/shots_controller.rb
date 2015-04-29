@@ -36,6 +36,11 @@ class ShotsController < ApplicationController
   def destroy
   end
 
+  def mine
+    @account = Account.find(current_user.memberships.last.account_id)
+
+  end
+
   private
 
   def shot_params
