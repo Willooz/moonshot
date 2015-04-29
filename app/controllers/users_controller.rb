@@ -3,8 +3,8 @@ class UsersController < ApplicationController
 
   def index
     @account_users = []
-    @account.memberships.each do |membership|
-      @account_users << membership.user.id
+    @account.profiles.each do |profile|
+      @account_users << profile.user.id
     end
   end
 
@@ -25,8 +25,8 @@ class UsersController < ApplicationController
 
   def set_user
     @user = current_user
-    if current_user.memberships.any?
-      @membership = current_user.memberships.find_by account_id: @account.id
+    if current_user.profiles.any?
+      @profile = current_user.profiles.find_by account_id: @account.id
     end
   end
 

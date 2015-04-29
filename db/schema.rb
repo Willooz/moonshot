@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20150429142455) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "memberships", force: :cascade do |t|
+  create_table "profiles", force: :cascade do |t|
     t.boolean  "owner"
     t.string   "role"
     t.string   "team"
@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(version: 20150429142455) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "memberships", ["account_id"], name: "index_memberships_on_account_id", using: :btree
-  add_index "memberships", ["user_id"], name: "index_memberships_on_user_id", using: :btree
+  add_index "profiles", ["account_id"], name: "index_profiles_on_account_id", using: :btree
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
 
   create_table "shot_invites", force: :cascade do |t|
     t.integer  "shot_id"
@@ -85,8 +85,8 @@ ActiveRecord::Schema.define(version: 20150429142455) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "memberships", "accounts"
-  add_foreign_key "memberships", "users"
+  add_foreign_key "profiles", "accounts"
+  add_foreign_key "profiles", "users"
   add_foreign_key "shot_invites", "shots"
   add_foreign_key "shot_invites", "users", column: "invitee_id"
   add_foreign_key "shot_invites", "users", column: "inviter_id"

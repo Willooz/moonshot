@@ -1,13 +1,23 @@
 Rails.application.routes.draw do
 
 
+  get 'shot_invites/new'
+
+  get 'shot_invites/create'
+
+  get 'shot_invites/edit'
+
+  get 'shot_invites/update'
+
+  get 'shot_invites/destroy'
+
   # root to: "home#index"
 
   devise_for :users, controllers: {registrations: 'registrations'}
 
   resources :users, only: [:show, :edit, :update, :destroy]
     resources :accounts, only: [:edit, :update] do
-      resources :memberships, only: [:index, :show]
+      resources :profiles, only: [:index, :show]
       resources :shots do
         collection do
           get 'mine'
