@@ -8,7 +8,7 @@ class CreateShotInvites < ActiveRecord::Migration
       table.timestamps null: false
     end
     add_foreign_key :shot_invites, :shots
-    add_foreign_key :shot_invites, :users, column: :inviter_id
-    add_foreign_key :shot_invites, :users, column: :invitee_id
+    add_foreign_key :shot_invites, :profiles, column: :inviter_id
+    add_foreign_key :shot_invites, :profiles, column: :invitee_id
   end
 end
