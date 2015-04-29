@@ -1,0 +1,9 @@
+.container.padded
+  .row.text-center
+      h1 = "#{@account.name} Shots"
+      - @shots.each do |shot|
+        .col-xs-6
+          = render partial: 'small_shot', locals: {shot: shot}
+          br
+          br
+

@@ -14,7 +14,10 @@
   <%= render "shared/navbar" %>
   <%= render "shared/flashes" %>
 
-  <%= yield %>
+  <div class="master-container">
+    <%= yield %>
+  </div>
+
 
   <%= javascript_include_tag :application %>
   <%= yield(:after_js) %>
