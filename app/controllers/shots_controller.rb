@@ -11,6 +11,10 @@ class ShotsController < ApplicationController
     @shots = policy_scope(Shot)
   end
 
+  def mine
+    @shots = Shot.all
+  end
+
   def new
     @shot = Shot.new
   end
