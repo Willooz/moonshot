@@ -2,11 +2,13 @@ class ShotsController < ApplicationController
 
   def show
     @shot = Shot.find(params[:id])
+    authorize @shot
   end
 
   def index
     @account = Account.find(@account)
     @shots = @account.shots
+    @shots = policy_scope(Shot)
   end
 
   def new
