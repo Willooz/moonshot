@@ -8,4 +8,14 @@ class Shot < ActiveRecord::Base
   validates :target_value  , presence: true, numericality: true
   validates :title,          presence: true
   validates :deadline,       presence: true
+
+  def percentage_done
+    bl = self.baseline_value
+    tg = self.target_value
+    if bl < tg
+      ((bl.to_f / tg) * 100).round(2)
+    else
+      ((tg.to_f / bl) * 100).round(2)
+    end
+  end
 end

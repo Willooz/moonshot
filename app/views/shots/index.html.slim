@@ -1,8 +1,8 @@
-.container.padded
-  .row.text-center
+.container.padded.text-center
+  .row
       h1 = "#{@account.name} Shots"
       - @shots.each do |shot|
-        .col-xs-6
+        .col-xs-12
           = render partial: 'small_shot', locals: {shot: shot}
           br
           br
