@@ -8,13 +8,11 @@ class UsersController < ApplicationController
     end
   end
 
-
   def edit
   end
 
   def update
   end
-
 
   def destroy
   end
@@ -23,15 +21,14 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  private
 
-private
-
-def set_user
-  @user = current_user
-  if current_user.memberships.any?
-    @membership = current_user.memberships.find_by account_id: @account.id
+  def set_user
+    @user = current_user
+    if current_user.memberships.any?
+      @membership = current_user.memberships.find_by account_id: @account.id
+    end
   end
-end
 
 end
 
