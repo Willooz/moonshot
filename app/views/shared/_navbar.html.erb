@@ -14,9 +14,9 @@
     </div>
 
     <% if user_signed_in? %>
-      <%= link_to "My shots", mine_account_shots_path(:account_id) %>
-      <%= link_to "Shots" %>
-      <%= link_to "People" %>
+      <%= link_to "My shots", mine_account_shots_path(params[:account_id]) %>
+      <%= link_to "Shots", account_shots_path(params[:account_id]) %>
+      <%= link_to "People", account_memberships_path(params[:account_id])%>
     <% end %>
 
 
