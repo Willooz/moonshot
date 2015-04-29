@@ -1,5 +1,4 @@
 class ShotsController < ApplicationController
-
   def show
     @shot = Shot.find(params[:id])
     authorize @shot
