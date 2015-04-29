@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150428131005) do
+ActiveRecord::Schema.define(version: 20150428160826) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,7 +57,10 @@ ActiveRecord::Schema.define(version: 20150428131005) do
     t.date     "deadline"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.integer  "account_id"
   end
+
+  add_index "shots", ["account_id"], name: "index_shots_on_account_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

@@ -5,3 +5,42 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Account.create(name: "Feer Enterprises")
+Account.create(name: "Acme Corp.")
+
+User.create(email: "hulk@marvel.com",
+            password: "12345678")
+
+Membership.create(account_id: 1,
+                  user_id:    1,
+                  role:       "Supersmasher",
+                  team:       "Avengers",
+                  owner:      true )
+
+Shot.create(title: "Let's code this Moonshot shit!",
+            description: "We can do it if we harness the power of cocaine",
+            baseline_value: 5,
+            target_value: 100,
+            deadline: (Time.now + 1000000).to_date,
+            account_id: 1,
+            accomplished: false
+            )
+
+Shot.create(title: "We're going to steal the Moon!",
+            description: "We need to figure out if it's made out of cheese. Sweet, delicious cheddar cheese.",
+            baseline_value: 55,
+            target_value: 2000,
+            deadline: (Time.now + 1000000).to_date,
+            accomplished: false,
+            account_id: 1
+            )
+
+Shot.create(title: "Make a million paperplanes",
+            description: "We'll use those to fly to Peru and see Macchu Picchu. Inka Kola baby!",
+            baseline_value: 122003,
+            target_value: 1000000,
+            deadline: (Time.now + 1000000).to_date,
+            accomplished: false,
+            account_id: 2
+            )
