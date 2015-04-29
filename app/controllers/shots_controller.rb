@@ -15,6 +15,9 @@ class ShotsController < ApplicationController
 
   def create
     @shot = Shot.new(shot_params)
+    @shot[:account_id] = params["account_id"].to_i
+    @shot.save
+    redirect_to account_shots_path
   end
 
   def edit
@@ -22,6 +25,9 @@ class ShotsController < ApplicationController
   end
 
   def update
+    @shot = Shot.find(params[:id])
+    @shot.update!(shot_params)
+    redirect_to account_shot_path(@account, @shot)
   end
 
   def destroy

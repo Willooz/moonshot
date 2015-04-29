@@ -1,10 +1,12 @@
 h4 = @shot.account.name
 h1 = @shot.title
-h2 = "#{(@shot.baseline_value / @shot.target_value) * 100} % done"
+h2 = "#{@shot.percentage_done} % done"
 h3 = "Deadline: #{@shot.deadline}"
 p = @shot.description
 p
   = "Current Value: #{@shot.baseline_value}"
   br
   = "Target Value: #{@shot.target_value}"
+= link_to "Edit this shot", edit_account_shot_path(@account, @shot)
+br
 = link_to "Back to #{@shot.account.name} shots", account_shots_path

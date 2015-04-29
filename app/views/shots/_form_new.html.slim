@@ -1,0 +1,9 @@
+= simple_form_for(@shot, method: :post, url: account_shots_path) do |f|
+  = f.error_notification
+  = f.input :title, required: true, autofocus: true
+  = f.input :description, required: true
+  = f.input :deadline, required: true
+  = f.input :baseline_value, required: true
+  = f.input :target_value, required: true
+  - btn_text = @shot.id.nil? ? "Create this Shot" : "Update this Shot"
+  = f.button :submit, t('.sign_up', default: btn_text), class: "btn btn-primary"
