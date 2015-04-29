@@ -1,0 +1,17 @@
+<h1> <%= @account.name%> </h1>
+<h2>All team members</h2>
+<% @memberships.each do |membership| %>
+<div class="container">
+  <div class="row">
+      <% user = User.find(membership.user_id) %>
+      <div class="col-xs-12 col-md-6">
+        <%= image_tag user.picture.url(:thumb), class: "img-circle" %>
+        <p> Name: <%= user.name %> </p>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <p> Role: <%= membership.role %> </p>
+        <p> Team : <%= membership.team %> </p>
+      </div>
+  </div>
+</div>
+<% end %>

@@ -13,13 +13,17 @@
       </a>
     </div>
 
+
+<% if user_signed_in? %>
     <div>
       <ul class="unstyle">
-        <li><%= link_to "My shots", user_shots_path %></li>
-        <li><%= link_to "Shots", shots_path %></li>
-        <li><%= link_to "People", users_path %></li>
+        <li><%= link_to "My shots", root_path %></li>
+        <li><%= link_to "Shots", root_path %></li>
+        <li><%= link_to "People", root_path %></li>
       </ul>
     </div>
+    <% end %>
+
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

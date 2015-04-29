@@ -5,13 +5,16 @@
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do  |form| %>
         <%= form.error_notification %>
+        <%= form.input :name, required: true %>
         <%= form.input :email, required: true, autofocus: true  %>
         <%= form.input :password, required: true %>
+        <%= form.input :picture, label: "Choose your profile picture" %>
         <div class="form-group">
             <%= label_tag 'account[name]', "Company name" %>
             <%= text_field_tag 'account[name]', '',  class: 'form-control' %>
         </div>
         <%= form.button :submit, t('.sign_up', default: "Sign up"), class: "btn btn-primary" %>
+        <% end %>
 
       <%= render "devise/shared/links" %>
     </div>

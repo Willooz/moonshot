@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
 
+  get 'memberships/index'
+
+  get 'memberships/show'
+
   devise_for :users, controllers: {registrations: 'registrations'}
   # root to: "/"
   resources :users, only: [:show, :edit, :update, :destroy]
-    resources :account, only: [:edit, :update] do
+    resources :accounts, only: [:edit, :update] do
+      resources :memberships, only: [:index, :show]
       resources :shots do
         collection do
           get 'mine'

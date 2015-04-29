@@ -30,12 +30,11 @@ class RegistrationsController < Devise::RegistrationsController
   def create_membership(user)
     account = Account.where(account_params).first_or_initialize
     if account.save
-      membership = user.memberships.create(account_id: account.id)
+      membership = user.memberships.create(account_id: account.id, user_id: user.id)
       return true
     else
       return false
     end
-    # return true or false if account was created
   end
 
   private
