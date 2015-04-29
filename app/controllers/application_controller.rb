@@ -2,21 +2,18 @@ class ApplicationController < ActionController::Base
   # include Pundit
 
   protect_from_forgery with: :exception
-  before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :authenticate_user!, unless: :pages_controller?
-
+  # before_action :configure_permitted_parameters, if: :devise_controller?
+  # before_action :authenticate_user!, unless: :pages_controller?
 
   # after_action :verify_authorized, except:  :index, unless: :devise_or_pages_controller?
   # after_action :verify_policy_scoped, only: :index, unless: :devise_or_pages_controller?
-  after_action :set_account
+
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   private
 
-  def set_account
-    @account = params[:account_id]
-  end
+
 
   def devise_or_pages_controller?
     devise_controller? || pages_controller?
@@ -38,6 +35,11 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) do |u|
       u.permit(:email, :password, :name, :picture)
     end
+  end
+
+  def after_sign_in_path_for(resource)
+    current_account = resource.accounts.find_by name: params[:account][:name]
+    account_shots_path(current_account)
   end
 
 end

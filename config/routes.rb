@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'memberships/index'
 
-  get 'memberships/show'
+  # root to: "home#index"
 
   devise_for :users, controllers: {registrations: 'registrations'}
-  # root to: "/"
+
   resources :users, only: [:show, :edit, :update, :destroy]
     resources :accounts, only: [:edit, :update] do
       resources :memberships, only: [:index, :show]

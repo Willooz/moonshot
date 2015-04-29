@@ -6,7 +6,7 @@
       <% user = User.find(membership.user_id) %>
       <div class="col-xs-12 col-md-6">
         <%= image_tag user.picture.url(:thumb), class: "img-circle" %>
-        <p> Name: <%= user.name %> </p>
+        <p> <%= user.name %> </p>
       </div>
       <div class="col-xs-12 col-md-6">
         <p> Role: <%= membership.role %> </p>

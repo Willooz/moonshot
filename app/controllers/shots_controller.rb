@@ -1,14 +1,17 @@
 class ShotsController < ApplicationController
+  before_action :set_shot, only: [:show, :edit, :update, :destroy]
+  before_action :set_account
+
 
   def show
-    @shot = Shot.find(params[:id])
-    authorize @shot
   end
 
   def index
-    @account = Account.find(@account)
     @shots = @account.shots
-    @shots = policy_scope(Shot)
+  end
+
+  def mine
+    @shots = Shot.all
   end
 
   def new
@@ -17,13 +20,17 @@ class ShotsController < ApplicationController
 
   def create
     @shot = Shot.new(shot_params)
+    @shot[:account_id] = params[:account_id]
+    @shot.save
+    redirect_to account_shots_path
   end
 
   def edit
-    @shot = Shot.find(params[:id])
   end
 
   def update
+    @shot.update!(shot_params)
+    redirect_to account_shot_path(@account, @shot)
   end
 
   def destroy
@@ -38,6 +45,15 @@ class ShotsController < ApplicationController
 
   def shot_params
     params.require(:shot).permit(:title, :description, :account_id, :baseline_value, :target_value, :accomplished, :deadline)
+  end
+
+
+  def set_shot
+    @shot = Shot.find(params[:id])
+  end
+
+  def set_account
+    @account = Account.find(params[:account_id])
   end
 
 end

@@ -14,14 +14,10 @@
     </div>
 
 
-<% if user_signed_in? %>
-    <div>
-      <ul class="unstyle">
-        <li><%= link_to "My shots", root_path %></li>
-        <li><%= link_to "Shots", root_path %></li>
-        <li><%= link_to "People", root_path %></li>
-      </ul>
-    </div>
+    <% if user_signed_in? %>
+      <%= link_to "My shots", mine_account_shots_path(params[:account_id]) %>
+      <%= link_to "Shots", account_shots_path(params[:account_id]) %>
+      <%= link_to "People", account_memberships_path(params[:account_id])%>
     <% end %>
 
 
@@ -54,17 +50,17 @@
               </li>
               <li>
                 <%= link_to destroy_user_session_path, method: :delete do %>
-                  <i class="fa fa-sign-out"></i>  Sign out from Moonshot
+                  <i class="fa fa-sign-out"></i>  Sign out of Moonshot
                 <% end %>
               </li>
             </ul>
           </li>
         <% else %>
           <li>
-            <%= link_to t(".sign_up", default: "Sign up"), new_user_registration_path %>
+            <%= link_to "Sign up", new_user_registration_path %>
           </li>
           <li>
-            <%= link_to t(".sign_in", default: "Sign in"), new_user_session_path %>
+            <%= link_to "Sign in", new_user_session_path %>
           </li>
         <% end %>
       </ul>
