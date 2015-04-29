@@ -13,13 +13,14 @@
       </a>
     </div>
 
-    <div>
-      <ul class="unstyle">
-        <li><%= link_to "My shots", user_shots_path %></li>
-        <li><%= link_to "Shots", shots_path %></li>
-        <li><%= link_to "People", users_path %></li>
-      </ul>
-    </div>
+    <% if user_signed_in? %>
+      <div>
+        <%= link_to "My shots" %>
+        <%= link_to "Shots" %>
+        <%= link_to "People" %>
+      </div>
+    <% end %>
+
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -50,17 +51,17 @@
               </li>
               <li>
                 <%= link_to destroy_user_session_path, method: :delete do %>
-                  <i class="fa fa-sign-out"></i>  Sign out from Moonshot
+                  <i class="fa fa-sign-out"></i>  Sign out of Moonshot
                 <% end %>
               </li>
             </ul>
           </li>
         <% else %>
           <li>
-            <%= link_to t(".sign_up", default: "Sign up"), new_user_registration_path %>
+            <%= link_to "Sign up", new_user_registration_path %>
           </li>
           <li>
-            <%= link_to t(".sign_in", default: "Sign in"), new_user_session_path %>
+            <%= link_to "Sign in", new_user_session_path %>
           </li>
         <% end %>
       </ul>
