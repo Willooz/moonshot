@@ -18,6 +18,7 @@ gem "sass-rails", "~> 5.0"
 gem "uglifier"
 gem "bootstrap-sass"
 gem "font-awesome-sass"
+gem "slim"
 
 gem "rails-i18n"
 gem "devise-i18n"

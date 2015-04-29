@@ -1,5 +1,3 @@
-h3 = shot.title
-h4 = "#{((shot.baseline_value.to_f / shot.target_value) * 100).round(2)} % done"
+h3 = link_to shot.title, account_shot_path(@account, shot)
+h4 = "#{shot.percentage_done} % done"
 p = "Deadline #{shot.deadline}"
-p =
-
