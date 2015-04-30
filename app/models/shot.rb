@@ -20,4 +20,12 @@ class Shot < ActiveRecord::Base
       ((tg.to_f / bl) * 100).round(2)
     end
   end
+
+  def shot_team
+    result = []
+    self.shot_invites.where(in_team: true).each do |invite|
+      result << invite.invitee
+    end
+    result
+  end
 end

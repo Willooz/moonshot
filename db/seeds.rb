@@ -19,6 +19,16 @@ Profile.create(account_id: 1,
                   team:       "Avengers",
                   owner:      true )
 
+User.create(email: "ironman@marvel.com",
+            name: "Iron Man",
+            password: "12345678")
+
+Profile.create(account_id: 1,
+                  user_id:    2,
+                  role:       "Playboy Millionaire",
+                  team:       "Avengers",
+                  owner:      false )
+
 Shot.create(title: "Let's code this Moonshot shit!",
             description: "We can do it if we harness the power of cocaine",
             baseline_value: 5,

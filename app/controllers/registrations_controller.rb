@@ -43,4 +43,21 @@ class RegistrationsController < Devise::RegistrationsController
     params.require(:account).permit(:name)
   end
 
+  def sign_up_params
+    if devise_params
+      {
+        name: params[:user][:name],
+        email: params[:user][:email],
+        password: params[:user][:password],
+        picture: params[:user][:picture],
+      }
+    end
+  end
+
+
+  def devise_params
+    devise_parameter_sanitizer.for(:sign_up).push(:email, :password, :name, :picture)
+  end
+
+
 end

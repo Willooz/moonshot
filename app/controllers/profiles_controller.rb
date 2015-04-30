@@ -13,4 +13,22 @@ class ProfilesController < ApplicationController
     @account = Account.find(current_user.profiles.last.account_id)
     @shots = Shot.all
   end
+
+  def mine
+    @user = current_user
+    @profile = current_user.profiles.first
+    @account = @profile.account
+
+    @shots_pending = []
+    @shots_accepted = []
+    @profile.shot_invites_received.each do |invite|
+      if invite.in_team && invite.shot.deadline > Time.now
+       @shots_accepted << invite.shot
+      else
+        if invite.shot.deadline > Time.now
+          @shots_pending << invite.shot
+        end
+      end
+    end
+  end
 end

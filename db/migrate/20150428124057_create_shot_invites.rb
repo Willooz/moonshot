@@ -4,7 +4,7 @@ class CreateShotInvites < ActiveRecord::Migration
       table.references :shot, index: true
       table.references :inviter, index: true
       table.references :invitee, index: true
-      table.string :state, default: "pending"
+      table.boolean :in_team, default: false
 
       table.timestamps null: false
     end
