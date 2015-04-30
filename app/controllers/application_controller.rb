@@ -38,7 +38,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    current_account = resource.accounts.find_by name: params[:account][:name]
+    current_account = resource.accounts.first
     account_shots_path(current_account)
   end
 
