@@ -1,2 +1,5 @@
-<h1>Profiles#show</h1>
-<p>Find me in app/views/profiles/show.html.erb</p>
+<h1> <%= @user.name %> for <%= @account.name%></h1>
+<%= render "shared/shotsbar" %>
+<% @shots.each do |shot| %>
+  <%= render partial: "shots/small_shot", locals: {shot: shot} %>
+<% end %>
