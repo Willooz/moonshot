@@ -1,8 +1,9 @@
 class BadgesController < ApplicationController
   def index
     @badges = Badge.all
-    @profile = Profile.find(params[:profile_id])
-    @account = @profile.account
+    @giver = Profile.find(params[:profile_id])
+    @receiver = Profile.find(2)
+    @account = @giver.account
     @shot = Shot.find(params[:shot_id])
   end
 

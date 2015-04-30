@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :update, :destroy]
 
   resources :accounts, only: [:edit, :update] do
-    resources :profiles, only: [:index, :show]
+    resources :profiles, only: [:index, :show] do
       resources :shots do
         collection do
           get 'mine'
