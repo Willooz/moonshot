@@ -15,9 +15,19 @@ class ShotInvitesController < ApplicationController
   end
 
   def update
+    @invite = ShotInvite.find(params[:id])
+    @invite.update_attribute(:in_team, true)
+    respond_to do |format|
+      format.js
+    end
   end
 
   def destroy
+    invite = ShotInvite.find(params[:id])
+    invite.destroy
+    respond_to do |format|
+      format.js
+    end
   end
 
   private
@@ -27,7 +37,7 @@ class ShotInvitesController < ApplicationController
   end
 
   def set_account
-    @account = Account.find(params[:shot_id])
+    @account = Account.find(params[:account_id])
   end
 
   def shot_invite_params

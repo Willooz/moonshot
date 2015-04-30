@@ -3,20 +3,30 @@
 <h3><%= @profile.role %> for <%= @account.name %> </h3>
 <%= image_tag @user.picture.url(:medium) %>
 <% if @shots_accepted.any? %>
-  <div>
+  <div id="accepted">
     <h4>Your current shots</h4>
     <% @shots_accepted.each do |accepted_shot| %>
-      <p> <%= link_to accepted_shot.title, account_shot_path(accepted_shot) %> </p>
-      <p> Current completion: <%= pend_shot.percentage_done %> </p>
+      <%=  render partial: "shots/small_shot", locals: {shot: accepted_shot} %>
     <% end %>
   </div>
 <% end %>
 <% if @shots_pending.any? %>
-  <div>
+  <div id="pending">
     <h4>Your pending invites</h4>
     <% @shots_pending.each do |pending_shot| %>
-      <%=  render partial: "shots/small_shot", locals: {shot: pending_shot} %>
-      <p> <%= link_to "Accept this invite", root_path %> </p>
+      <div id=<%="#{pending_shot.id}"%> >
+        <%=  render partial: "shots/small_shot", locals: {shot: pending_shot} %>
+
+        <% pending_shot.shot_invites.where(invitee_id: current_user.id).each do |invite| %>
+          <%= form_tag(account_shot_shot_invite_path(@account, pending_shot, invite), method: :patch, remote:true) do  %>
+            <%= submit_tag "Accept this invite" %>
+            <% end %>
+
+            <%= form_tag(account_shot_shot_invite_path(@account, pending_shot, invite), method: :delete, remote:true) do  %>
+            <%= submit_tag "Decline this invite" %>
+          <% end %>
+        <% end %>
+      </div>
     <% end %>
   </div>
 <% end %>

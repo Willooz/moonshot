@@ -1,0 +1,8 @@
+<% invite_id = "\'\##{@invite.shot_id}\'"%>
+$(<%=invite_id %>).hide();
+
+var new_accepted_shot = $("<%= j render 'shots/small_shot', shot: @invite.shot%>").hide();
+$('#accepted').prepend(new_accepted_shot);
+new_accepted_shot.fadeIn(600);
+
+console.log($('#accepted'));
