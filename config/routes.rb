@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: {registrations: 'registrations'}
 
+  get '/badges', to: 'badges#index'
+
   resources :users, only: [:show, :edit, :update, :destroy]
     resources :accounts, only: [:edit, :update] do
       resources :profiles, only: [:index, :show]
