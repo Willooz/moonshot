@@ -5,4 +5,8 @@ class Profile < ActiveRecord::Base
 
   validates_presence_of :account
   validates_presence_of :user
+
+  def name
+    self.user.name
+  end
 end
