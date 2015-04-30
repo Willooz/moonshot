@@ -3,6 +3,7 @@ class Shot < ActiveRecord::Base
   belongs_to :account
   has_many :shot_invites
   has_many :profiles, through: :shot_invites
+  has_many :badges
 
   validates :baseline_value, presence: true, numericality: true
   validates :target_value  , presence: true, numericality: true
