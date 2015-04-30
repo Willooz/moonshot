@@ -4,14 +4,16 @@ class HighfivesController < ApplicationController
   end
 
   def create
-    badge_ids = params[:badges].map { |k, v| k.to_i }
+    badge_ids = params[:badges].keys.map { |k| k.to_i }
     shot = Shot.find(params[:shot_id])
     badge_ids.each do |badge_id|
-      shot.highfives.build(
+      highfive = shot.highfives.build(
         badge_id: badge_id,
         giver_id: params[:profile_id],
         receiver_id: params[:receiver_id]
       )
+      highfive.save
     end
+    redirect_to account_profile_shots_path(params[:account_id], params[:profile_id])
   end
 end
