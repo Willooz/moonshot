@@ -38,8 +38,9 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    current_account = resource.accounts.first
-    account_shots_path(current_account)
+    current_profile = resource.profiles.first
+    current_account = current_profile.account
+    account_profile_shots_path(current_account, current_profile)
   end
 
 end

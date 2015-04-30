@@ -1,6 +1,7 @@
 class ShotsController < ApplicationController
   before_action :set_shot, only: [:show, :edit, :update, :destroy]
   before_action :set_account
+  before_action :set_profile
 
 
   def show
@@ -53,6 +54,10 @@ class ShotsController < ApplicationController
 
   def set_account
     @account = Account.find(params[:account_id])
+  end
+
+  def set_profile
+    @account = Account.find(params[:profile_id])
   end
 
 end
