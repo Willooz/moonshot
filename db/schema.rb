@@ -24,12 +24,10 @@ ActiveRecord::Schema.define(version: 20150429160321) do
 
   create_table "badges", force: :cascade do |t|
     t.string   "title"
-    t.string   "picture_file_name"
-    t.string   "picture_content_type"
-    t.integer  "picture_file_size"
-    t.datetime "picture_updated_at"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.string   "description"
+    t.string   "picture"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "highfives", force: :cascade do |t|

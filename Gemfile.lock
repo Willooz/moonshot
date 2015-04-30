@@ -87,6 +87,8 @@ GEM
     devise-i18n-views (0.3.4)
     erubis (2.7.0)
     execjs (2.5.2)
+    faker (1.4.3)
+      i18n (~> 0.5)
     figaro (1.1.0)
       thor (~> 0.14)
     font-awesome-sass (4.3.2.1)
@@ -225,6 +227,7 @@ DEPENDENCIES
   devise
   devise-i18n
   devise-i18n-views
+  faker
   figaro
   font-awesome-sass
   high_voltage

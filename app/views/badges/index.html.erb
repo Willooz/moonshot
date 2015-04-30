@@ -1,0 +1,9 @@
+<h1>Badges</h1>
+<p>Select badges you'd like to give to "Asshole"</p>
+
+<% @bagdes.each do |badge| %>
+  <div class="square-card">
+    <% render "badge", badge: badge %>
+  </div>
+
+<% end %>
