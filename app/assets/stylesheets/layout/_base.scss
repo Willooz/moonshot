@@ -8,6 +8,8 @@
  body {
   background: $blue;
   color: $gray;
+  font-family: $base-font;
+  font-weight: 400;
  }
 
 .master-container {
@@ -17,6 +19,25 @@
   padding: 10px;
   background: white;
   border-radius: $box-corner-radius;
+ }
+
+.square-card {
+  margin: 0;
+  width: 245px;
+  height: 300px;
+  padding: 20px;
+  text-align: center;
+  background: white;
+  display: inline-block;
+  float: left;
+  p.title {
+    font-weight: 700;
+  }
+  p.description {
+  }
+ }
+.square-card:hover {
+  background: $gray-lighter;
  }
 
  .img-circle {
