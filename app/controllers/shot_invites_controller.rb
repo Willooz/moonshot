@@ -7,8 +7,8 @@ class ShotInvitesController < ApplicationController
   end
 
   def create
-    raise
     @shot_invite = ShotInvite.new(shot_invite_params)
+    @shot_invite.save
   end
 
   def edit
@@ -31,6 +31,6 @@ class ShotInvitesController < ApplicationController
   end
 
   def shot_invite_params
-      params.require(:shot).permit(:inviter_id, :invitee_id, :shot_id)
+      params.require(:shot_invite).permit(:inviter_id, :invitee_id, :shot_id)
   end
 end

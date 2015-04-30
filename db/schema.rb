@@ -63,9 +63,9 @@ ActiveRecord::Schema.define(version: 20150429160321) do
     t.integer  "shot_id"
     t.integer  "inviter_id"
     t.integer  "invitee_id"
-    t.string   "state",      default: "pending"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.boolean  "in_team",    default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   add_index "shot_invites", ["invitee_id"], name: "index_shot_invites_on_invitee_id", using: :btree
