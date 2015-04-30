@@ -1,9 +1,10 @@
 <h1>Badges</h1>
 <p>Select badges you'd like to give to "Asshole"</p>
-
+<%= link_to "Cancel", "#", class: "btn btn-default" %>
+<%= link_to "Give badges", "#", class: "btn btn-primary" %>
+<br>
 <% @badges.each do |badge| %>
   <div class="square-card">
     <%= render "badge", badge: badge %>
   </div>
-
 <% end %>

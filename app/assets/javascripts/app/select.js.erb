@@ -1,0 +1,11 @@
+$(document).ready(function() {
+  $(".square-card").mouseenter(function(){
+    $(this).addClass("highlighted");
+  });
+  $(".square-card").mouseleave(function(){
+    $(this).removeClass("highlighted");
+  });
+  $(".square-card").click(function(){
+    $(this).toggleClass("selected");
+  });
+});

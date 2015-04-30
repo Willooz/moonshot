@@ -35,10 +35,14 @@
   }
   p.description {
   }
+
  }
-.square-card:hover {
+.highlighted {
   background: $gray-lighter;
- }
+}
+.selected {
+  background: $gray-light;
+}
 
  .img-circle {
   border-radius: 50%;
