@@ -1,10 +1,13 @@
 <h1>Badges</h1>
-<p>Select badges you'd like to give to "Asshole"</p>
-<%= link_to "Cancel", "#", class: "btn btn-default" %>
-<%= link_to "Give badges", "#", class: "btn btn-primary" %>
-<br>
-<% @badges.each do |badge| %>
-  <div class="square-card">
-    <%= render "badge", badge: badge %>
-  </div>
+<p>Select badges you'd like to give to "Asshole", bitch.</p>
+<%= form_tag account_profile_shot_highfives_path(@account, @profile, @shot) do %>
+  <%= link_to "Cancel", "#", class: "btn btn-default" %>
+  <%= submit_tag "Give badges", class: "btn btn-primary" %>
+
+  <% @badges.each do |badge| %>
+    <div class="square-card">
+      <%= check_box_tag "badges[#{badge.id}]", true, false, class: 'hide' %>
+      <%= render "badge", badge: badge %>
+    </div>
+  <% end %>
 <% end %>

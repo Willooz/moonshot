@@ -46,7 +46,7 @@ Shot.create(title: "Make a million paperplanes",
             account_id: 2
             )
 
-20.times do
+13.times do
   Badge.create(
     title: Faker::Lorem.word,
     description: Faker::Lorem.sentence(3),

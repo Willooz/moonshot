@@ -26,6 +26,7 @@
   width: 245px;
   height: 300px;
   padding: 20px;
+  border: 1px solid white;
   text-align: center;
   background: white;
   display: inline-block;
@@ -38,10 +39,10 @@
 
  }
 .highlighted {
-  background: $gray-lighter;
+  border-color: $gray-light;
 }
 .selected {
-  background: $gray-light;
+  background: $gray-lighter;
 }
 
  .img-circle {
