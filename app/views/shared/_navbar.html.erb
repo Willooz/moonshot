@@ -16,9 +16,9 @@
 
 
     <% if user_signed_in? %>
-      <%= link_to "My shots", mine_account_shots_path(params[:account_id]) %>
-      <%= link_to "Shots", account_shots_path(params[:account_id]) %>
-      <%= link_to "People", account_profiles_path(params[:account_id])%>
+      <%= link_to "My shots", root_path %>
+      <%= link_to "Shots", root_path %>
+      <%= link_to "People", root_path%>
     <% end %>
 
 
@@ -28,7 +28,7 @@
         <% if user_signed_in? %>
           <li class="dropdown">
             <%= link_to "#", {class: "dropdown-toggle", "data-toggle" => "dropdown", "role" => "button", "aria-expanded" => "false"} do %>
-              <%= image_tag "http://placehold.it/30x30", class: "img-avatar" %>
+              <%= image_tag current_user.picture.url, class: "img-avatar" %>
             <% end %>
             <ul class="dropdown-menu" role="menu">
               <li>
