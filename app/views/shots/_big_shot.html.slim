@@ -11,4 +11,4 @@ p
 br
 = link_to "Back to #{@shot.account.name} shots", account_shots_path
 br
-= link_to "Invite someone to work on this shot", shot_invites_new_path
+= link_to "Invite someone to work on this shot", new_account_shot_shot_invite_path(@account, @shot)

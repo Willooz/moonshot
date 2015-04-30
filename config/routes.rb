@@ -1,17 +1,7 @@
 Rails.application.routes.draw do
 
 
-  get 'shot_invites/new'
-
-  get 'shot_invites/create'
-
-  get 'shot_invites/edit'
-
-  get 'shot_invites/update'
-
-  get 'shot_invites/destroy'
-
-  # root to: "home#index"
+   # root to: "home#index"
 
   devise_for :users, controllers: {registrations: 'registrations'}
 
@@ -22,6 +12,7 @@ Rails.application.routes.draw do
         collection do
           get 'mine'
         end
+      resources :shot_invites, only: [:new, :create, :edit, :update, :destroy]
     end
   end
 end

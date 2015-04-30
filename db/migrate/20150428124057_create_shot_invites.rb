@@ -5,6 +5,7 @@ class CreateShotInvites < ActiveRecord::Migration
       table.references :inviter, index: true
       table.references :invitee, index: true
       table.string :state, default: "pending"
+
       table.timestamps null: false
     end
     add_foreign_key :shot_invites, :shots
