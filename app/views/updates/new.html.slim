@@ -1,0 +1,19 @@
+h4 = @shot.account.name
+h3 = @shot.title
+h2 = Update
+
+= simple_form_for(@update, method: :post, url: account_shot_updates_path) do |f|
+  = f.error_notification
+  = f.input :description
+  = f.input :current_value
+  = f.hidden_field :profile_id, value: current_user.profiles.first.id
+  = f.hidden_field :shot_id, value: @shot.id
+  = f.button :submit, t('.sign_up', default: "Update Shot"), class: "btn btn-primary"
+
+h3
+  = "Previous Value: #{@shot.baseline_value}"
+  br
+  = "Target Value: #{@shot.target_value}"
+  br
+= link_to "Back to #{@shot.account.name} shots", account_shots_path
+

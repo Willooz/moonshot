@@ -4,6 +4,7 @@ class Shot < ActiveRecord::Base
   has_many :shot_invites
   has_many :profiles, through: :shot_invites
   has_many :badges
+  has_many :updates
 
   validates :baseline_value, presence: true, numericality: true
   validates :target_value  , presence: true, numericality: true
@@ -11,7 +12,7 @@ class Shot < ActiveRecord::Base
   validates :deadline,       presence: true
 
   def percentage_done
-    bl = self.baseline_value
+    bl = self.latest_value
     tg = self.target_value
     if bl < tg
       ((bl.to_f / tg) * 100).round(2)
@@ -26,5 +27,13 @@ class Shot < ActiveRecord::Base
       result << invite.invitee
     end
     result
+  end
+
+  def latest_value
+    if self.updates.last.nil?
+      self.baseline_value
+    else
+      self.updates.last.current_value
+    end
   end
 end

@@ -14,4 +14,5 @@ class ProfilesController < ApplicationController
     @account = Account.find(current_user.profiles.last.account_id)
     @shots = Shot.all
   end
+
 end
