@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :shots, through: :shot_invites
+
   has_many :profiles
   has_many :accounts, through: :profiles
 

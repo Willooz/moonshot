@@ -5,7 +5,6 @@ class ProfilesController < ApplicationController
     @profiles.each do |profile|
       @users = User.find(profile.user_id)
     end
-
   end
 
   def show
@@ -15,4 +14,24 @@ class ProfilesController < ApplicationController
     @shots = Shot.all
   end
 
+
+end
+
+  def mine
+    @user = current_user
+    @profile = current_user.profiles.first
+    @account = @profile.account
+
+    @shots_pending = []
+    @shots_accepted = []
+    @profile.shot_invites_received.each do |invite|
+      if invite.in_team && invite.shot.deadline > Time.now
+       @shots_accepted << invite.shot
+      else
+        if invite.shot.deadline > Time.now
+          @shots_pending << invite.shot
+        end
+      end
+    end
+  end
 end

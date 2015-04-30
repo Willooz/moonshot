@@ -29,6 +29,7 @@ group :development, :test do
   gem "annotate"
   gem "binding_of_caller"
   gem "better_errors"
+  gem "faker"
   gem "quiet_assets"
   gem "pry-byebug"
   gem "pry-rails"
