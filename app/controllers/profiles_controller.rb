@@ -5,7 +5,6 @@ class ProfilesController < ApplicationController
     @profiles.each do |profile|
       @users = User.find(profile.user_id)
     end
-
   end
 
   def show

@@ -1,0 +1,14 @@
+<h1>Badges</h1>
+<p>Select badges you'd like to give to <%= @receiver.name %></p>
+<%= form_tag account_profile_shot_highfives_path(@account, @giver, @shot) do %>
+  <%= link_to "Cancel", "#", class: "btn btn-default" %>
+  <%= submit_tag "Give badges", class: "btn btn-primary" %>
+  <%= hidden_field_tag 'receiver_id', @receiver.id %>
+
+  <% @badges.each do |badge| %>
+    <div class="square-card">
+      <%= check_box_tag "badges[#{badge.id}]", true, false, class: 'hide' %>
+      <%= render "badge", badge: badge %>
+    </div>
+  <% end %>
+<% end %>
