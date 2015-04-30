@@ -29,7 +29,7 @@ Profile.create(account_id: 1,
                   team:       "Avengers",
                   owner:      false )
 
-Shot.create(title: "Let's code this Moonshot shit!",
+Shot.create(title: "Coding this Moonshot shit",
             description: "We can do it if we harness the power of cocaine",
             baseline_value: 5,
             target_value: 100,

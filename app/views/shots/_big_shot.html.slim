@@ -2,9 +2,11 @@ h4 = @shot.account.name
 h1 = @shot.title
 h2 = "#{@shot.percentage_done} % done"
 h3 = "Deadline: #{@shot.deadline}"
+- unless @shot.updates.empty?
+  h5 = "Last updated by #{@shot.updates.last.profile.name}"
 p = @shot.description
 p
-  = "Current Value: #{@shot.baseline_value}"
+  = "Current Value: #{@shot.latest_value}"
   br
   = "Target Value: #{@shot.target_value}"
 = link_to "Edit this shot", edit_account_shot_path(@account, @shot)
@@ -12,3 +14,5 @@ br
 = link_to "Back to #{@shot.account.name} shots", account_shots_path
 br
 = link_to "Invite someone to work on this shot", new_account_shot_shot_invite_path(@account, @shot)
+br
+= link_to "Update this shot", new_account_shot_update_path(@account, @shot)

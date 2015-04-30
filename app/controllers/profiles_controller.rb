@@ -14,6 +14,9 @@ class ProfilesController < ApplicationController
     @shots = Shot.all
   end
 
+
+end
+
   def mine
     @user = current_user
     @profile = current_user.profiles.first

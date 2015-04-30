@@ -1,6 +1,8 @@
 class Profile < ActiveRecord::Base
   belongs_to :account
   belongs_to :user
+
+  has_many :updates
   has_many :shot_invites_sent, class_name: "ShotInvite", foreign_key: "inviter_id"
   has_many :shot_invites_received, class_name: "ShotInvite", foreign_key: "invitee_id"
   has_many :highfives_given, class_name: "Highfive", foreign_key: "giver_id"
