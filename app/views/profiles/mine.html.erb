@@ -1,1 +1,22 @@
-mine.html.erb
+<h1> Welcome, <%= @user.name %> </h1>
+<h2> Your current profile: </h2>
+<h3><%= @profile.role %> for <%= @account.name %> </h3>
+<%= image_tag @user.picture.url(:medium) %>
+<% if @shots_accepted.any? %>
+  <div>
+    <h4>Your current shots</h4>
+    <% @shots_accepted.each do |accepted_shot| %>
+      <p> <%= link_to accepted_shot.title, account_shot_path(accepted_shot) %> </p>
+      <p> Current completion: <%= pend_shot.percentage_done %> </p>
+    <% end %>
+  </div>
+<% end %>
+<% if @shots_pending.any? %>
+  <div>
+    <h4>Your pending invites</h4>
+    <% @shots_pending.each do |pending_shot| %>
+      <%=  render partial: "shots/small_shot", locals: {shot: pending_shot} %>
+      <p> <%= link_to "Accept this invite", root_path %> </p>
+    <% end %>
+  </div>
+<% end %>

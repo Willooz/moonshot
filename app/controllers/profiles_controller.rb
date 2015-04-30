@@ -23,10 +23,12 @@ class ProfilesController < ApplicationController
     @shots_pending = []
     @shots_accepted = []
     @profile.shot_invites_received.each do |invite|
-      if invite.in_team
+      if invite.in_team && invite.shot.deadline > Time.now
        @shots_accepted << invite.shot
       else
-        @shots_pending << invite.shot
+        if invite.shot.deadline > Time.now
+          @shots_pending << invite.shot
+        end
       end
     end
   end
