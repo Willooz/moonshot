@@ -6,6 +6,7 @@ class Shot < ActiveRecord::Base
   has_many :updates
   has_many :highfives
   has_many :badges, through: :highfives
+  has_many :events
 
   validates :baseline_value, presence: true, numericality: true
   validates :target_value  , presence: true, numericality: true

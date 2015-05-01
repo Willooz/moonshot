@@ -13,6 +13,7 @@ class HighfivesController < ApplicationController
         receiver_id: params[:receiver_id]
       )
       highfive.save
+      event = highfive.Event.create(shot_id: shot.id)
     end
     redirect_to account_profile_shots_path(params[:account_id], params[:profile_id])
   end

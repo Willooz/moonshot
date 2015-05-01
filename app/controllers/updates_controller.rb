@@ -8,6 +8,7 @@ class UpdatesController < ApplicationController
     @update = Update.create(update_params)
     @shot = Shot.find(params[:shot_id])
     @account = Account.find(params[:account_id])
+    @update.Event.create(shot_id: @shot.id)
     redirect_to account_shot_path(@account, @shot)
   end
 
