@@ -28,6 +28,8 @@ Rails.application.routes.draw do
   # MAIN NAVIGATION
   get 'me/shots', to: 'shots#mine'
   get 'shots', to: 'shots#index'
+  get 'shots/new', to: 'shots#new', as: :new_shot
+  post 'shots/create', to: 'shots#create', as: :shot_create
   get 'shots/:id', to: 'shots#show', as: :shot
   get 'shots/:id/invite', to: 'shot_invites#new', as: :new_shot_invite
   get 'shots/:id/update', to: 'updates#new', as: :new_update
