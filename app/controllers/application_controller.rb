@@ -2,18 +2,39 @@ class ApplicationController < ActionController::Base
   # include Pundit
 
   protect_from_forgery with: :exception
-  # before_action :configure_permitted_parameters, if: :devise_controller?
-  # before_action :authenticate_user!, unless: :pages_controller?
+  before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :authenticate_user!, unless: :pages_controller?
+
 
   # after_action :verify_authorized, except:  :index, unless: :devise_or_pages_controller?
   # after_action :verify_policy_scoped, only: :index, unless: :devise_or_pages_controller?
 
+  # def manage_cookies
+  #   if current_user.id != cookies.permanent.signed[:user_id]
+  #     cookies.permanent.signed = {
+  #     user_id: current_user.id,
+  #     profile_id: current_profile.id
+  #     }
+  # end
+
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
+  def current_profile
+    if user_signed_in?
+      @_cp ||= if cookies.permanent.signed[:profile_id]
+        current_user.profiles.find(cookies.permanent.signed[:profile_id])
+      else
+        current_user.profiles.last
+      end
+    end
+  end
+
+  def current_account
+    current_profile.account
+  end
+
   private
-
-
 
   def devise_or_pages_controller?
     devise_controller? || pages_controller?
@@ -28,8 +49,7 @@ class ApplicationController < ActionController::Base
     redirect_to(root_path)
   end
 
-
-    protected
+  protected
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) do |u|
@@ -38,8 +58,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    current_account = resource.accounts.first
-    account_shots_path(current_account)
+    shots_path
   end
 
 end

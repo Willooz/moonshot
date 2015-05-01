@@ -1,5 +1,5 @@
 <h1> <%= @user.name %> for <%= @account.name%></h1>
-<%= render "shared/shotsbar" %>
+<%= render partial: "shotsbar" %>
 <% @shots.each do |shot| %>
   <%= render partial: "shots/small_shot", locals: {shot: shot} %>
 <% end %>
