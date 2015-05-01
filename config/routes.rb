@@ -11,27 +11,26 @@ Rails.application.routes.draw do
   # SETTINGS NAVIGATION
   get 'me', to: 'profiles#mine'
   post 'me', to: 'profiles#create'
-  patch 'me', to: 'profiles#update'
+  patch 'me', to: 'profiles#update', as: :me_update
   put 'me', to: 'profiles#update'
-  delete 'me', to: 'profiles#destroy'
+  delete 'me', to: 'profiles#destroy', as: :me_destroy
   get 'me/edit', to: 'profiles#edit'
 
+  get 'people', to: 'profiles#index'
+  get 'people/:id', to: 'profiles#show', as: :people_show
+
   get 'account', to: 'accounts#show'
-  patch 'account', to: 'accounts#update'
-  put 'me', to: 'profiles#update'
-  delete 'account', to: 'accounts#destroy'
+  patch 'account', to: 'accounts#update', as: :account_update
+  put 'account', to: 'account#update'
+  delete 'account', to: 'accounts#destroy', as: :account_delete
   get 'account/edit', to: 'accounts#edit'
 
   # MAIN NAVIGATION
   get 'me/shots', to: 'shots#mine'
-
   get 'shots', to: 'shots#index'
-  get 'shots/:id', to: 'shots#show', as: :shot_show
-  get 'shots/:id/invite', to: 'shot_invites#new'
-  get 'shots/:id/update', to: 'updates#new'
+  get 'shots/:id', to: 'shots#show', as: :shot
+  get 'shots/:id/invite', to: 'shot_invites#new', as: :new_shot_invite
+  get 'shots/:id/update', to: 'updates#new', as: :new_update
   get 'shots/:id/badge', to: 'badges#index', as: :badges
-
-  get 'people', to: 'profiles#index'
-  get 'people/:id', to: 'profiles#show', as: :people_show
 
 end
