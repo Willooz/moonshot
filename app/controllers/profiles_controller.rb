@@ -3,7 +3,7 @@ class ProfilesController < ApplicationController
     @account = Account.find(current_user.profiles.last.account_id)
     @profiles = Profile.where("account_id = ?", @account.id)
     @profiles.each do |profile|
-      @users = User.find(profile.user_id)
+    @users = User.find(profile.user_id)
     end
   end
 
@@ -14,11 +14,13 @@ class ProfilesController < ApplicationController
     @shots = Shot.all
   end
 
+
+end
+
   def mine
     @user = current_user
     @profile = current_user.profiles.first
     @account = @profile.account
-    @shot_invites = @profile.shot_invites_received
 
     @shots_pending = []
     @shots_accepted = []
@@ -32,4 +34,4 @@ class ProfilesController < ApplicationController
       end
     end
   end
-
+end

@@ -39,6 +39,36 @@ $navbar-profile-border-width: 2px;
 /* -------------------------------------
  * SCSS code
  * ------------------------------------- */
+
+ .super-nav {
+  line-height: 4.6;
+  margin-bottom: 0;
+  line-height: 5;
+
+
+  li {
+    margin-left: 5px;
+    margin-right: 10px;
+    border-bottom: 2px solid transparent;
+    display: inline-block;
+    font-family: 'Proxima Nova';
+    font-weight: bold;
+    color: $base-moonshot;
+
+    transition: border-bottom 0.3s ease;
+    transition: color 0.3s ease;
+    &:hover {
+      border-bottom: 2px solid #282058;
+      color: #8c7dbf;
+
+    }
+  }
+
+
+
+
+
+ }
 .navbar-wagon {
   background: $navbar-bg;
   font-family: $navbar-font-family;
