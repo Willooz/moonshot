@@ -5,23 +5,34 @@ Rails.application.routes.draw do
     root to: "devise/sessions#new"
   end
 
-  get 'account/profile', to: 'profiles#mine'
-
   devise_for :users, controllers: {registrations: 'registrations'}
 
   resources :users, only: [:edit, :update, :destroy]
 
-  resources :accounts, only: [:edit, :update] do
-    resources :profiles, only: [:index, :show] do
-      resources :shots do
-        resources :updates, only: [:new, :create]
-        collection do
-          get 'mine'
-        end
-        resources :shot_invites, only: [:new, :create, :edit, :update, :destroy]
-        resources :badges, only: :index
-        resources :highfives, only: :create
-      end
-    end
-  end
+  # SETTINGS NAVIGATION
+  get 'me', to: 'profiles#mine'
+  post 'me', to: 'profiles#create'
+  patch 'me', to: 'profiles#update'
+  put 'me', to: 'profiles#update'
+  delete 'me', to: 'profiles#destroy'
+  get 'me/edit', to: 'profiles#edit'
+
+  get 'account', to: 'accounts#show'
+  patch 'account', to: 'accounts#update'
+  put 'me', to: 'profiles#update'
+  delete 'account', to: 'accounts#destroy'
+  get 'account/edit', to: 'accounts#edit'
+
+  # MAIN NAVIGATION
+  get 'me/shots', to: 'shots#mine'
+
+  get 'shots', to: 'shots#index'
+  get 'shots/:id', to: 'shots#show'
+  get 'shots/:id/invite', to: 'shot_invites#new'
+  get 'shots/:id/update', to: 'updates#new'
+  get 'shots/:id/badge', to: 'badges#index'
+
+  get 'people', to: 'profiles#index'
+  get 'people/:id', to: 'profiles#show', as: :people_show
+
 end
