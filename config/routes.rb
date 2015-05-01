@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   get 'shots/:id', to: 'shots#show', as: :shot_show
   get 'shots/:id/invite', to: 'shot_invites#new'
   get 'shots/:id/update', to: 'updates#new'
-  get 'shots/:id/badge', to: 'badges#index'
+  get 'shots/:id/badge', to: 'badges#index', as: :badges
 
   get 'people', to: 'profiles#index'
   get 'people/:id', to: 'profiles#show', as: :people_show
