@@ -21,11 +21,12 @@ class ShotsController < ApplicationController
 
   def create
     @shot = Shot.new(shot_params)
-    @shot[:account_id] = params[:account_id]
+    @shot[:account_id] = current_account.id
     @shot.save
 
     # Missing code to create self-invite
-    # Missiing code to alert user that his shot was created
+    # ShotInvite.create()
+    # Missing code to alert user that his shot was created
 
     redirect_to shots_path
   end
