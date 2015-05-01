@@ -15,7 +15,7 @@ class ProfilesController < ApplicationController
   end
 
 
-end
+
 
   def mine
     @user = current_user

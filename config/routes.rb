@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   get 'me/shots', to: 'shots#mine'
 
   get 'shots', to: 'shots#index'
-  get 'shots/:id', to: 'shots#show'
+  get 'shots/:id', to: 'shots#show', as: :shot_show
   get 'shots/:id/invite', to: 'shot_invites#new'
   get 'shots/:id/update', to: 'updates#new'
   get 'shots/:id/badge', to: 'badges#index'
