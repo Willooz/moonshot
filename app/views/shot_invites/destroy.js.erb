@@ -1,3 +1,6 @@
-$();
+var invite_id  = "<%= @invite.shot_id %>"
+$("#" + invite_id).fadeOut(600);
 
-console.log("Everything went well")
+$("#accept" + invite_id).hide(600);
+
+
