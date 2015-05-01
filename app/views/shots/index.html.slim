@@ -1,9 +1,11 @@
-.container.padded.text-center
-  .row
-      h1 = "#{@account.name} Shots"
-      - @shots.each do |shot|
-        .col-xs-12
-          = render partial: 'small_shot', locals: {shot: shot}
-          br
-          br
+.page-title
+  h1 = "SHOTS"
+  = link_to "Create shot", shots_path, class: "btn btn-right btn-primary"
+  = link_to "X", shots_path, class: "btn btn-right btn-default"
 
+.page-menu.hide
+.page-content
+  - @shots.each do |shot|
+    = render partial: 'small_shot', locals: { shot: shot }
+.page-foot
+  = link_to "Back to top", "#title", class: "btn btn-default"
