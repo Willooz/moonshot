@@ -61,7 +61,18 @@ h1, h2, h3 {
   height: 150px;
   padding: 15px;
   border-top: 1px solid $gray-lighter;
-  // background: LightCoral;
+  background: LightCoral;
+  .card-left {
+    width: 150px;
+    background: LightBlue;
+  }
+  .card-middle {
+    width: 500px;
+    background: LightGreen;
+  }
+  .card-right {
+
+  }
 }
 
 .square-card {

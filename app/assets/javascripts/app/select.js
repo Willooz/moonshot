@@ -9,6 +9,18 @@ $(document).ready(function() {
     $(this).removeClass("highlighted");
   });
 
+  $(".list-card").mouseenter(function(){
+    $(this).addClass("selected");
+  });
+
+  $(".list-card").mouseleave(function(){
+    $(this).removeClass("selected");
+  });
+
+  $(".list-card").click(function(){
+
+  });
+
   $(".square-card").click(function(e){
     var card = $(e.currentTarget);
     var cb = card.find('input[type=checkbox]');
