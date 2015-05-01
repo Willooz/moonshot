@@ -1,4 +1,11 @@
 .list-card
-  h3 = link_to shot.title, shots_path(shot)
-  h4 = "#{shot.percentage_done} % done"
-  p = "Deadline #{shot.deadline}"
+  .card-left
+    = image_tag("http://placehold.it/150x150", class: "img-circle")
+  .card-center
+    h3 = link_to shot.title, shots_path(shot)
+    h4 = "#{shot.percentage_done} % done"
+    p = "Deadline #{shot.deadline}"
+  .card-right
+
+
+
