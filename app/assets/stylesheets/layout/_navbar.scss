@@ -48,18 +48,28 @@ $navbar-profile-border-width: 2px;
 
   li {
     margin-left: 5px;
-    margin-right: 10px;
-    border-bottom: 2px solid transparent;
+    margin-right: 5px;
+    margin-bottom: 0px;
+    padding-top: -10px;
+    border-bottom: 3px solid transparent;
     display: inline-block;
     font-family: 'Proxima Nova';
     font-weight: bold;
     color: $base-moonshot;
+    span{
+      padding: 5px;
+      border-radius: 3px;
+      transition: background-color 0.3s ease;
+    }
 
     transition: border-bottom 0.3s ease;
     transition: color 0.3s ease;
     &:hover {
-      border-bottom: 2px solid #282058;
-      color: #8c7dbf;
+      border-bottom: 3px solid #cccccc;
+      color: white;
+      span{
+        background-color: $base-moonshot;
+      }
 
     }
   }
@@ -79,7 +89,6 @@ $navbar-profile-border-width: 2px;
   letter-spacing: $navbar-letter-spacing;
   padding-left: $navbar-horizontal-padding;
   padding-right: $navbar-horizontal-padding;
-  border-bottom: $navbar-border-bottom-width solid $navbar-border-bottom-color;
   min-height: 0;
   transition: background 0.4s ease;
 
