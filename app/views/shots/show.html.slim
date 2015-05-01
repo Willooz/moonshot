@@ -1,4 +1,20 @@
-.container.padded
-  .row
-    .col-xs-6.col-xs-offset-3
-      = render 'big_shot'
+.page-title
+  h1 = @shot.title
+  - if @profile.shots.include?(@shot)
+    = link_to "Update shot", new_update_path(@shot), class: "btn btn-right btn-primary"
+    = link_to "Back", me_shots_path, class: "btn btn-right btn-default"
+  -else
+    = link_to "Back", shots_path, class: "btn btn-right btn-default"
+
+.page-menu
+  ul class="nav nav-tabs"
+    li role="presentation" class="active"
+      = link_to "Overview", "#"
+    li
+      = link_to "People", "#"
+    li
+      = link_to "Timeline", "#"
+.page-content
+    = render 'big_shot'
+.page-foot
+  = link_to "Back to top", "#title", class: "btn btn-default"

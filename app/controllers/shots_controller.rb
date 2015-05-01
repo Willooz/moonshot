@@ -2,6 +2,7 @@ class ShotsController < ApplicationController
   before_action :set_shot, only: [:show, :edit, :update, :destroy]
 
   def show
+    @profile = current_profile
   end
 
   def index
