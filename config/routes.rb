@@ -27,7 +27,6 @@ Rails.application.routes.draw do
 
   # MAIN NAVIGATION
   get 'me/shots', to: 'shots#mine'
-
   get 'shots', to: 'shots#index'
   get 'shots/:id', to: 'shots#show', as: :shot
   get 'shots/:id/invite', to: 'shot_invites#new', as: :new_shot_invite
