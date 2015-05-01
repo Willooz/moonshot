@@ -3,6 +3,8 @@ class HighfivesController < ApplicationController
     @highfives = Highfive.all
   end
 
+
+
   def create
     badge_ids = params[:badges].keys.map { |k| k.to_i }
     shot = Shot.find(params[:shot_id])
