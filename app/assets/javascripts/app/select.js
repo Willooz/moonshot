@@ -17,8 +17,11 @@ $(document).ready(function() {
     $(this).removeClass("selected");
   });
 
-  $(".list-card").click(function(){
-
+  $(".list-card").click(function(e){
+    var card = $(e.currentTarget);
+    var a = card.find('a');
+    console.log(a);
+    a.trigger('click');
   });
 
   $(".square-card").click(function(e){
