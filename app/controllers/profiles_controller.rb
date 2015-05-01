@@ -21,6 +21,7 @@ end
     @user = current_user
     @profile = current_user.profiles.first
     @account = @profile.account
+    @shot_invites = @profile.shot_invites_received
 
     @shots_pending = []
     @shots_accepted = []
