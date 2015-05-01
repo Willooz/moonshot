@@ -16,9 +16,9 @@
 
 
     <% if user_signed_in? %>
-      <%= link_to "My shots", root_path %>
-      <%= link_to "Shots", root_path %>
-      <%= link_to "People", root_path%>
+      <%= link_to "My shots", me_shots_path %>
+      <%= link_to "Shots", shots_path %>
+      <%= link_to "People", people_path%>
     <% end %>
 
 
@@ -35,18 +35,13 @@
                 <!-- Add user name as header in dropdown -->
               </li>
               <li>
-                <%= link_to "#" do %>
-                  <i class="fa fa-user"></i> <%= t ".profile", default: "My Profile" %>
+                <%= link_to me_path do %>
+                  <i class="fa fa-user"></i> <%= t ".profile", default: "Profile settings" %>
                 <% end %>
               </li>
               <li>
-                <%= link_to "#" do %>
+                <%= link_to account_path do %>
                   <i class="fa fa-home"></i>  <%= t ".profile", default: "Account Settings" %>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to destroy_user_session_path, method: :delete do %>
-                  <i class="fa fa-sign-out"></i>  Switch to account : XXX
                 <% end %>
               </li>
               <li>
