@@ -17,8 +17,8 @@
     </p>
   </div>
   <div class="card-right">
-    <% 5.times do %>
-      <%= image_tag("http://placehold.it/50x50", class: "img-circle") %>
+    <% shot.invitees.each do |invitee| %>
+      <%= image_tag(invitee.user.picture.url, size: "50x50", class: "img-circle") %>
     <% end %>
   </div>
 </div>

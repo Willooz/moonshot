@@ -15,8 +15,14 @@ $(document).ready(function() {
     $("#all_shots").fadeIn(1000);
   });
 
+  $(".nav-tabs a").click(function(e) {
+    var link = $(e.currentTarget);
+    $(".nav-tabs li").removeClass("active");
+    link.closest("li").addClass("active");
+  });
+
   $("#overview_link").click(function() {
-    $("#people").hide();
+    $("#people").hide()
     $("#timeline").hide();
     $("#overview").fadeIn(1000);
   });
