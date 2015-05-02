@@ -1,15 +1,15 @@
 .list-card
   .card-left
     = image_tag("http://placehold.it/100x100", class: "img-circle")
-  .card-middle
 
-  .card-center
+  .card-middle
     h4 = link_to shot.title, shot_path(shot)
     p
       i class="fa fa-bullseye"
       = "#{shot.percentage_done} % done"
       i class="fa fa-calendar"
       = "Deadline #{shot.deadline}"
+
   .card-right
     - 5.times do
       = image_tag("http://placehold.it/50x50", class: "img-circle")
