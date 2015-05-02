@@ -43,7 +43,7 @@ class ShotsController < ApplicationController
   end
 
   def mine
-    @account = Account.find(current_user.profiles.last.account_id)
+    @shots = current_profile.shots
   end
 
   private
