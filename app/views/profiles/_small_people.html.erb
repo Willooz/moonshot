@@ -1,0 +1,20 @@
+<div class="list-card">
+  <div class="card-left">
+    <%= image_tag profile.user.picture.url(:medium), size: "100x100", class: "img-circle" %>
+  </div>
+  <div class="card-middle">
+    <h4>
+      <% if @current_profile == profile %>
+        <%= link_to profile.user.name, me_path %> </p>
+      <% else %>
+        <%= link_to profile.user.name, people_show_path(profile) %> </p>
+      <% end %>
+    </h4>
+    <p>
+      <span><i class="fa fa-user"></i> <%= profile.role %></span>
+      <span><i class="fa fa-sitemap"></i> <%= profile.team %></span>
+    </p>
+  </div>
+  <div class="card-right">
+  </div>
+</div>
