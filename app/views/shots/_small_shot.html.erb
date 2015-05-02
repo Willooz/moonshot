@@ -1,0 +1,23 @@
+<div class="list-card">
+  <div class="card-left">
+    <div class="circle-container">
+      <h3><%= "#{shot.percentage_done} %" %></h3>
+      <div class="circle" id=<%="circle#{shot.id}"%>>
+        <%= content_tag(:div, nil, class: "bar", data: {completion_rate: "#{shot.percentage_done}"}) %>
+      </div>
+    </div>
+  </div>
+  <div class="card-center">
+    <h4>
+      <%= link_to shot.title, shot_path(shot) %>
+    </h4>
+    <p>
+      <i class="fa fa-bullseye"></i><%= " #{shot.percentage_done} % done" %>
+      <i class="fa fa-calendar"></i><%= "Deadline #{shot.deadline}" %>
+    </p>
+  </div>
+  <div class="card-right"></div>
+</div>
+
+
+

@@ -6,20 +6,35 @@
   left: 30px;
 
 }
-
+  .circle-container{
+    width: 100px;
+    height: 100px;
+    background: transparent;
+    position: relative;
+    h3{
+      position: absolute;
+      z-index: 5000;
+      padding-left: 25%;
+      padding-top: 40%;
+      color: white;
+      font-size: 20px;
+    }
+  }
   .circle{
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background-color: black;
-    position: relative;
+    background-image: image-url("moon_small.png");
+    position: absolute;
     overflow: hidden;
     text-align: center;
+    z-index: 1000;
+
 
     .bar{
       height: 100%;
-      width: 20%;
-      display: inline-block;
-      background: red;
+      position: absolute;
+      background-color: rgba(255, 255, 0, 0.4);
+      z-index: 2000;
     }
   }

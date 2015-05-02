@@ -1,0 +1,11 @@
+<%= content_for[:after_js] do %>
+  <%= javascript_tag do %>
+      var circle_id = <%= "circle#{shot.id}" %>;
+      var bar_id = <%= "bar#{shot.id}"%>
+      var shot_width = <%= "#{shot.percentage_done}%" %>;
+
+      $("#" + circle_id).mouseenter(function(){
+        $("#" + bar_id).css('width', shot_width).fadeIn(1000);
+      });
+  <% end %>
+<% end %>
