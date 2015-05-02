@@ -1,4 +1,7 @@
 $(document).ready(function() {
+
+  $(".datepicker").datepicker({format: "dd/mm/yyyy"});
+
   var selected_elements = [];
 
   $(".list-card").mouseenter(function(){

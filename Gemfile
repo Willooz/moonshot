@@ -17,6 +17,7 @@ gem "jquery-rails"
 gem "sass-rails", "~> 5.0"
 gem "uglifier"
 gem "bootstrap-sass"
+gem "bootstrap-datepicker-rails"
 gem "font-awesome-sass"
 gem "slim"
 
