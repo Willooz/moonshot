@@ -9,6 +9,7 @@ class ProfilesController < ApplicationController
   end
 
   def show
+    @current_profile = current_profile
     @profile = Profile.find(params[:id])
     @user = @profile.user
     @account = Account.find(current_user.profiles.last.account_id)
