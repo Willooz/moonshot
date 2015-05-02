@@ -1,11 +1,7 @@
 class ProfilesController < ApplicationController
   def index
-    @account = Account.find(current_user.profiles.last.account_id)
-    @profiles = Profile.where("account_id = ?", @account.id)
-    @users = []
-    @profiles.each do |profile|
-      @users << User.find(profile.user_id)
-    end
+    @profiles = Profile.where("account_id = ?", current_account.id)
+    @current_profile = current_profile
   end
 
   def show
