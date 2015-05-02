@@ -3,7 +3,7 @@ class ShotInvitesController < ApplicationController
 
   def new
     @shot_invite = ShotInvite.new
-    @profiles = @account.profiles
+    @profiles = current_account.profiles
   end
 
   def create
@@ -38,7 +38,7 @@ class ShotInvitesController < ApplicationController
   private
 
   def set_shot
-    @shot = Shot.find(params[:shot_id])
+    @shot = Shot.find(params[:id])
   end
 
 

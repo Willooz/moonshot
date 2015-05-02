@@ -1,11 +1,19 @@
-#current_shots {
+// PEOPLE SHOW view - Display settings upon page load
 
-}
-
+#current_shots {}
 #badges {
   display: none;
 }
-
 #all_shots {
+  display: none;
+}
+
+// SHOT SHOW view - Display settings upon page load
+
+#overview {}
+#people {
+  display: none;
+}
+#timeline {
   display: none;
 }
