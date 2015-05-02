@@ -15,4 +15,20 @@ $(document).ready(function() {
     $("#all_shots").fadeIn(1000);
   });
 
+  $("#overview_link").click(function() {
+    $("#people").hide();
+    $("#timeline").hide();
+    $("#overview").fadeIn(1000);
+  });
+  $("#people_link").click(function() {
+    $("#overview").hide();
+    $("#timeline").hide();
+    $("#people").fadeIn(1000);
+  });
+  $("#timeline_link").click(function() {
+    $("#overview").hide();
+    $("#people").hide();
+    $("#timeline").fadeIn(1000);
+  });
+
 });

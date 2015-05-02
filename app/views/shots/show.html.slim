@@ -9,40 +9,37 @@
 .page-menu
   ul class="nav nav-tabs"
     li role="presentation" class="active"
-      = link_to "Overview", "#"
+      = link_to "Overview", "#overview", id: "overview_link"
     li
-      = link_to "People", "#"
+      = link_to "People", "#people", id: "people_link"
     li
-      = link_to "Timeline", "#"
+      = link_to "Timeline", "#timeline", id: "timeline_link"
 
-.page-content
-  #overview
-    p
-      i class="fa fa-bullseye"
-      = " #{@shot.target_value} "
-      i class="fa fa-calendar"
-      = " #{@shot.deadline}"
-    p = @shot.description
+div id="overview" class="page-content"
+  p
+    i class="fa fa-bullseye"
+    = " #{@shot.target_value} "
+    i class="fa fa-calendar"
+    = " #{@shot.deadline}"
+  p = @shot.description
 
-    .team
-      - 5.times do
-        = link_to people_show_path(1)
-          = image_tag("http://placehold.it/50x50", class: "img-circle")
-      - if @profile.shots.include?(@shot)
-        = link_to "Invite new mate", new_shot_invite_path, class: "btn btn-right btn-primary"
+  .team
+    - 5.times do
+      = link_to people_show_path(1)
+        = image_tag("http://placehold.it/50x50", class: "img-circle")
+    - if @profile.shots.include?(@shot)
+      = link_to "Invite new mate", new_shot_invite_path, class: "btn btn-right btn-primary"
 
-    .graph
-      .graph-left
-        h2 = "#{@shot.latest_value}"
-      .graph-right
+  .graph
+    .graph-left
+      h2 = "#{@shot.latest_value}"
+    .graph-right
 
+div id="people" class="page-content"
+  - @shot.invitees.each do |profile|
+    = render partial: "shot_people", locals: { profile: profile }
 
-  #people
-    - @shot.invitees.each do |profile|
-      = render partial: "shot_people", locals: { profile: profile }
-
-
-  #comments
+div id="timeline" class="page-content"
     - @shot.updates.each do |update|
       = render partial: "shot_timeline", locals: { update: update }
 
