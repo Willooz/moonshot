@@ -1,0 +1,15 @@
+<h2>Invite <%=@invitee.name %> to work on a Shot with you </h2>
+
+
+<%= form_tag send_invites_path(@invitee) %>
+  <%= link_to "Cancel", "#", class: "btn btn-default" %>
+  <%= submit_tag "Send invites", class: "btn btn-primary" %>
+  <%= hidden_field_tag 'inviter_id', @inviter.id %>
+
+  <% @shots.each do |shot| %>
+    <div class="square-card">
+      <%= check_box_tag "shots[#{shot.id}]", true, false, class: 'hide' %>
+      <%= render "shots/small_shot", shot: shot %>
+    </div>
+  <% end %>
+
