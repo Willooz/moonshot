@@ -62,25 +62,34 @@ h1, h2, h3 {
   margin: 0;
   width: 100%;
   height: 150px;
-  padding: 15px;
+  padding: 0px;
   border-top: 1px solid $gray-lighter;
   // background: LightCoral;
   .card-left {
     width: 150px;
+    height: 100%;
     float: left;
     display: inline-block;
     // background: LightBlue;
+    img {
+      margin: 25px;
+    }
   }
   .card-middle {
-    width: 500px;
+    height: 100%;
     float: left;
+    padding: 35px 0px;
     display: inline-block;
-    // background: LightGreen;
+    background: LightGreen;
   }
   .card-right {
-    float: left;
+    height: 100%;
+    float: right;
     display: inline-block;
-
+    background: LightCoral;
+    img {
+      margin: 50px 0px 50px 10px;
+    }
   }
 }
 
