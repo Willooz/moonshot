@@ -24,10 +24,12 @@ class ShotsController < ApplicationController
     @shot[:account_id] = current_account.id
     @shot.save
 
-    # Missing code to create self-invite
-    # ShotInvite.create()
-    # Missing code to alert user that his shot was created
-
+    new_shot_invite = @shot.shot_invites.build(
+      inviter: current_profile,
+      invitee: current_profile
+      )
+    new_shot_invite.save
+    flash[:notice] = "Shot successfully created"
     redirect_to shots_path
   end
 

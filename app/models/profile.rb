@@ -9,7 +9,7 @@ class Profile < ActiveRecord::Base
   has_many :highfives_received, class_name: "Highfive", foreign_key: "receiver_id"
 
   has_many :shots, through: :shot_invites_received
-  has_many :badges, through: :highfives
+  has_many :badges, through: :highfives_received
 
   validates_presence_of :account
   validates_presence_of :user
