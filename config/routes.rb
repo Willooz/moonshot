@@ -36,5 +36,6 @@ Rails.application.routes.draw do
   get 'shots/:id/invite', to: 'shot_invites#new', as: :new_shot_invite
   get 'shots/:id/update', to: 'updates#new', as: :new_update
   get 'shots/:id/badge', to: 'badges#index', as: :badges
+  post 'shots/:id/highfive', to: 'highfives#create', as: :new_highfive
 
 end

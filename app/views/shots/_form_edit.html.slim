@@ -1,4 +1,4 @@
-= simple_form_for(@shot, method: :patch, url: account_shot_path(@account, @shot)) do |f|
+= simple_form_for(@shot, method: :patch, url: new_update_path(@shot)) do |f|
   = f.error_notification
   = f.input :title, required: true, autofocus: true
   = f.input :description, required: true

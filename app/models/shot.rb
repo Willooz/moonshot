@@ -2,8 +2,8 @@ class Shot < ActiveRecord::Base
 
   belongs_to :account
   has_many :shot_invites
-  has_many :invitees, class_name: "Profile", foreign_key: "invitee_id"
-  has_many :inviters, class_name: "Profile", foreign_key: "inviter_id"
+  has_many :invitees, class_name: "Profile", foreign_key: "invitee_id", through: :shot_invites
+  has_many :inviters, class_name: "Profile", foreign_key: "inviter_id", through: :shot_invites
   has_many :updates
   has_many :highfives
   has_many :badges, through: :highfives
