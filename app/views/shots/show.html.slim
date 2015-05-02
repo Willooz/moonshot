@@ -39,12 +39,12 @@
 
   #people
     - @shot.invitees.each do |profile|
-      = render "_shot_people"
+      = render partial: "shot_people", locals: { profile: profile }
 
 
   #comments
     - @shot.updates.each do |update|
-      = render "_shot_timeline"
+      = render partial: "shot_timeline", locals: { update: update }
 
 
 
