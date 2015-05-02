@@ -1,17 +1,17 @@
 <div class="list-card">
 
   <div class="card-left">
-    <%= image_tag(profile.user.picture.url(:medium), size: "100x100", alt: "Profile", class: "img-circle") %>
+    <%= image_tag(profile.user.picture(:thumb), alt: "Profile", class: "img-circle") %>
   </div>
 
   <div class="card-middle">
     <% profile.badges.each do |badge| %>
-      <%= image_tag(badge.picture.url(:medium), size: "50x50", alt: "Badge", class: "img-circle") %>
+      <%= image_tag(badge.picture, size: "50x50", alt: "Badge", class: "img-circle") %>
     <% end %>
   </div>
 
   <div class="card-right">
-    <%= link_to "Give badge", badges_path(@shot), class: "btn btn-right btn-primary" %>
+    <%= link_to "Give a badge", badges_path(@shot), class: "btn btn-right btn-primary" %>
   </div>
 
 </div>
