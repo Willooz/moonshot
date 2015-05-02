@@ -9,11 +9,11 @@
 .page-menu
   ul class="nav nav-tabs"
     li role="presentation" class="active"
-      = link_to "Overview", "#overview", id: "overview_link"
-    li
-      = link_to "People", "#people", id: "people_link"
-    li
-      = link_to "Timeline", "#timeline", id: "timeline_link"
+      = link_to "Overview", "#", id: "overview_link"
+    li role="presentation"
+      = link_to "People", "#", id: "people_link"
+    li role="presentation"
+      = link_to "Timeline", "#", id: "timeline_link"
 
 div id="overview" class="page-content"
   p
@@ -24,9 +24,9 @@ div id="overview" class="page-content"
   p = @shot.description
 
   .team
-    - 5.times do
+    - @shot.invitees.each do |invitee|
       = link_to people_show_path(1)
-        = image_tag("http://placehold.it/50x50", class: "img-circle")
+        = image_tag(invitee.user.picture.url, size: "50x50", class: "img-circle")
     - if @profile.shots.include?(@shot)
       = link_to "Invite new mate", new_shot_invite_path, class: "btn btn-right btn-primary"
 
