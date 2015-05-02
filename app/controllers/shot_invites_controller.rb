@@ -9,8 +9,10 @@ class ShotInvitesController < ApplicationController
 
   def create
     @shot_invite = ShotInvite.new(shot_invite_params)
-    @shot_invite.save
-    @shot_invite.Event.create(event_params)
+    @shot_invite.save!
+    @shot_invite.events.create(params[:shot_id])
+    flash[:notice] = "Your invitation has been sent. It needs to be accepted before it appears on the shot's overview or your mate's profile."
+    redirect_to shot_path(@shot)
   end
 
   def edit
@@ -53,9 +55,6 @@ class ShotInvitesController < ApplicationController
       params.require(:shot_invite).permit(:inviter_id, :invitee_id, :shot_id)
   end
 
-   def event_params
-      params.require(:shot_invite).permit(:shot_id)
-  end
 
   # def shot_invite_params_for_one_person
   #     params.require(:shot_invite).permit(:inviter)

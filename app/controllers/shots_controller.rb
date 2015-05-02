@@ -3,6 +3,12 @@ class ShotsController < ApplicationController
 
   def show
     @profile = current_profile
+    @invitees = []
+    @shot.shot_invites.each do |invite|
+      if invite.in_team && invite.deadline > Time.now
+        @invitees << invite.invitee
+      end
+    end
   end
 
   def index

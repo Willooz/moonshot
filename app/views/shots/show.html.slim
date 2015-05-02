@@ -24,7 +24,7 @@ div id="overview" class="page-content"
   p = @shot.description
 
   .team
-    - @shot.invitees.each do |invitee|
+    - @invitees.each do |invitee|
       = link_to people_show_path(invitee)
         = image_tag(invitee.user.picture.url, size: "50x50", class: "img-circle")
     - if @profile.shots.include?(@shot)
@@ -36,6 +36,7 @@ div id="overview" class="page-content"
     .graph-right
 
 div id="people" class="page-content"
+  = link_to "Invite people to work on the shot",  new_shot_invite_path(@shot), class: "btn btn-primary"
   - @shot.invitees.each do |profile|
     = render partial: "shot_people", locals: { profile: profile }
 
