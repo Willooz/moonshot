@@ -8,17 +8,23 @@
 <%= render partial: "shotsbar" %>
 
 <div id="current_shots">
+  <div class="buttons">
+    <%= link_to "Send invites", invite_teammember_path(@profile), class: "btn btn-primary" %>
+  </div>
+
+  <div class="clear"></div>
+
   <% unless @accepted_shots.empty? %>
     <% @accepted_shots.each do |shot| %>
       <%= render partial: "shots/small_shot", locals: {shot: shot} %>
     <% end %>
     <% else %>
-      <p>This user currently does not have any shots. Do you want to send him a shot invite?</p>
+      <p>This user currently does not have any shots. Do you want <%= link_to "to send him a shot invite", invite_teammember_path(@profile) %>?</p>
   <% end %>
 </div>
 
 <div id="badges">
-  <% unless @accepted_shots.empty? %>
+  <% unless @highfives.empty? %>
     <% @highfives.each do |highfive| %>
       <% badge = Badge.find(highfive.badge_id) %>
       <% shot = Shot.find(highfive.shot_id) %>
@@ -32,12 +38,17 @@
 
 
 <div id="all_shots">
+  <div class="buttons">
+    <%= link_to "Send invites", invite_teammember_path(@profile), class: "btn btn-primary" %>
+  </div>
+
+  <div class="clear"></div>
   <% unless @all_shots.empty? %>
     <% @all_shots.each do |shot| %>
       <%= render partial: "shots/small_shot", locals: {shot: shot} %>
     <% end %>
     <% else %>
-      <p>This user currently does not have any shots. Do you want to send him a shot invite?</p>
+      <p>This user currently does not have any shots. Do you want <%= link_to "to send him a shot invite", invite_teammember_path(@profile) %>?</p>
   <% end %>
 
 </div>

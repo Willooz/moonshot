@@ -1,5 +1,5 @@
 class ShotInvitesController < ApplicationController
-  before_action :set_shot
+  before_action :set_shot, only: [:edit, :update, :destroy]
 
   def new
     @shot_invite = ShotInvite.new
@@ -33,6 +33,12 @@ class ShotInvitesController < ApplicationController
 
   def add_teammember
     @shots = params[:shots]
+    @shots.each do |key, _value|
+      ShotInvite.create(inviter_id: params[:inviter_id], invitee_id: params[:invitee_id], shot_id: key)
+    end
+    redirect_to people_show_path(params[:invitee_id])
+    flash[:notice] = "Your shot invites have been sent. They need to be accepted before appearing on your colleague's profile or shot overview."
+
   end
 
   private
