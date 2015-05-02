@@ -14,18 +14,18 @@
         </a>
       </div>
 
-      <div class="col-xs-6 pull-left">
+      <div class="col-xs-6 text-center">
 
         <ul class="list-inline super-nav">
           <% if user_signed_in? %>
             <%= link_to me_shots_path do %>
-              <li>MY SHOTS</li>
+              <li><span>MY SHOTS</span></li>
             <% end %>
             <%= link_to shots_path do %>
-              <li>SHOTS</li>
+              <li><span>SHOTS</span></li>
             <% end %>
             <%= link_to people_path do %>
-              <li>PEOPLE</li>
+              <li><span>PEOPLE</span></li>
             <% end %>
           <% end %>
         </ul>
