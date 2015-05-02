@@ -14,13 +14,40 @@
       = link_to "People", "#"
     li
       = link_to "Timeline", "#"
+
 .page-content
-  = render 'big_shot'
   #overview
+    p
+      i class="fa fa-bullseye"
+      = " #{@shot.target_value} "
+      i class="fa fa-calendar"
+      = " #{@shot.deadline}"
+    p = @shot.description
+
+    .team
+      - 5.times do
+        = link_to people_show_path(1)
+          = image_tag("http://placehold.it/50x50", class: "img-circle")
+      - if @profile.shots.include?(@shot)
+        = link_to "Invite new mate", new_shot_invite_path, class: "btn btn-right btn-primary"
+
+    .graph
+      .graph-left
+        h2 = "#{@shot.latest_value}"
+      .graph-right
+
 
   #people
+    - @shot.invitees.each do |profile|
+      = render "_shot_people"
+
 
   #comments
+    - @shot.updates.each do |update|
+      = render "_shot_timeline"
+
+
 
 .page-foot
   = link_to "Back to top", "#title", class: "btn btn-default"
+
