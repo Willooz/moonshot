@@ -1,9 +1,10 @@
 class ShotInvitesController < ApplicationController
-  before_action :set_shot, only: [:edit, :update, :destroy]
+  before_action :set_shot, only: [:new, :create, :edit, :update, :destroy]
 
   def new
     @shot_invite = ShotInvite.new
     @profiles = current_account.profiles
+    @current_profile = current_profile
   end
 
   def create

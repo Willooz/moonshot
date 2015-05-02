@@ -3,7 +3,7 @@
 <div class="form">
   <%= form_tag send_invites_path(@invitee), method: :post %>
   <div class="buttons">
-    <%= link_to "Cancel", "#", class: "btn btn-default" %>
+    <%= link_to "Cancel", invite_teammember_path(@invitee), class: "btn btn-default" %>
     <%= submit_tag "Send invites", class: "btn btn-primary" %>
     <%= hidden_field_tag 'inviter_id', @inviter.id %>
     <%= hidden_field_tag 'invitee_id', @invitee.id %>

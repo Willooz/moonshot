@@ -1,6 +1,6 @@
-= simple_form_for(@shot_invite, method: :post, url: shot_invites_path) do |f|
+= simple_form_for(@shot_invite, method: :post, url: new_shot_invite_path) do |f|
   = f.error_notification
   = f.input :invitee_id, collection: @profiles, label: "Invite a co-worker", include_blank: false, label_method: :name
-  = f.hidden_field :inviter_id, value: current_profile.id
+  = f.hidden_field :inviter_id, value: @current_profile.id
   = f.hidden_field :shot_id, value: @shot.id
   = f.button :submit, t('.sign_up', default: "Send Invite"), class: "btn btn-primary"

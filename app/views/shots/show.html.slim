@@ -25,10 +25,10 @@ div id="overview" class="page-content"
 
   .team
     - @shot.invitees.each do |invitee|
-      = link_to people_show_path(1)
+      = link_to people_show_path(invitee)
         = image_tag(invitee.user.picture.url, size: "50x50", class: "img-circle")
     - if @profile.shots.include?(@shot)
-      = link_to "Invite new mate", new_shot_invite_path, class: "btn btn-right btn-primary"
+      = link_to "Invite a new mate", new_shot_invite_path, class: "btn btn-right btn-primary"
 
   .graph
     .graph-left
