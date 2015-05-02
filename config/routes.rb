@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   get 'people', to: 'profiles#index'
   get 'people/:id', to: 'profiles#show', as: :people_show
+  get 'people/:id/invite', to: 'profiles#invite', as: :invite_teammember
+  post 'people/:id/send_invites', to: 'shot_invites#add_teammember', as: :send_invites
 
   get 'account', to: 'accounts#show'
   patch 'account', to: 'accounts#update', as: :account_update

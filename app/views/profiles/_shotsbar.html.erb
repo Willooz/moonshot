@@ -1,13 +1,19 @@
-<div id="top-links">
-  <div class="container">
-    <div class="row" id="shotsbar">
-      <div class="col-xs-6">
-        <%= link_to "SHOTS", shots_path %>
-      </div>
+<div  id="shotsbar">
+  <ul class="nav nav-tabs">
+    <li>
+      <%= link_to "CURRENT SHOTS", "#current_shots", id: "current_link" %>
+    </li>
 
-      <div class="col-xs-6">
-        <%= link_to "BADGES", badges_path %>
-      </div>
-    </div>
-  </div>
+    <li>
+      <%= link_to "BADGES", "#badges", id: "badges_link" %>
+    </li>
+
+    <li>
+      <%= link_to "ALL SHOTS", "#all_shots", id: "all_link" %>
+    </li>
+  </ul>
 </div>
+
+
+
+

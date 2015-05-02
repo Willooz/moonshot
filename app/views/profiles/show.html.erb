@@ -4,7 +4,40 @@
   <h3> <%= @profile.role.downcase %> @<%= @account.name.upcase %> </h3>
 </div>
 <div class="clear"></div>
+
 <%= render partial: "shotsbar" %>
-<% @shots.each do |shot| %>
-  <%= render partial: "shots/small_shot", locals: {shot: shot} %>
-<% end %>
+
+<div id="current_shots">
+  <% unless @accepted_shots.empty? %>
+    <% @accepted_shots.each do |shot| %>
+      <%= render partial: "shots/small_shot", locals: {shot: shot} %>
+    <% end %>
+    <% else %>
+      <p>This user currently does not have any shots. Do you want to send him a shot invite?</p>
+  <% end %>
+</div>
+
+<div id="badges">
+  <% unless @accepted_shots.empty? %>
+    <% @highfives.each do |highfive| %>
+      <% badge = Badge.find(highfive.badge_id) %>
+      <% shot = Shot.find(highfive.shot_id) %>
+      <%= shot.title %>
+    <% end %>
+  <% else %>
+    <p> This user does not have any badges yet. Do you want to give him any?</p>
+  <% end %>
+
+</div>
+
+
+<div id="all_shots">
+  <% unless @all_shots.empty? %>
+    <% @all_shots.each do |shot| %>
+      <%= render partial: "shots/small_shot", locals: {shot: shot} %>
+    <% end %>
+    <% else %>
+      <p>This user currently does not have any shots. Do you want to send him a shot invite?</p>
+  <% end %>
+
+</div>
