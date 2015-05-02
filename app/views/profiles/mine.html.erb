@@ -6,7 +6,7 @@
   <div id="accepted">
     <h4>Your current shots</h4>
     <% @shots_accepted.each do |accepted_shot| %>
-      <%=  render partial: "shots/small_shot", locals: {shot: accepted_shot} %>
+      <%=  render partial: "shots/small_shot", locals: {shot: accepted_shot, invitees: @invitees} %>
     <% end %>
   </div>
 <% end %>
