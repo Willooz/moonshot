@@ -1,6 +1,6 @@
-.container
-  .row
-    .col-xs-4.col-xs-offset-3
-      h1 Shots#new
-      p Find me in app/views/shots/new.html.slim
-      = render 'form_edit'
+.page-title
+  h1 = "Update shot #{@shot.title}"
+
+.page-menu.hide
+.page-content
+  = render 'form_edit'

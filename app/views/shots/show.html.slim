@@ -16,18 +16,41 @@
       = link_to "Timeline", "#"
 
 .page-content
-  i class="fa fa-bullseye"
-  = " #{@shot.target_value} "
-  i class="fa fa-calendar"
-  = " #{@shot.deadline}"
-  br
-  p = "Current Value: #{@shot.latest_value}"
-  p = @shot.description
   #overview
+    p
+      i class="fa fa-bullseye"
+      = " #{@shot.target_value} "
+      i class="fa fa-calendar"
+      = " #{@shot.deadline}"
+    p = @shot.description
+
+    .team
+      - 5.times do
+        = link_to people_show_path(1)
+          = image_tag("http://placehold.it/50x50", class: "img-circle")
+      - if @profile.shots.include?(@shot)
+        = link_to "Invite new mate", new_shot_invite_path, class: "btn btn-right btn-primary"
+
+    .graph
+      .graph-left
+        h2 = "#{@shot.latest_value}"
+      .graph-right
+        canvas id="myChart" width="400" height="200"
+
 
   #people
+  / - @shot.profiles.each do |profile|
+      = render partial: '_shot_people'
+
+
 
   #comments
 
+
+
+
 .page-foot
   = link_to "Back to top", "#title", class: "btn btn-default"
+
+script src="Chart.js"
+
