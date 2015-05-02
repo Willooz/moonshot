@@ -1,14 +1,6 @@
 $(document).ready(function() {
   var selected_elements = [];
 
-  $(".square-card").mouseenter(function(){
-    $(this).addClass("highlighted");
-  });
-
-  $(".square-card").mouseleave(function(){
-    $(this).removeClass("highlighted");
-  });
-
   $(".list-card").mouseenter(function(){
     $(this).addClass("selected");
   });
@@ -17,8 +9,19 @@ $(document).ready(function() {
     $(this).removeClass("selected");
   });
 
-  $(".list-card").click(function(){
+  $(".list-card").click(function(e){
+    var card = $(e.currentTarget);
+    var a = card.find('a')[0];
+    console.log(a);
+    a.click();
+  });
 
+  $(".square-card").mouseenter(function(){
+    $(this).addClass("highlighted");
+  });
+
+  $(".square-card").mouseleave(function(){
+    $(this).removeClass("highlighted");
   });
 
   $(".square-card").click(function(e){
@@ -27,17 +30,6 @@ $(document).ready(function() {
 
     card.toggleClass("selected");
     cb.prop("checked", !cb.prop("checked"));
-
-    /*var id = Number($(this).data("id"));
-    if ($.inArray(id, selected_elements) < 0 ) {
-      selected_elements.push(id);
-    else
-      var index = $.inArray(id, selected_elements);
-      selected_elements.splice
-    }
-    selected_elements.push(Number(id))
-    console.log(selected_elements);
-    */
   });
 
 });

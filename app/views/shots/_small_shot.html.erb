@@ -7,16 +7,20 @@
       </div>
     </div>
   </div>
-  <div class="card-center">
+  <div class="card-middle">
     <h4>
       <%= link_to shot.title, shot_path(shot) %>
     </h4>
     <p>
-      <i class="fa fa-bullseye"></i><%= " #{shot.percentage_done} % done" %>
-      <i class="fa fa-calendar"></i><%= "Deadline #{shot.deadline}" %>
+      <i class="fa fa-bullseye"></i><%= " #{shot.target_value}" %>
+      <i class="fa fa-calendar"></i><%= " #{shot.deadline}" %>
     </p>
   </div>
-  <div class="card-right"></div>
+  <div class="card-right">
+    <% 5.times do %>
+      <%= image_tag("http://placehold.it/50x50", class: "img-circle") %>
+    <% end %>
+  </div>
 </div>
 
 
