@@ -35,22 +35,19 @@
       .graph-left
         h2 = "#{@shot.latest_value}"
       .graph-right
-        canvas id="myChart" width="400" height="200"
 
 
   #people
-  / - @shot.profiles.each do |profile|
-      = render partial: '_shot_people'
-
+    - @shot.invitees.each do |profile|
+      = render "_shot_people"
 
 
   #comments
-
+    - @shot.updates.each do |update|
+      = render "_shot_timeline"
 
 
 
 .page-foot
   = link_to "Back to top", "#title", class: "btn btn-default"
-
-script src="Chart.js"
 
