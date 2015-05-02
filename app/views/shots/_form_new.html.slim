@@ -2,7 +2,7 @@
   = f.error_notification
   = f.input :title, required: true, autofocus: true
   = f.input :description, required: true
-  = f.input :deadline, required: true
+  = f.input :deadline, required: true, as: :string, input_html: {class: "datepicker"}
   = f.input :baseline_value, required: true
   = f.input :target_value, required: true
   - btn_text = @shot.id.nil? ? "Create this Shot" : "Update this Shot"
