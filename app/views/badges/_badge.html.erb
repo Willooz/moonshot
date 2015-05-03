@@ -1,4 +1,5 @@
-<%= image_tag(badge.picture, width: 150, height: 150, alt: "Badge", class: "img-circle") %>
+<%= image_tag(badge.picture, size: "100x100", alt: "Badge", class: "img-circle") %>
 <br><br>
 <p class="title"><%= badge.title %></p>
-<p class="description"><%= badge.description %></p>
+<!-- <p class="description"><%= badge.description %></p> -->
+<%= check_box_tag "badges[#{badge.id}]", true, false, class: 'hide' %>
