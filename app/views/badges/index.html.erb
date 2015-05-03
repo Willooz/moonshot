@@ -1,14 +1,21 @@
-<h1>Badges</h1>
-<p>Select badges you'd like to give to <%= @receiver.name %></p>
-<%= form_tag highfive_create_path(@shot) do %>
-  <%= link_to "Cancel", "#", class: "btn btn-default" %>
-  <%= submit_tag "Give badges", class: "btn btn-primary" %>
-  <%= hidden_field_tag 'receiver_id', @receiver.id %>
+<div class="page-title">
+  <h1>Select badges for <%= @receiver.name %></h1>
+  <%= link_to "Cancel", shot_path(@shot), class: "btn btn-right btn-default" %>
+</div>
 
-  <% @badges.each do |badge| %>
-    <div class="square-card">
-      <%= check_box_tag "badges[#{badge.id}]", true, false, class: 'hide' %>
-      <%= render "badge", badge: badge %>
-    </div>
+<div class="page-content">
+  <%= form_tag highfive_create_path(@shot) do %>
+    <%= hidden_field_tag 'receiver_id', @receiver.id %>
+    <% @badges.each do |badge| %>
+      <div class="square-card">
+        <%= check_box_tag "badges[#{badge.id}]", true, false, class: 'hide' %>
+        <%= render "badge", badge: badge %>
+      </div>
+    <% end %>
+    <%= submit_tag "Give badges", class: "btn btn-primary" %>
   <% end %>
-<% end %>
+</div>
+
+<div class="page-foot">
+  <%= link_to "Back to top", "#title", class: "btn btn-default" %>
+</div>

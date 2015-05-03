@@ -1,5 +1,6 @@
-.container.padded
-  .row
-    .col-xs-6.col-xs-offset-3
-      h2 = "Invite someone to work on #{@shot.title}"
-      = render 'form_new'
+.page-title
+  h1 = "Invite teammates to #{@shot.title}"
+  = link_to "Cancel", shot_path(@shot), class: "btn btn-right btn-default"
+
+.page-content
+  = render 'form_new'

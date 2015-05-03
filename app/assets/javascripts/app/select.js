@@ -4,15 +4,15 @@ $(document).ready(function() {
 
   var selected_elements = [];
 
-  $(".list-card").mouseenter(function(){
+  $(".linked-card").mouseenter(function(){
     $(this).addClass("selected");
   });
 
-  $(".list-card").mouseleave(function(){
+  $(".linked-card").mouseleave(function(){
     $(this).removeClass("selected");
   });
 
-  $(".list-card").click(function(e){
+  $(".linked-card").click(function(e){
     var card = $(e.currentTarget);
     var a = card.find('a')[0];
     console.log(a);
@@ -30,7 +30,6 @@ $(document).ready(function() {
   $(".square-card").click(function(e){
     var card = $(e.currentTarget);
     var cb = card.find('input[type=checkbox]');
-
     card.toggleClass("selected");
     cb.prop("checked", !cb.prop("checked"));
   });

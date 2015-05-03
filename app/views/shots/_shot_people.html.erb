@@ -5,13 +5,13 @@
   </div>
 
   <div class="card-middle">
-    <% profile.badges.each do |badge| %>
+    <% profile.badges.distinct.each do |badge| %>
       <%= image_tag(badge.picture, size: "50x50", alt: "Badge", class: "img-circle") %>
     <% end %>
   </div>
 
   <div class="card-right">
-    <%= link_to "Give a badge", badges_path(@shot), class: "btn btn-right btn-primary" %>
+    <%= link_to "Give badges", badges_path(@shot, profile.id), class: "btn btn-right btn-primary" %>
   </div>
 
 </div>

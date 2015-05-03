@@ -3,7 +3,11 @@ class ShotInvitesController < ApplicationController
 
   def new
     @shot_invite = ShotInvite.new
-    @profiles = current_account.profiles
+    current_invites = []
+    @shot.invitees.each do |invitee|
+      current_invites << invitee.id
+    end
+    @profiles = current_account.profiles.where.not(id: current_invites)
     @current_profile = current_profile
   end
 
@@ -55,8 +59,4 @@ class ShotInvitesController < ApplicationController
       params.require(:shot_invite).permit(:inviter_id, :invitee_id, :shot_id)
   end
 
-
-  # def shot_invite_params_for_one_person
-  #     params.require(:shot_invite).permit(:inviter)
-  # end
 end
