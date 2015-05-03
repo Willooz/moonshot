@@ -206,13 +206,13 @@ ShotInvite.create( shot_id: 2,
 
 Badge.create(
     title: "Fighter",
-    description: "Someone who never gave up when the odds were against us.",
+    description: "Someone who never gave up when odds were against us.",
     picture: "fighter.png"
   )
 
 Badge.create(
     title: "Diplomat",
-    description: "Someone who was key to work out differences amongst the group.",
+    description: "Someone who built bridges and reconciled differences",
     picture: "diplomat.png"
   )
 
@@ -234,8 +234,14 @@ Badge.create(
     picture: "team_player.png"
   )
 
+Badge.create(
+    title: "Creative Mind",
+    description: "Someone who found solutions in creative ways.",
+    picture: "creative_mind.png"
+  )
 
-8.times do
+
+7.times do
   Badge.create(
     title: Faker::Lorem.word,
     description: Faker::Lorem.sentence(3),
