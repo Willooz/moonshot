@@ -204,7 +204,38 @@ ShotInvite.create( shot_id: 2,
                     in_team: true,
                     invitee_id: 5 )
 
-13.times do
+Badge.create(
+    title: "Fighter",
+    description: "Someone who never gave up when the odds were against us.",
+    picture: "fighter.png"
+  )
+
+Badge.create(
+    title: "Diplomat",
+    description: "Someone who was key to work out differences amongst the group.",
+    picture: "diplomat.png"
+  )
+
+Badge.create(
+    title: "Morale Booster",
+    description: "Someone who made the team at ease and gave them moral support.",
+    picture: "morale_booster.png"
+  )
+
+Badge.create(
+    title: "Motivator",
+    description: "Someone who knew how to get the best out of you.",
+    picture: "motivator.png"
+  )
+
+Badge.create(
+    title: "Team Player",
+    description: "Someone who put others and the project ahead of himself.",
+    picture: "team_player.png"
+  )
+
+
+8.times do
   Badge.create(
     title: Faker::Lorem.word,
     description: Faker::Lorem.sentence(3),
