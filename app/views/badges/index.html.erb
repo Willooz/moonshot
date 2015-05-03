@@ -3,16 +3,18 @@
   <%= link_to "Cancel", shot_path(@shot), class: "btn btn-right btn-default" %>
 </div>
 
+
 <div class="page-content">
   <%= form_tag highfive_create_path(@shot) do %>
     <%= hidden_field_tag 'receiver_id', @receiver.id %>
     <% @badges.each do |badge| %>
-      <div class="square-card">
-        <%= check_box_tag "badges[#{badge.id}]", true, false, class: 'hide' %>
-        <%= render "badge", badge: badge %>
-      </div>
+    <div class="square-card">
+      <%= render "badge", badge: badge %>
+    </div>
     <% end %>
-    <%= submit_tag "Give badges", class: "btn btn-primary" %>
+    <div class="submit">
+      <%= submit_tag "Give badges", class: "btn btn-primary" %>
+    </div>
   <% end %>
 </div>
 
