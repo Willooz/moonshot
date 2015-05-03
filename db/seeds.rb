@@ -11,43 +11,53 @@ Account.create(name: "X-Men")
 
 User.create(email: "hulk@marvel.com",
             name: "Hulk",
-            password: "12345678" )
+            password: "12345678",
+            picture: File.new("app/assets/images/seed_profiles/hulk.jpg"))
 
 User.create(email: "ironman@marvel.com",
             name: "Iron Man",
-            password: "12345678")
+            password: "12345678",
+            picture: File.new("app/assets/images/seed_profiles/ironman.jpg"))
 
 User.create(email: "black-widow@marvel.com",
             name: "Black Widow",
-            password: "12345678")
+            password: "12345678",
+            picture: File.new("app/assets/images/seed_profiles/blackwidow.jpg"))
 
 User.create(email: "spiderman@marvel.com",
             name: "Spider-Man",
-            password: "12345678")
+            password: "12345678",
+            picture: File.new("app/assets/images/seed_profiles/spidey.jpg"))
 
 User.create(email: "thor@marvel.com",
             name: "Thor",
-            password: "12345678")
+            password: "12345678",
+            picture: File.new("app/assets/images/seed_profiles/thor.jpg"))
 
 User.create(email: "jeangrey@marvel.com",
             name: "Jean Grey",
-            password: "12345678")
+            password: "12345678",
+            picture: File.new("app/assets/images/seed_profiles/jeangrey.jpg"))
 
 User.create(email: "wolverine@marvel.com",
             name: "Wolverine",
-            password: "12345678")
+            password: "12345678",
+            picture: File.new("app/assets/images/seed_profiles/wolverine.jpg"))
 
 User.create(email: "storm@marvel.com",
             name: "Storm",
-            password: "12345678")
+            password: "12345678",
+            picture: File.new("app/assets/images/seed_profiles/storm.jpg"))
 
 User.create(email: "mystique@marvel.com",
             name: "Mystique",
-            password: "12345678")
+            password: "12345678",
+            picture: File.new("app/assets/images/seed_profiles/mystique.jpg"))
 
 User.create(email: "professor-x@marvel.com",
             name: "Professor X",
-            password: "12345678")
+            password: "12345678",
+            picture: File.new("app/assets/images/seed_profiles/professorx.jpg"))
 
 Profile.create(account_id: 1,
                   user_id:    1,
