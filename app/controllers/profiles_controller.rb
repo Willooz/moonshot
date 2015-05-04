@@ -25,9 +25,6 @@ class ProfilesController < ApplicationController
     @highfives = Highfive.where(receiver_id: current_profile.id)
   end
 
-
-
-
   def mine
     @user = current_user
     @profile = current_profile

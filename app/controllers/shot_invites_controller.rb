@@ -8,7 +8,7 @@ class ShotInvitesController < ApplicationController
       current_invites << invitee.id
     end
     @profiles = current_account.profiles.where.not(id: current_invites)
-    @current_profile = current_profile
+    @inviter = current_profile
   end
 
   def create
@@ -17,6 +17,21 @@ class ShotInvitesController < ApplicationController
     @shot_invite.events.create(params[:shot_id])
     flash[:notice] = "Your invitation has been sent. It needs to be accepted before it appears on the shot's overview or your mate's profile."
     redirect_to shot_path(@shot)
+  end
+
+  def create_many
+    invitee_ids = params[:invitees].keys.map { |k| k.to_i }
+    shot = Shot.find(params[:id])
+    invitee_ids.each do |invitee_id|
+      shot_invite = shot.shot_invites.build(
+        inviter_id: current_profile.id,
+        invitee_id: invitee_id
+      )
+      shot_invite.save
+      event = shot_invite.events.create(shot_id: shot.id)
+    end
+    flash[:notice] = "You successfully invited new teammates"
+    redirect_to shot_path(shot)
   end
 
   def edit
@@ -56,7 +71,7 @@ class ShotInvitesController < ApplicationController
 
 
   def shot_invite_params
-      params.require(:shot_invite).permit(:inviter_id, :invitee_id, :shot_id)
+    params.require(:shot_invite).permit(:inviter_id, :invitee_id, :shot_id)
   end
 
 end
