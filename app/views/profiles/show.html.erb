@@ -25,12 +25,14 @@
 
 <div id="badges">
   <% unless @highfives.empty? %>
+    <%= link_to "Give badges", give_badges_path(params[:id]), class: "btn btn-right btn-primary" %>
     <% @highfives.each do |highfive| %>
       <% badge = Badge.find(highfive.badge_id) %>
       <% shot = Shot.find(highfive.shot_id) %>
       <%= shot.title %>
     <% end %>
   <% else %>
+    <%= link_to "Give badges", give_badges_path(params[:id]), class: "btn btn-right btn-primary" %>
     <p> This user does not have any badges yet. Do you want to give him any?</p>
   <% end %>
 

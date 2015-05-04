@@ -250,12 +250,3 @@ Badge.create(
     picture: "creative_mind.png"
   )
 
-
-7.times do
-  Badge.create(
-    title: Faker::Lorem.word,
-    description: Faker::Lorem.sentence(3),
-    picture: "http://lorempixel.com/150/150/"
-  )
-end
-

@@ -1,0 +1,22 @@
+
+<% unless @common_shots.empty? %>
+  <% form_tag assign_badges_path(@receiver) do %>
+
+    <%= select_tag 'shot_id', options_for_select(@common_shots.collect{ |cs| [cs.title, cs.id]  },label: "Choose a shot", include_blank: false) %>
+    <%= hidden_field_tag "giver_id", @giver.id %>
+    <% @badges.each do |badge| %>
+      <div class="square-card">
+        <%= render "badges/badge", badge: badge %>
+      </div>
+    <% end %>
+    <div class="submit">
+      <%= submit_tag "Give badges", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+
+
+  <% else %>
+    <p>You don't have any common shots with the user yet.</p>
+  <% end %>
+
+
