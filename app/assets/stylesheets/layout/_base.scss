@@ -6,7 +6,7 @@
  * ------------------------------------- */
 
 body {
-  background: image-url("lightblue_gradient.png");
+  background: image-url("darkpurple_gradient.png");
   // $base-moonshot;
   color: $gray;
   font-family: $font-family-base;
@@ -57,43 +57,6 @@ h3 {
   border-radius: $box-corner-radius;
 }
 
-.page-title {
-  width: 100%;
-  height: 100px;
-  margin: 0px;
-  padding: 40px 50px;
-  // background: LightBlue;
-  h1 {
-    display: block;
-    float: left;
-  }
-}
-
-.page-menu {
-  width: 100%;
-  height: 50px;
-  margin: 0px 50px;
-  // padding: 0px 30px;
-  // background: LightGreen;
-  ul {
-    margin: 0;
-  }
-}
-
-.page-content {
-  width: 100%;
-  padding: 50px;
-}
-
-.page-foot {
-  width: 100%;
-  margin: 0px;
-  padding: 50px;
-  text-align: center;
-  clear: both;
-  // background: LightGreen;
-}
-
 .team {
   img {
     margin: 0px 0px 50px 10px;
@@ -124,67 +87,6 @@ h3 {
 
 }
 
-.list-card {
-  margin: 0;
-  width: 100%;
-  height: 150px;
-  padding: 0px 50px;
-  border-bottom: 1px solid $gray-lighter;
-  // background: LightCoral;
-  .card-left {
-    width: 125px;
-    height: 100%;
-    float: left;
-    display: inline-block;
-    // background: LightBlue;
-    img {
-      margin: 25px 25px 25px 0px;
-    }
-  }
-  .card-middle {
-    height: 100%;
-    float: left;
-    padding: 35px 0px;
-    display: inline-block;
-    // background: LightGreen;
-    span {
-      margin-right: 20px;
-    }
-    img {
-      margin: 15px 0px;
-    }
-  }
-  .card-right {
-    height: 100%;
-    float: right;
-    display: inline-block;
-    // background: LightCoral;
-    img {
-      margin: 50px 0px;
-    }
-    .btn {
-      margin: 50px 0px;
-    }
-  }
-}
-
-.square-card {
-  margin: 0;
-  width: 188px;
-  height: 225px;
-  padding: 35px;
-  border: 1px solid white;
-  text-align: center;
-  background: white;
-  display: inline-block;
-  float: left;
-  p.title {
-    font-weight: 300;
-  }
-  p.description {
-  }
-
- }
 .highlighted {
   border-color: $light-bg-color;
   transition: border-color 0.1s ease;
@@ -213,6 +115,7 @@ h3 {
 }
 
 .nav-tabs {
+  width: 900px;
   font-family: $font-family-title;
 }
 
