@@ -56,7 +56,7 @@ $navbar-profile-radius: 50%;
       border-bottom: 3px solid $gray-lighter;
       color: white;
       span{
-        background-color: $light-text-color;
+        background-color: $dark-bg-color;
       }
 
     }
@@ -120,7 +120,7 @@ $navbar-profile-radius: 50%;
     width: 250px;
   }
 
-  .img-avatar{
+  .img-avatar {
     height: $navbar-height;
     margin-right: 10px;
     border-radius: 999em;
@@ -132,12 +132,13 @@ $navbar-profile-radius: 50%;
     background: transparent;
   }
 
-  .navbar-nav > li > .dropdown-menu{
+  .navbar-nav > li > .dropdown-menu {
+    font-weight: normal;
     border-radius: $box-corner-radius;
     margin-top: 5px;
   }
 
-  .navbar-nav > li > .dropdown-menu:before{
+  .navbar-nav > li > .dropdown-menu:before {
     position: absolute;
     background: white;
     height: 10px;

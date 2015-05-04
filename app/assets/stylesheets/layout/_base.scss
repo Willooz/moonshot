@@ -64,7 +64,8 @@ h3 {
   padding: 0px;
   // background: LightBlue;
   h1 {
-    display: inline-block;
+    display: block;
+    float: left;
   }
 }
 
@@ -180,10 +181,12 @@ h3 {
 
  }
 .highlighted {
-  border-color: $gray-light;
+  border-color: $light-bg-color;
+  transition: border-color 0.1s ease;
 }
 .selected {
-  background: $gray-lighter;
+  background: lighten($light-bg-color, 15%);
+  transition: background 0.1s ease;
 }
 
 .img-circle {
@@ -202,6 +205,10 @@ h3 {
 .form {
   width: 100%;
   background-color: white;
+}
+
+.nav-tabs {
+  font-family: $font-family-title;
 }
 
 .float-right {
