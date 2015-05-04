@@ -24,7 +24,10 @@ class ProfilesController < ApplicationController
     end
     @highfives = Highfive.where(receiver_id: @profile.id)
     @badges = []
-    @profile.highfives_received.group(:badge_id)
+    @highfives.select('DISTINCT ON(badge_id)*').each do |highfive|
+      @badges << highfive.badge
+    end
+
   end
 
   def mine
