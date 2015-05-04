@@ -22,7 +22,9 @@ class ProfilesController < ApplicationController
         @all_shots << shot
       end
     end
-    @highfives = Highfive.where(receiver_id: current_profile.id)
+    @highfives = Highfive.where(receiver_id: @profile.id)
+    @badges = []
+    @profile.highfives_received.group(:badge_id)
   end
 
   def mine
@@ -70,8 +72,11 @@ class ProfilesController < ApplicationController
   end
 
   def assign_badges
+    params[:badges].each do |badge|
+      highfive = Highfive.create!(giver_id: params[:giver_id], shot_id: params[:shot_id], receiver_id: params[:receiver_id], badge_id: badge.first.to_i)
+      highfive.events.create(shot_id: params[:shot_id])
+    end
     redirect_to people_show_path(params[:id])
-
   end
 
   private
