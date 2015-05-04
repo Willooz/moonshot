@@ -26,13 +26,16 @@
 <div id="badges">
   <% unless @highfives.empty? %>
     <%= link_to "Give badges", give_badges_path(params[:id]), class: "btn btn-right btn-primary" %>
-    <% @highfives.each do |highfive| %>
-      <% badge = Badge.find(highfive.badge_id) %>
-      <% shot = Shot.find(highfive.shot_id) %>
-      <%= image_tag badge.picture, size: "50x50" %>
-      <p> for <%= shot.title %> </p>
+      <% @badges.each do |badge| %>
+        <div class=<%= "padded badge#{badge.id}"%>>
+          <div class="badge-image" data-toggle="popover" data-trigger="hover" title="<%= badge.title %>" data-content="<%= render partial: 'popover', locals: {badge: badge}%>">
+            <%= image_tag badge.picture, size: "100x100" %>
+          </div>
+          <div class="badge-text"> x<%= badge.highfives.where("receiver_id = ?", @profile.id).count %></div>
+          <div class="clear"></div>
+        </div>
+      <% end %>
 
-    <% end %>
   <% else %>
     <%= link_to "Give badges", give_badges_path(params[:id]), class: "btn btn-right btn-primary" %>
     <p> This user does not have any badges yet. Do you want to give him any?</p>
@@ -56,3 +59,30 @@
   <% end %>
 
 </div>
+
+<%= content_for :after_js do%>
+<script>
+$('[data-toggle="popover"]').popover({
+        html: true,
+        trigger: 'manual',
+        container: $(this).attr('id'),
+        placement: 'top',
+        content: function () {
+            $return = '<div class="hover-hovercard"></div>';
+        }
+    }).on("mouseenter", function () {
+        var _this = this;
+        $(this).popover("show");
+        $(this).siblings(".popover").on("mouseleave", function () {
+            $(_this).popover('hide');
+        });
+    }).on("mouseleave", function () {
+        var _this = this;
+        setTimeout(function () {
+            if (!$(".popover:hover").length) {
+                $(_this).popover("hide")
+            }
+        }, 100);
+    });
+  </script>
+  <% end %>
