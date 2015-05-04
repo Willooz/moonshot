@@ -1,19 +1,19 @@
-<div id="profile-picture"> <%= image_tag @user.picture.url(:thumb), class: "img-circle" %></div>
-<div id="profile-details">
-  <h1> <%= @user.name %> </h1>
-  <h3> <%= @profile.role.downcase %> @<%= @account.name.upcase %> </h3>
-</div>
-<div class="clear"></div>
-
-<%= render partial: "shotsbar" %>
-
-<div id="current_shots">
-  <div class="buttons">
+<div class="page-title">
+  <div id="profile-picture"> <%= image_tag @user.picture.url(:thumb), class: "img-circle" %></div>
+  <div id="profile-details">
+    <h1> <%= @user.name %> </h1>
+    <h3> <%= @profile.role.downcase %> @<%= @account.name.upcase %> </h3>
     <%= link_to "Send invites", invite_teammember_path(@profile), class: "btn btn-primary" %>
   </div>
 
   <div class="clear"></div>
+</div>
 
+<div class="page-menu">
+  <%= render partial: "shotsbar" %>
+</div>
+
+<div id="current_shots">
   <% unless @accepted_shots.empty? %>
     <% @accepted_shots.each do |shot| %>
       <%= render partial: "shots/small_shot", locals: {shot: shot} %>

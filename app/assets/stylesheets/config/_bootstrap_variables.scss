@@ -22,9 +22,9 @@ $base-moonshot: #282058;
 $btn-default-color: $gray-light;
 
 // General radius (for buttons, inputs, popover...)
-$border-radius-base:  4px;
-$border-radius-large: 4px;
-$border-radius-small: 4px;
+$border-radius-base: $box-corner-radius;
+$border-radius-large: $box-corner-radius;
+$border-radius-small: $box-corner-radius;
 
 // Links style
 $link-hover-decoration: none;
