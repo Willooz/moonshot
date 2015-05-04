@@ -39,6 +39,11 @@ Rails.application.routes.draw do
   get 'shots/:id/update', to: 'updates#new', as: :new_update
   get 'shots/:shot_id/badge/:id', to: 'badges#index', as: :badges
   post 'shots/:id/highfive', to: 'highfives#create', as: :highfive_create
-  post 'shots/:id/invite', to: 'shot_invites#create_many', as: :shot_invite_create
+  post 'shots/:id/invite', to: 'shot_invites#create', as: :shot_invite_create
+  post 'shots/:id/invite_many', to: 'shot_invites#create_many', as: :shot_invite_create_many
+  patch 'shots/:id/accept', to: 'shot_invites#update', as: :shot_invite_accept
+  delete 'shots/:id/decline', to: 'shot_invites#destroy', as: :shot_invite_decline
+
+
 
 end
