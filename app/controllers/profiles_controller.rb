@@ -56,4 +56,30 @@ class ProfilesController < ApplicationController
       end
     end
   end
+
+
+  def give_badges
+    @badges = Badge.all
+    @highfive = Highfive.new
+    @receiver = Profile.find(params[:id])
+    @giver = current_profile
+    shots = @receiver.shots
+    @common_shots = []
+    shots.each do |shot|
+      if @receiver.shots.include?(shot)
+        @common_shots << shot
+      end
+    end
+  end
+
+  def assign_badges
+
+
+  end
+
+  private
+
+  def highfive_params
+    params.require(:highfive).permit(:giver_id, :receiver_id, :badge_id)
+  end
 end

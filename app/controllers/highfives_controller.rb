@@ -18,6 +18,8 @@ class HighfivesController < ApplicationController
     end
     flash[:success] = "Your badges were given to #{receiver.user.name}"
     redirect_to shot_path(shot)
-
   end
+
+
+
 end
