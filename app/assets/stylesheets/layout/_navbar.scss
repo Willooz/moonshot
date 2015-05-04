@@ -13,8 +13,6 @@ $navbar-bg: white;
 $navbar-height: 50px;
 $navbar-vertical-padding: 10px;
 $navbar-horizontal-padding: 20px;
-$navbar-border-bottom-width: 1px;
-$navbar-border-bottom-color: $gray-lighter;
 
 /* -------------------------------------
  * Navbar button
@@ -23,7 +21,7 @@ $navbar-btn-height: 40px;
 $navbar-btn-bg: lightgrey;
 $navbar-btn-color: white;
 $navbar-btn-horizontal-padding: 10px;
-$navbar-btn-radius: 2px;
+$navbar-btn-radius: $box-corner-radius;
 
 /* -------------------------------------
  * Navbar profile picture
@@ -110,7 +108,7 @@ $navbar-profile-radius: 50%;
     margin-top: ($navbar-height + 2 * $navbar-vertical-padding - $navbar-btn-height) / 2;
     font-weight: bold;
     background-color: $navbar-btn-bg;
-    font-size: 12px;
+    // font-size: 12px;
     &:hover{
       background-color: darken($navbar-btn-bg, 30%);
     }
@@ -135,8 +133,8 @@ $navbar-profile-radius: 50%;
   }
 
   .navbar-nav > li > .dropdown-menu{
-    border-radius: 0;
-    margin-top: 10px;
+    border-radius: $box-corner-radius;
+    margin-top: 5px;
   }
 
   .navbar-nav > li > .dropdown-menu:before{
