@@ -3,12 +3,10 @@
  * ------------------------------------- */
 $navbar-color: $gray-light;
 $navbar-hover-color: $yellow;
-$navbar-font-family: $navbar-font;
 $navbar-font-size: 14px;
 $navbar-text-transform: capitalize;
 $navbar-font-weight: 300;
 $navbar-letter-spacing: 1.5px;
-$navbar-font-family: $navbar-font;
 $navbar-bg: white;
 
 /* -------------------------------------
@@ -40,7 +38,7 @@ $navbar-profile-border-width: 2px;
  * SCSS code
  * ------------------------------------- */
 
- .super-nav {
+.super-nav {
   line-height: 4.6;
   margin-bottom: 0;
   line-height: 5;
@@ -53,8 +51,7 @@ $navbar-profile-border-width: 2px;
     padding-top: -10px;
     border-bottom: 3px solid transparent;
     display: inline-block;
-    font-family: 'Proxima Nova';
-    font-weight: bold;
+    font-family: $font-family-title;
     color: $base-moonshot;
     span{
       padding: 5px;
@@ -73,15 +70,11 @@ $navbar-profile-border-width: 2px;
 
     }
   }
-
-
-
-
-
  }
+
 .navbar-wagon {
   background: $navbar-bg;
-  font-family: $navbar-font-family;
+  font-family: $font-family-title;
   border: none;
   font-size: $navbar-font-size;
   text-transform: $navbar-text-transform;

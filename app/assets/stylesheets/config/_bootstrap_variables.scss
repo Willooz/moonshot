@@ -4,24 +4,26 @@
  * ------------------------------------- */
 
 // Typography and background
-$font-family-sans-serif:  $base-font;
+$font-family-sans-serif:  $font-family-base;
 $body-bg:                 lighten(#000, 93.5%);
 $font-size-base:          $base-size;
 $line-height-base:        $base-height;
-$headings-font-family:    $header-font;
+$headings-font-family:    $font-family-head;
 
 // Semantic color scheme
+
 $brand-primary:   $blue;
 $brand-success:   $green;
 $brand-info:      $yellow;
 $brand-danger:    $red;
 $brand-warning:   $orange;
 $base-moonshot: #282058;
+$btn-default-color: $gray-light;
 
 // General radius (for buttons, inputs, popover...)
-$border-radius-base:  2px;
-$border-radius-large: 2px;
-$border-radius-small: 2px;
+$border-radius-base:  4px;
+$border-radius-large: 4px;
+$border-radius-small: 4px;
 
 // Links style
 $link-hover-decoration: none;
@@ -31,3 +33,5 @@ $link-color: $green;
 // Grid padding
 $grid-gutter-width: 0 ;
 
+// Navs padding
+$nav-link-padding: 10px 24px;
