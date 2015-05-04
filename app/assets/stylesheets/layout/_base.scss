@@ -6,7 +6,7 @@
  * ------------------------------------- */
 
 body {
-  background: image-url("stars_light.png");
+  background: image-url("lightblue_gradient.png");
   // $base-moonshot;
   color: $gray;
   font-family: $font-family-base;
@@ -23,6 +23,7 @@ h1 {
   line-height: 40px;
   font-family: $font-family-head;
   font-size: $title-size;
+  color: $dark-text-color;
 }
 h2 {
   padding: 30px 0px 20px 0px;
@@ -37,9 +38,9 @@ h3 {
 
 .master-container {
   margin: 10px auto;
+  padding: 0px;
   width: 1000px;
   position: relative;
-  padding: 30px;
   background: white;
   border-radius: $box-corner-radius;
   form {
@@ -58,30 +59,36 @@ h3 {
 
 .page-title {
   width: 100%;
-  height: 40px;
-  margin-bottom: 30px;
-  padding: 0px;
+  height: 100px;
+  margin: 0px;
+  padding: 40px 50px;
   // background: LightBlue;
   h1 {
-    display: inline-block;
+    display: block;
+    float: left;
   }
 }
 
 .page-menu {
   width: 100%;
   height: 50px;
-  margin: 0px;
-  padding: 0px;
+  margin: 0px 50px;
+  // padding: 0px 30px;
   // background: LightGreen;
   ul {
     margin: 0;
   }
 }
 
+.page-content {
+  width: 100%;
+  padding: 50px;
+}
+
 .page-foot {
   width: 100%;
   margin: 0px;
-  padding: 50px 0px 30px 0px;
+  padding: 50px;
   text-align: center;
   clear: both;
   // background: LightGreen;
@@ -107,12 +114,12 @@ h3 {
   .graph-left {
     width: 40%;
     display: inline-block;
-    background: LightGreen;
+    // background: LightGreen;
   }
   .graph-right {
     width: 60%;
     display: inline-block;
-    background: LightCoral;
+    background: $light-bg-color;
   }
 
 }
@@ -121,17 +128,17 @@ h3 {
   margin: 0;
   width: 100%;
   height: 150px;
-  padding: 0px;
+  padding: 0px 50px;
   border-bottom: 1px solid $gray-lighter;
   // background: LightCoral;
   .card-left {
-    width: 150px;
+    width: 125px;
     height: 100%;
     float: left;
     display: inline-block;
     // background: LightBlue;
     img {
-      margin: 25px;
+      margin: 25px 25px 25px 0px;
     }
   }
   .card-middle {
@@ -179,10 +186,12 @@ h3 {
 
  }
 .highlighted {
-  border-color: $gray-light;
+  border-color: $light-bg-color;
+  transition: border-color 0.1s ease;
 }
 .selected {
-  background: $gray-lighter;
+  background: lighten($light-bg-color, 15%);
+  transition: background 0.1s ease;
 }
 
 .img-circle {
@@ -201,6 +210,10 @@ h3 {
 .form {
   width: 100%;
   background-color: white;
+}
+
+.nav-tabs {
+  font-family: $font-family-title;
 }
 
 .float-right {

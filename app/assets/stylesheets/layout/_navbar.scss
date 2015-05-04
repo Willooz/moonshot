@@ -1,12 +1,10 @@
 /* -------------------------------------
  * Colors & Fonts
  * ------------------------------------- */
-$navbar-color: $gray-light;
-$navbar-hover-color: $yellow;
-$navbar-font-size: 14px;
-$navbar-text-transform: capitalize;
-$navbar-font-weight: 300;
-$navbar-letter-spacing: 1.5px;
+$navbar-color: $light-text-color;
+$navbar-hover-color: $dark-text-color;
+$navbar-font-size: 18px;
+$navbar-letter-spacing: $letter-spacing;
 $navbar-bg: white;
 
 /* -------------------------------------
@@ -15,8 +13,6 @@ $navbar-bg: white;
 $navbar-height: 50px;
 $navbar-vertical-padding: 10px;
 $navbar-horizontal-padding: 20px;
-$navbar-border-bottom-width: 1px;
-$navbar-border-bottom-color: $gray-lighter;
 
 /* -------------------------------------
  * Navbar button
@@ -25,14 +21,12 @@ $navbar-btn-height: 40px;
 $navbar-btn-bg: lightgrey;
 $navbar-btn-color: white;
 $navbar-btn-horizontal-padding: 10px;
-$navbar-btn-radius: 2px;
+$navbar-btn-radius: $box-corner-radius;
 
 /* -------------------------------------
  * Navbar profile picture
  * ------------------------------------- */
 $navbar-profile-radius: 50%;
-$navbar-profile-border-color: white;
-$navbar-profile-border-width: 2px;
 
 /* -------------------------------------
  * SCSS code
@@ -41,20 +35,17 @@ $navbar-profile-border-width: 2px;
 .super-nav {
   line-height: 4.6;
   margin-bottom: 0;
-  line-height: 5;
-
 
   li {
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
     margin-bottom: 0px;
     padding-top: -10px;
     border-bottom: 3px solid transparent;
     display: inline-block;
     font-family: $font-family-title;
-    color: $base-moonshot;
     span{
-      padding: 5px;
+      padding: 10px 10px;
       border-radius: 3px;
       transition: background-color 0.3s ease;
     }
@@ -62,10 +53,10 @@ $navbar-profile-border-width: 2px;
     transition: border-bottom 0.3s ease;
     transition: color 0.3s ease;
     &:hover {
-      border-bottom: 3px solid #cccccc;
+      border-bottom: 3px solid $gray-lighter;
       color: white;
       span{
-        background-color: $base-moonshot;
+        background-color: $dark-bg-color;
       }
 
     }
@@ -76,9 +67,8 @@ $navbar-profile-border-width: 2px;
   background: $navbar-bg;
   font-family: $font-family-title;
   border: none;
+  border-radius: 0px;
   font-size: $navbar-font-size;
-  text-transform: $navbar-text-transform;
-  font-weight: $navbar-font-weight;
   letter-spacing: $navbar-letter-spacing;
   padding-left: $navbar-horizontal-padding;
   padding-right: $navbar-horizontal-padding;
@@ -119,7 +109,7 @@ $navbar-profile-border-width: 2px;
     margin-top: ($navbar-height + 2 * $navbar-vertical-padding - $navbar-btn-height) / 2;
     font-weight: bold;
     background-color: $navbar-btn-bg;
-    font-size: 12px;
+    // font-size: 12px;
     &:hover{
       background-color: darken($navbar-btn-bg, 30%);
     }
@@ -131,12 +121,10 @@ $navbar-profile-border-width: 2px;
     width: 250px;
   }
 
-  .img-avatar{
-    border: $navbar-profile-border-width solid $navbar-profile-border-color;
-    box-shadow: 0 0 2px rgb(200, 200, 200);
-    height: $navbar-height - (2 * $navbar-profile-border-width);
+  .img-avatar {
+    height: $navbar-height;
     margin-right: 10px;
-    border-radius: $navbar-profile-radius;
+    border-radius: 999em;
   }
 
   .navbar-toggle {
@@ -145,12 +133,13 @@ $navbar-profile-border-width: 2px;
     background: transparent;
   }
 
-  .navbar-nav > li > .dropdown-menu{
-    border-radius: 0;
-    margin-top: 10px;
+  .navbar-nav > li > .dropdown-menu {
+    font-weight: normal;
+    border-radius: $box-corner-radius;
+    margin-top: 5px;
   }
 
-  .navbar-nav > li > .dropdown-menu:before{
+  .navbar-nav > li > .dropdown-menu:before {
     position: absolute;
     background: white;
     height: 10px;

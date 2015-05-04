@@ -12,26 +12,32 @@ $headings-font-family:    $font-family-head;
 
 // Semantic color scheme
 
-$brand-primary:   $blue;
+$brand-primary:   $dark-bg-color;
 $brand-success:   $green;
 $brand-info:      $yellow;
 $brand-danger:    $red;
 $brand-warning:   $orange;
+$brand-white:     white;
 $base-moonshot: #282058;
 $btn-default-color: $gray-light;
 
 // General radius (for buttons, inputs, popover...)
-$border-radius-base:  4px;
-$border-radius-large: 4px;
-$border-radius-small: 4px;
+$border-radius-base: $box-corner-radius;
+$border-radius-large: $box-corner-radius;
+$border-radius-small: $box-corner-radius;
 
 // Links style
 $link-hover-decoration: none;
-$link-hover-color: $blue;
-$link-color: $green;
+$link-hover-color: $special-text-color;
+$link-color: $dark-text-color;
 
 // Grid padding
 $grid-gutter-width: 0 ;
 
 // Navs padding
 $nav-link-padding: 10px 24px;
+
+// Dropdowns
+$dropdown-link-color: $gray-light;
+$dropdown-link-active-color: $gray;
+$dropdown-link-hover-color: $light-text-color;

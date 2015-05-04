@@ -3,8 +3,7 @@
   = link_to "Create new shot", new_shot_path, class: "btn btn-right btn-primary"
 
 .page-menu.hide
-.page-content
-  - @shots.each do |shot|
-    = render partial: 'small_shot', locals: { shot: shot }
+- @shots.each do |shot|
+  = render partial: 'small_shot', locals: { shot: shot }
 .page-foot
   = link_to "Back to top", "#title", class: "btn btn-default"

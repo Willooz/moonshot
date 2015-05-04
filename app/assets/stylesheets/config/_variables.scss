@@ -1,33 +1,6 @@
 /* -------------------------------------
  * Fonts
  * ------------------------------------- */
-// Google fonts
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Montserrat:400,700");
-@font-face {
-  font-family: 'ProximaNova-Light';
-  src: url('ProximaNova-Light.eot?') format('eot'),
-       url('ProximaNova-Light.otf')  format('opentype'),
-       url('ProximaNova-Light.woff') format('woff'),
-       url('ProximaNova-Light.ttf')  format('truetype'),
-       url('ProximaNova-Light.svg#ProximaNova-Light') format('svg');
-}
-@font-face {
-  font-family: 'ProximaNova-Regular';
-  src: url('ProximaNova-Regular.eot?') format('eot'),
-       url('ProximaNova-Regular.otf')  format('opentype'),
-       url('ProximaNova-Regular.woff') format('woff'),
-       url('ProximaNova-Regular.ttf')  format('truetype'),
-       url('ProximaNova-Regular.svg#ProximaNova-Regular') format('svg');
-}
-@font-face {
-  font-family: 'ProximaNova-Bold';
-  src: url('ProximaNova-Bold.eot?') format('eot'),
-       url('ProximaNova-Bold.otf')  format('opentype'),
-       url('ProximaNova-Bold.woff') format('woff'),
-       url('ProximaNova-Bold.ttf')  format('truetype'),
-       url('ProximaNova-Bold.svg#ProximaNova-Bold') format('svg');
-}
-
 $font-family-base: "ProximaNova-Light", "Open Sans", "sans-serif";
 $font-family-title: "ProximaNova-Regular", "Open Sans", "sans-serif";
 $font-family-head: "Museo Slab", "Montserrat", "sans-serif";
@@ -35,8 +8,8 @@ $font-family-head: "Museo Slab", "Montserrat", "sans-serif";
 // Font-size and line-height
 $title-size: 34px;
 $sub-title-size: 24px;
-$letter-spacing: 1px;
 $base-size: 16px;
+$letter-spacing: 1.5px;
 $base-height: 1.4;
 
 /* -------------------------------------
@@ -49,6 +22,21 @@ $yellow: #FDB631;
 $orange: #E67E22;
 $green: #32B796;
 $purple: #6452BD;
+
+// Light Blue Scheme
+$special-text-color: #FF648D;  /* Bright Red-Pink */
+$light-text-color: #5894DA;  /* Light Ocean Blue */
+$dark-text-color: #35516B;  /* Dark Ocean Blue */
+$light-bg-color: #A1DEEE;
+$dark-bg-color: #71B1C7;
+
+// Dark Purple Scheme
+// $special-text-color: #FF6464;  /* Light Orange-Red */
+// $light-text-color: #BC91ED;  /* Light Mauve */
+// $dark-text-color: #58356B;  /* Dark Ocean Blue */
+// $light-bg-color: #BC82D7;
+// $dark-bg-color: #322468;
+
 
 // Gray scale
 $gray-darker:  lighten(#000, 13.5%); // #222
