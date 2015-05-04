@@ -14,7 +14,6 @@ class ShotInvitesController < ApplicationController
   def create
     @shot_invite = ShotInvite.new(shot_invite_params)
     @shot_invite.save!
-    @shot_invite.events.create(params[:shot_id])
     flash[:notice] = "Your invitation has been sent. It needs to be accepted before it appears on the shot's overview or your mate's profile."
     redirect_to shot_path(@shot)
   end
@@ -25,6 +24,7 @@ class ShotInvitesController < ApplicationController
   def update
     @invite = ShotInvite.find(params[:id])
     @invite.update_attribute(:in_team, true)
+    @shot_invite.events.create(params[:shot_id])
     respond_to do |format|
       format.js
     end
