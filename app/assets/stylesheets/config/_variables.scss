@@ -2,26 +2,41 @@
  * Fonts
  * ------------------------------------- */
 // Google fonts
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Montserrat:400,700|Raleway:300,400");
-$base-font: "National", "Open Sans", "Helvetica", "sans-serif";
-$header-font: "Museo Slab", "Montserrat", "sans-serif";
-$button-font: "Proxima Nova";
-$navbar-font: 'Proxima Nova', "sans-serif";
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Montserrat:400,700");
+@font-face {
+  font-family: 'ProximaNova-Light';
+  src: url('ProximaNova-Light.eot?') format('eot'),
+       url('ProximaNova-Light.otf')  format('opentype'),
+       url('ProximaNova-Light.woff') format('woff'),
+       url('ProximaNova-Light.ttf')  format('truetype'),
+       url('ProximaNova-Light.svg#ProximaNova-Light') format('svg');
+}
+@font-face {
+  font-family: 'ProximaNova-Regular';
+  src: url('ProximaNova-Regular.eot?') format('eot'),
+       url('ProximaNova-Regular.otf')  format('opentype'),
+       url('ProximaNova-Regular.woff') format('woff'),
+       url('ProximaNova-Regular.ttf')  format('truetype'),
+       url('ProximaNova-Regular.svg#ProximaNova-Regular') format('svg');
+}
+@font-face {
+  font-family: 'ProximaNova-Bold';
+  src: url('ProximaNova-Bold.eot?') format('eot'),
+       url('ProximaNova-Bold.otf')  format('opentype'),
+       url('ProximaNova-Bold.woff') format('woff'),
+       url('ProximaNova-Bold.ttf')  format('truetype'),
+       url('ProximaNova-Bold.svg#ProximaNova-Bold') format('svg');
+}
 
-// Local fonts (uncomment following lines)
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
-// $my-font: "Font Name";
+$font-family-base: "ProximaNova-Light", "Open Sans", "sans-serif";
+$font-family-title: "ProximaNova-Regular", "Open Sans", "sans-serif";
+$font-family-head: "Museo Slab", "Montserrat", "sans-serif";
 
 // Font-size and line-height
 $title-size: 34px;
 $sub-title-size: 24px;
-$base-size: 18px;
+$letter-spacing: 1px;
+$base-size: 16px;
 $base-height: 1.4;
 
 /* -------------------------------------

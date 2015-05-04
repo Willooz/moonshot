@@ -6,11 +6,12 @@
  * ------------------------------------- */
 
 body {
-  background: $base-moonshot;
+  background: image-url("stars_light.png");
+  // $base-moonshot;
   color: $gray;
-  font-family: $base-font;
+  font-family: $font-family-base;
   font-size: $base-size;
-  font-weight: 400;
+  letter-spacing: $letter-spacing;
 }
 
 
@@ -20,15 +21,19 @@ h1, h2, h3 {
 
 h1 {
   line-height: 40px;
-  font-family: $header-font;
+  font-family: $font-family-head;
   font-size: $title-size;
 }
-
 h2 {
   padding: 30px 0px 20px 0px;
-  font-family: $navbar-font;
+  font-family: $font-family-title;
   font-size: $sub-title-size;
 }
+h3 {
+  font-family: $font-family-base;
+  font-size: $sub-title-size;
+}
+
 
 .master-container {
   margin: 10px auto;
