@@ -40,11 +40,11 @@ div id="overview" class="page-content"
       h2 = "#{@shot.latest_value}"
     .graph-right
 
-div id="people" class="page-content"
+div id="people"
   - @shot.invitees.each do |profile|
     = render partial: "shot_people", locals: { profile: profile }
 
-div id="timeline" class="page-content"
+div id="timeline"
   - @shot.updates.each do |update|
     = render partial: "shot_timeline", locals: { update: update }
 

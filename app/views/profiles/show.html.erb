@@ -1,11 +1,9 @@
 <div class="page-title">
-  <div id="profile-picture"> <%= image_tag @user.picture.url(:thumb), class: "img-circle" %></div>
-  <div id="profile-details">
-    <h1> <%= @user.name %> </h1>
-    <h3> <%= @profile.role.downcase %> @<%= @account.name.upcase %> </h3>
-    <%= link_to "Send invites", invite_teammember_path(@profile), class: "btn btn-primary" %>
-  </div>
-
+<!--   <div id="profile-picture">
+    <%= image_tag @user.picture.url %>
+  </div> -->
+  <div id="profile-details"><h1> <%= @user.name %> </h1></div>
+  <%= link_to "Invite to a shot", invite_teammember_path(@profile), class: "btn btn-right btn-primary" %>
   <div class="clear"></div>
 </div>
 
@@ -45,11 +43,6 @@
 
 
 <div id="all_shots">
-  <div class="buttons">
-    <%= link_to "Send invites", invite_teammember_path(@profile), class: "btn btn-primary" %>
-  </div>
-
-  <div class="clear"></div>
   <% unless @all_shots.empty? %>
     <% @all_shots.each do |shot| %>
       <%= render partial: "shots/small_shot", locals: {shot: shot} %>
@@ -60,29 +53,34 @@
 
 </div>
 
+<div class="page-foot">
+  <%= link_to "Back to top", "#title", class: "btn btn-default" %>
+</div>
+
+
 <%= content_for :after_js do%>
-<script>
-$('[data-toggle="popover"]').popover({
-        html: true,
-        trigger: 'manual',
-        container: $(this).attr('id'),
-        placement: 'top',
-        content: function () {
-            $return = '<div class="hover-hovercard"></div>';
-        }
-    }).on("mouseenter", function () {
-        var _this = this;
-        $(this).popover("show");
-        $(this).siblings(".popover").on("mouseleave", function () {
-            $(_this).popover('hide');
-        });
-    }).on("mouseleave", function () {
-        var _this = this;
-        setTimeout(function () {
-            if (!$(".popover:hover").length) {
-                $(_this).popover("hide")
-            }
-        }, 100);
-    });
+  <script>
+  $('[data-toggle="popover"]').popover({
+          html: true,
+          trigger: 'manual',
+          container: $(this).attr('id'),
+          placement: 'top',
+          content: function () {
+              $return = '<div class="hover-hovercard"></div>';
+          }
+      }).on("mouseenter", function () {
+          var _this = this;
+          $(this).popover("show");
+          $(this).siblings(".popover").on("mouseleave", function () {
+              $(_this).popover('hide');
+          });
+      }).on("mouseleave", function () {
+          var _this = this;
+          setTimeout(function () {
+              if (!$(".popover:hover").length) {
+                  $(_this).popover("hide")
+              }
+          }, 100);
+      });
   </script>
-  <% end %>
+<% end %>
