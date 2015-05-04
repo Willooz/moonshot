@@ -217,36 +217,60 @@ ShotInvite.create( shot_id: 2,
 Badge.create(
     title: "Fighter",
     description: "Someone who never gave up when odds were against us.",
-    picture: "fighter.png"
+    picture: "badges/fighter.png"
   )
 
 Badge.create(
     title: "Diplomat",
     description: "Someone who built bridges and reconciled differences",
-    picture: "diplomat.png"
+    picture: "badges/diplomat.png"
   )
 
 Badge.create(
     title: "Morale Booster",
     description: "Someone who made the team at ease and gave them moral support.",
-    picture: "morale_booster.png"
+    picture: "badges/morale_booster.png"
   )
 
 Badge.create(
     title: "Motivator",
     description: "Someone who knew how to get the best out of you.",
-    picture: "motivator.png"
+    picture: "badges/motivator.png"
   )
 
 Badge.create(
     title: "Team Player",
     description: "Someone who put others and the project ahead of himself.",
-    picture: "team_player.png"
+    picture: "badges/team_player.png"
+  )
+
+Badge.create(
+    title: "Free Thinker",
+    description: "Someone is not afraid to think outside of the box.",
+    picture: "badges/free_thinker.png"
+  )
+
+Badge.create(
+    title: "Energizer",
+    description: "Someone who inspipred and energized others.",
+    picture: "badges/energizer.png"
   )
 
 Badge.create(
     title: "Creative Mind",
     description: "Someone who found solutions in creative ways.",
-    picture: "creative_mind.png"
+    picture: "badges/creative_mind.png"
+  )
+
+Badge.create(
+    title: "Tech Hero",
+    description: "Someone who made sure that things worked properly.",
+    picture: "badges/tech_hero.png"
+  )
+
+Badge.create(
+    title: "Mr Meticulous",
+    description: "Someone who didn't miss a single little detail.",
+    picture: "badges/mr_meticulous.png"
   )
 
