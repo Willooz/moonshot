@@ -1,14 +1,13 @@
 <div class="list-card linked-card">
-  <div class="card-left">
-    <div class="circle-container">
+  <div class="card-left shotcreation">
       <%= image_tag shot.invitees.first.user.picture, size: "100x100", alt: "Badge", class: "img-circle" %>
   </div>
   <div class="card-middle">
     <h4>
-      <%= link_to shot.title, shot_path(shot) %>
+      <%= "#{shot.invitees.first.name} created a new shot." %>
     </h4>
     <p>
-
+      <%= link_to shot.title, shot_path(shot) %>
     </p>
   </div>
   <div class="card-right">

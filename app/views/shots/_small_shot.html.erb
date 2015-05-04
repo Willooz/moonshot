@@ -1,8 +1,8 @@
 <div class="list-card linked-card">
   <div class="card-left">
     <div class="circle-container">
-      <h3><%= "#{shot.percentage_done} %" %></h3>
-      <div class="circle" id=<%="circle#{shot.id}"%>>
+      <h3><%= "#{update.shot.percentage_done} %" %></h3>
+      <div class="circle" id=<%="circle#{update.shot.id}"%>>
         <%= content_tag(:div, nil, class: "bar", data: {completion_rate: "#{shot.percentage_done}"}) %>
       </div>
     </div>
@@ -12,8 +12,7 @@
       <%= link_to shot.title, shot_path(shot) %>
     </h4>
     <p>
-      <span><i class="fa fa-bullseye"></i> <%= shot.target_value %></span>
-      <span><i class="fa fa-calendar"></i> <%= shot.deadline %></span>
+      <%= update.description %>
     </p>
   </div>
   <div class="card-right">
