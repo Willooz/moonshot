@@ -29,10 +29,12 @@ class ShotsController < ApplicationController
     @shot = Shot.new(shot_params)
     @shot[:account_id] = current_account.id
     @shot.save
+    @shot.events.create(trigger: @shot)
 
     new_shot_invite = @shot.shot_invites.build(
       inviter: current_profile,
-      invitee: current_profile
+      invitee: current_profile,
+      in_team: true
       )
     new_shot_invite.save
     flash[:notice] = "Shot successfully created"

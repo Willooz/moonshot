@@ -19,9 +19,9 @@ class Shot < ActiveRecord::Base
     bl = self.latest_value
     tg = self.target_value
     if bl < tg
-      ((bl.to_f / tg) * 100).round(2)
+      ((bl.to_f / tg) * 100).round
     else
-      ((tg.to_f / bl) * 100).round(2)
+      ((tg.to_f / bl) * 100).round
     end
   end
 

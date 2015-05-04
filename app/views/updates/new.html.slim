@@ -2,7 +2,7 @@ h4 = @shot.account.name
 h3 = @shot.title
 h2 = Update
 
-= simple_form_for(@update, method: :post, url: account_shot_updates_path) do |f|
+= simple_form_for(@update, method: :post, url: new_update_path) do |f|
   = f.error_notification
   = f.input :description
   = f.input :current_value
@@ -15,5 +15,5 @@ h3
   br
   = "Target Value: #{@shot.target_value}"
   br
-= link_to "Back to #{@shot.account.name} shots", account_shots_path
+= link_to "Back to #{@shot.account.name} shots", shots_path
 

@@ -1,15 +1,15 @@
 class UpdatesController < ApplicationController
   def new
-    @shot = Shot.find(params[:shot_id])
+    @shot = Shot.find(params[:id])
     @update = Update.new
   end
 
   def create
     @update = Update.create(update_params)
-    @shot = Shot.find(params[:shot_id])
-    @account = Account.find(params[:account_id])
-    @update.Event.create(shot_id: @shot.id)
-    redirect_to account_shot_path(@account, @shot)
+    @shot = Shot.find(params[:id])
+    @account = current_account
+    @update.events.create(shot_id: @shot.id)
+    redirect_to shot_path(@shot)
   end
 
   private
