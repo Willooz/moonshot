@@ -1,0 +1,16 @@
+<h1>Events#index</h1>
+<p>Find me in app/views/events/index.html.erb</p>
+
+<% @events.each do |event| %>
+  <% case event.trigger_type %>
+    <% when "Highfive" %>
+      <%= render partial: 'highfive', locals: { highfive: event.trigger } %>
+    <% when "ShotInvite" %>
+      <p>Shot Invites! Come and play</p>
+    <% when "Update" %>
+      <p>Shot was updated!</p>
+    <% when "Shot" %>
+      <p>New shot!</p>
+  <% end %>
+
+<% end %>

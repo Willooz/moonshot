@@ -1,0 +1,19 @@
+<div class="list-card linked-card">
+  <div class="card-left highfive">
+    <%= image_tag highfive.badge.picture, size: "100x100", alt: "Badge", class: "img-circle" %>
+  </div>
+  <div class="card-middle">
+    <h4>
+      <%= "#{highfive.giver.name} gave a badge to #{highfive.receiver.name}"%>
+    </h4>
+    <h5>
+      <%= "for his work on #{highfive.shot.title}"%>
+    </h5>
+    <p>
+
+    </p>
+  </div>
+  <div class="card-right">
+    <%= highfive.created_at.to_date%>
+  </div>
+</div>

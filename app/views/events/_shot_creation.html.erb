@@ -1,0 +1,24 @@
+<div class="list-card linked-card">
+  <div class="card-left">
+    <div class="circle-container">
+      <%= image_tag shot.invitees.first.user.picture, size: "100x100", alt: "Badge", class: "img-circle" %>
+  </div>
+  <div class="card-middle">
+    <h4>
+      <%= link_to shot.title, shot_path(shot) %>
+    </h4>
+    <p>
+
+    </p>
+  </div>
+  <div class="card-right">
+    <% shot.invitees.take(3).each do |invitee| %>
+      <%= image_tag(invitee.user.picture.url, size: "50x50", class: "img-circle") %>
+    <% end %>
+    <div class="float-right">
+      <% if shot.invitees.count > 3 %>
+        <h2> + <%= (shot.invitees.count - 3)  %> </h2>
+      <% end %>
+    </div>
+  </div>
+</div>
