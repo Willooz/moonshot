@@ -73,6 +73,7 @@ class ProfilesController < ApplicationController
   end
 
   def assign_badges
+    raise
     redirect_to people_show_path(params[:id])
 
   end
