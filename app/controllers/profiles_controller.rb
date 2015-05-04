@@ -72,13 +72,16 @@ class ProfilesController < ApplicationController
         @common_shots << shot
       end
     end
+
   end
 
   def assign_badges
+    @receiver = Profile.find(params[:receiver_id])
     params[:badges].each do |badge|
       highfive = Highfive.create!(giver_id: params[:giver_id], shot_id: params[:shot_id], receiver_id: params[:receiver_id], badge_id: badge.first.to_i)
       highfive.events.create(shot_id: params[:shot_id])
     end
+    flash[:notice] = "Thanks for giving badges to #{@receiver.user.name}!"
     redirect_to people_show_path(params[:id])
   end
 

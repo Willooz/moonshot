@@ -24,8 +24,12 @@
 </div>
 
 <div id="badges">
-  <% unless @highfives.empty? %>
+  <div class="buttons">
     <%= link_to "Give badges", give_badges_path(params[:id]), class: "btn btn-right btn-primary" %>
+  </div>
+  <div class="clear"></div>
+  <% unless @highfives.empty? %>
+
       <% @badges.each do |badge| %>
         <div class=<%= "padded badge#{badge.id}"%>>
           <div class="badge-image" data-toggle="popover" data-trigger="hover" title="<%= badge.title %>" data-content="<%= render partial: 'popover', locals: {badge: badge}%>">
