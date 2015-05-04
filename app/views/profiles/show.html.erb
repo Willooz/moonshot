@@ -29,7 +29,9 @@
     <% @highfives.each do |highfive| %>
       <% badge = Badge.find(highfive.badge_id) %>
       <% shot = Shot.find(highfive.shot_id) %>
-      <%= shot.title %>
+      <%= image_tag badge.picture, size: "50x50" %>
+      <p> for <%= shot.title %> </p>
+
     <% end %>
   <% else %>
     <%= link_to "Give badges", give_badges_path(params[:id]), class: "btn btn-right btn-primary" %>

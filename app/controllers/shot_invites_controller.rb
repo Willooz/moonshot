@@ -1,6 +1,6 @@
 class ShotInvitesController < ApplicationController
   before_action :set_shot, only: [:new, :create, :edit, :update, :destroy]
-
+  respond_to :js, only: [:update, :destroy]
   def new
     @shot_invite = ShotInvite.new
     current_invites = []
@@ -39,20 +39,15 @@ class ShotInvitesController < ApplicationController
   end
 
   def update
-    @invite = ShotInvite.find(params[:id])
+    @invite = ShotInvite.find(params[:shot_invite_id])
     @invite.update_attribute(:in_team, true)
-    @shot_invite.events.create(params[:shot_id])
-    respond_to do |format|
-      format.js
-    end
+    @invite.events.create(shot_id: params[:shot_id])
+
   end
 
   def destroy
-    invite = ShotInvite.find(params[:id])
+    invite = ShotInvite.find(params[:shot_invite_id])
     invite.destroy
-    respond_to do |format|
-      format.js
-    end
   end
 
   def add_teammember

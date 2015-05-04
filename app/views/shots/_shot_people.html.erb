@@ -1,12 +1,12 @@
 <div class="list-card">
 
   <div class="card-left">
-    <%= image_tag(profile.user.picture(:thumb), alt: "Profile", class: "img-circle") %>
+    <%= link_to image_tag(profile.user.picture(:thumb), alt: "Profile", class: "img-circle"), people_show_path(profile) %>
   </div>
 
   <div class="card-middle">
     <% profile.badges.distinct.each do |badge| %>
-      <%= image_tag(badge.picture, size: "50x50", alt: "Badge", class: "img-circle") %>
+      <%= image_tag(badge.picture, size: "50x50", alt: "Badge", class: "img-circle")  %>
     <% end %>
   </div>
 
