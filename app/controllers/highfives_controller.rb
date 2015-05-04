@@ -16,10 +16,7 @@ class HighfivesController < ApplicationController
       highfive.save
       event = highfive.events.create(shot_id: shot.id)
     end
-    flash[:success] = "Your badges were given to #{receiver.user.name}"
+    flash[:notice] = "You successfully gave badges to #{receiver.user.name}"
     redirect_to shot_path(shot)
   end
-
-
-
 end

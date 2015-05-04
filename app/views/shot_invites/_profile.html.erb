@@ -1,0 +1,4 @@
+<%= image_tag(profile.user.picture, size: "100x100", alt: "Profile Picture", class: "img-circle") %>
+<br><br>
+<p class="title"><%= profile.user.name %></p>
+<%= check_box_tag "invitees[#{profile.id}]", true, false, class: 'hide' %>

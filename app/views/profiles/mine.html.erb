@@ -19,11 +19,11 @@
         <%=  render partial: "shots/small_shot", locals: {shot: pending_shot} %>
 
         <% pending_shot.shot_invites.where(invitee_id: current_user.id).each do |invite| %>
-          <%= form_tag(account_shot_shot_invite_path(@account, pending_shot, invite), method: :patch, remote:true) do  %>
+          <%= form_tag(shot_invite_accept_path(pending_shot, invite), method: :patch, remote:true) do  %>
             <%= submit_tag "Accept this invite", id:"accept#{pending_shot.id}" %>
             <% end %>
       </div>
-            <%= form_tag(account_shot_shot_invite_path(@account, pending_shot, invite), method: :delete, remote:true) do  %>
+            <%= form_tag(shot_invite_decline_path(pending_shot, invite), method: :delete, remote:true) do  %>
             <%= submit_tag "Decline this invite", id:"delete#{pending_shot.id}"  %>
           <% end %>
         <% end %>
