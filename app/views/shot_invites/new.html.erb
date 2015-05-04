@@ -1,16 +1,16 @@
-<%= form_tag highfive_create_path(@shot) do %>
+<%= form_tag shot_invite_create_many_path(@shot) do %>
   <div class="page-title">
-    <h1>Select badges for <strong><%= @receiver.name %></strong></h1>
-    <%= submit_tag "Give badges", class: "btn btn-right btn-primary" %>
+    <h1>Invite to <strong><%= @shot.title %></strong></h1>
+    <%= submit_tag "Invite", class: "btn btn-right btn-primary" %>
     <%= link_to "Cancel", shot_path(@shot), class: "btn btn-right btn-default" %>
   </div>
 
 
   <div class="page-content">
-    <%= hidden_field_tag 'receiver_id', @receiver.id %>
-    <% @badges.each do |badge| %>
+    <%= hidden_field_tag 'inviter_id', @inviter.id %>
+    <% @profiles.each do |profile| %>
       <div class="square-card">
-        <%= render "badge", badge: badge %>
+        <%= render "profile", profile: profile %>
       </div>
     <% end %>
   </div>
