@@ -6,7 +6,7 @@
  * ------------------------------------- */
 
 body {
-  background: image-url("stars_light.png");
+  background: image-url("lightblue_gradient.png");
   // $base-moonshot;
   color: $gray;
   font-family: $font-family-base;
@@ -23,6 +23,7 @@ h1 {
   line-height: 40px;
   font-family: $font-family-head;
   font-size: $title-size;
+  color: $dark-text-color;
 }
 h2 {
   padding: 30px 0px 20px 0px;
@@ -107,12 +108,12 @@ h3 {
   .graph-left {
     width: 40%;
     display: inline-block;
-    background: LightGreen;
+    // background: LightGreen;
   }
   .graph-right {
     width: 60%;
     display: inline-block;
-    background: LightCoral;
+    background: $light-bg-color;
   }
 
 }

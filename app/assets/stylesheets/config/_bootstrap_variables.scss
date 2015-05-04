@@ -12,11 +12,12 @@ $headings-font-family:    $font-family-head;
 
 // Semantic color scheme
 
-$brand-primary:   $blue;
+$brand-primary:   $light-bg-color;
 $brand-success:   $green;
 $brand-info:      $yellow;
 $brand-danger:    $red;
 $brand-warning:   $orange;
+$brand-white:     white;
 $base-moonshot: #282058;
 $btn-default-color: $gray-light;
 
@@ -27,8 +28,8 @@ $border-radius-small: 4px;
 
 // Links style
 $link-hover-decoration: none;
-$link-hover-color: $blue;
-$link-color: $green;
+$link-hover-color: $special-text-color;
+$link-color: $dark-text-color;
 
 // Grid padding
 $grid-gutter-width: 0 ;
