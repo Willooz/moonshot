@@ -21,8 +21,15 @@
 
 @font-face {
     font-family: 'Proxima Nova';
-    src: asset-url('ProximaNovaSemibold.otf');
+    src: asset-url('ProximaNovaSemiBold.otf');
     font-weight: semibold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: asset-url('ProximaNovaLight.otf');
+    font-weight: light;
     font-style: normal;
 }
 

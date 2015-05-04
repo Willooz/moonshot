@@ -11,14 +11,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render "shared/navbar" %>
-  <%= render "shared/flashes" %>
-
-  <div class="master-container">
-    <%= yield %>
-  </div>
-
-  <%= javascript_include_tag :application %>
-  <%= yield(:after_js) %>
+  <% if user_signed_in? %>
+    <%= render "shared/navbar" %>
+    <%= render "shared/flashes" %>
+    <div class="master-container">
+      <%= yield %>
+    </div>
+    <%= javascript_include_tag :application %>
+    <%= yield(:after_js) %>
+  <% else %>
+    <div class="moony-bg">
+      <%= yield %>
+    </div>
+  <% end %>
 </body>
 </html>

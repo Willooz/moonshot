@@ -1,7 +1,7 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
-      <h2><%= t('.sign_up', default: "Sign up") %></h2>
+
+    <div class="sign-card signup">
+      <div class="logosign"><%= image_tag 'logo_white.svg' %></div>
+      <h4>Create new account</h4>
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do  |form| %>
         <%= form.error_notification %>
@@ -14,10 +14,10 @@
             <%= text_field_tag 'account[name]', '',  class: 'form-control' %>
         </div>
         <%= form.button :submit, t('.sign_up', default: "Sign up"), class: "btn btn-primary" %>
-
+        <%= render "devise/shared/links" %>
         <% end %>
 
-      <%= render "devise/shared/links" %>
+
     </div>
   </div>
 </div>

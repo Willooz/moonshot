@@ -1,0 +1,72 @@
+.sign-card{
+  background: rgba(255, 255, 255,0.1);
+  color: white;
+  position: relative;
+
+  width: 350px;
+  height: 400px;
+  margin: 0px auto 50px auto;
+  border-radius: $box-corner-radius;
+  padding: 20px;
+  form{
+    width: 300px;
+  }
+  h4{
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .logosign
+  {
+    background: transparent;
+    text-align: center;
+    border-radius: $box-corner-radius;
+    padding: 5px;
+    margin-bottom: 20px;
+    img{
+      width: 300px;
+    }
+  }
+  .btn-primary{
+    background: $base-moonshot;
+    border: 1px solid white;
+    font-size: 17px;
+    padding: 5px 10px 5px 10px;
+    transition: border 0.3s ease;
+    transition: background 0.3s ease;
+    transition: color 0.3s ease;
+    margin-bottom: 15px;
+    &:hover{
+    background: white;
+    color: $base-moonshot;
+    border: 1px solid $base-moonshot;
+    transition: border 0.3s ease;
+    transition: background 0.3s ease;
+    transition: color 0.3s ease;
+    }
+  }
+  a {
+    color: white;
+    &:hover{
+      color: gray;
+    }
+  }
+}
+
+.signup{
+  margin-top: -50px;
+  margin-bottom: 150px;
+  height: 600px;
+}
+
+.moony-bg{
+ background:
+  linear-gradient(
+    rgba(40, 32, 88, 0.6),
+    rgba(40, 32, 88, 0.6)
+    ),
+  image-url("background-moon.jpg");
+ background-size: cover;
+ padding-top: 110px;
+ padding-bottom: 155px;
+ background-position: center center;
+}
