@@ -1,4 +1,6 @@
-<h1>Moonshot feed of <%= @account.name %></h1>
+<div class="page-title">
+  <h1>Moonshot feed of <%= @account.name %></h1>
+</div>
 
 <% @events.each do |event| %>
   <% case event.trigger_type %>
@@ -11,5 +13,8 @@
     <% when "Shot" %>
       <%= render partial: 'shot_creation', locals: { shot: event.trigger } %>
   <% end %>
-
 <% end %>
+
+<div class="page-foot">
+  <%= link_to "Back to top", "#title", class: "btn btn-default" %>
+</div>

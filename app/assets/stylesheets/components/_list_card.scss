@@ -17,6 +17,7 @@
   }
   .card-middle {
     height: 100%;
+    width: 525px;
     float: left;
     padding: 35px 0px;
     display: inline-block;
@@ -30,14 +31,21 @@
   }
   .card-right {
     height: 100%;
-    float: right;
+    width: 250px;
     display: inline-block;
     // background: LightCoral;
     img {
       margin: 50px 0px;
+      float: right;
+    }
+    p {
+      margin: 50px 0px;
+      display: inline-block;
+      float: right;
     }
     .btn {
       margin: 50px 0px;
+      float: right;
     }
   }
 }
