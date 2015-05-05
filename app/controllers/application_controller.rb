@@ -20,6 +20,8 @@ class ApplicationController < ActionController::Base
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
+  helper_method :current_profile
+
   def current_profile
     if user_signed_in?
       @_cp ||= if cookies.permanent.signed[:profile_id]
