@@ -67,12 +67,13 @@ h3 {
 }
 
 .highlighted {
-  border-color: $light-bg-color;
-  transition: border-color 0.1s ease;
+  border: 1px solid $light-bg-color;
+  transition: border 0.1s ease;
 }
+
 .selected {
   background: lighten($light-bg-color, 15%);
-  transition: background 0.1s ease;
+  // transition: background 0.1s ease;
 }
 
 .img-circle {
