@@ -12,6 +12,9 @@ body {
   font-family: $font-family-base;
   font-size: $base-size;
   letter-spacing: $letter-spacing;
+  // p {
+  //   line-height: 20px;
+  // }
 }
 
 
@@ -33,6 +36,11 @@ h2 {
 h3 {
   font-family: $font-family-base;
   font-size: $sub-title-size;
+}
+
+.btn {
+  font-family: $font-family-button;
+  font-size: $button-size;
 }
 
 

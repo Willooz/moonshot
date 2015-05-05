@@ -20,18 +20,18 @@
     }
 }
 
-  .highfive{
-    border-left: solid 5px $red;
-  }
+.shot-highfive {
+  border-left: solid 5px $brand-info;
+}
 
-  .shotcreation{
-    border-left: solid 5px $orange;
-  }
+.shot-creation{
+  border-left: solid 5px $brand-primary;
+}
 
-  .updatestuff{
-    border-left: solid 5px $green;
-  }
+.shot-update {
+  border-left: solid 5px $brand-success;
+}
 
-  .accepted-invite{
-    border-left: solid 5px $blue;
-  }
+.shot-join {
+  border-left: solid 5px $brand-warning;
+}

@@ -1,29 +1,19 @@
-<div class="list-card">
-  <div class="card-left updatestuff">
+<div class="list-card shot-update linked-card">
+  <div class="card-left">
     <div class="circle-container">
       <h3><%= "#{update.shot.percentage_done} %" %></h3>
-      <div class="circle"%>>
+      <div class="circle"%>
         <%= content_tag(:div, nil, class: "bar", data: {completion_rate: "#{update.shot.percentage_done}"}) %>
       </div>
     </div>
   </div>
   <div class="card-middle">
-    <h4>
-      <%= "#{update.profile.name} updated this shot: "%><%= link_to update.shot.title, shot_path(update.shot) %>
-    </h4>
+
+    <h4><%= link_to "Shot update", shot_path(update.shot), class: "label label-success" %></h4>
     <p>
-      <span><i class="fa fa-bullseye"></i> <%= update.shot.target_value %></span>
-      <span><i class="fa fa-calendar"></i> <%= update.shot.deadline %></span>
+      <strong><%= update.shot.title %></strong><%= " was updated by #{update.profile.name}." %>
+      <br>
+      <span class="subtext"><i class="fa fa-calendar"></i> <%= update.created_at.strftime("on %m/%d at %I:%M%p") %></span>
     </p>
-  </div>
-  <div class="card-right">
-    <% update.shot.invitees.take(3).each do |invitee| %>
-      <%= image_tag(invitee.user.picture.url, size: "50x50", class: "img-circle") %>
-    <% end %>
-    <div class="float-right">
-      <% if update.shot.invitees.count > 3 %>
-        <h2> + <%= (update.shot.invitees.count - 3)  %> </h2>
-      <% end %>
-    </div>
   </div>
 </div>

@@ -19,7 +19,7 @@
     height: 100%;
     width: 525px;
     float: left;
-    padding: 35px 0px;
+    padding: 20px 0px;
     display: inline-block;
     // background: LightGreen;
     span {
@@ -47,5 +47,9 @@
       margin: 50px 0px;
       float: right;
     }
+  }
+  span.subtext {
+    color: $gray-light;
+    font-size: 14px;
   }
 }
