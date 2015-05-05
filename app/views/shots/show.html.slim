@@ -39,7 +39,7 @@ div id="overview"
 
   .graph
     .graph-left
-      h2 = "#{@shot.latest_value}"
+      h2 = render partial: "graph", locals: { shot: @shot }
     .graph-right
 
 div id="people"
