@@ -15,7 +15,9 @@
       <%= render partial: "shots/small_shot", locals: {shot: shot} %>
     <% end %>
     <% else %>
+    <div class="page-content">
       <p>This user currently does not have any shots. Do you want <%= link_to "to send him a shot invite", invite_teammember_path(@profile) %>?</p>
+    </div>
   <% end %>
 </div>
 
@@ -29,9 +31,10 @@
         <%= render partial: "people_badges", locals: {badge: badge} %>
       <% end %>
   <% else %>
+  <div class="page-content">
     <p> This user does not have any badges yet. Do you want to give him any?</p>
+  </div>
   <% end %>
-
 </div>
 
 
@@ -41,7 +44,9 @@
       <%= render partial: "shots/small_shot", locals: {shot: shot} %>
     <% end %>
     <% else %>
+    <div class="page-content">
       <p>This user currently does not have any shots. Do you want <%= link_to "to send him a shot invite", invite_teammember_path(@profile) %>?</p>
+    </div>
   <% end %>
 
 </div>

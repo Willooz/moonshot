@@ -39,6 +39,9 @@
             <li class="dropdown">
               <%= link_to "#", {class: "dropdown-toggle", "data-toggle" => "dropdown", "role" => "button", "aria-expanded" => "false"} do %>
                 <%= image_tag current_user.picture.url, class: "img-avatar" %>
+                <% if current_user.profiles.first.shot_invites_received.where(in_team: false).any?%>
+                  <span class="invite_count"> <%= current_user.profiles.first.shot_invites_received.where(in_team: false).count %> </span>
+                <% end %>
               <% end %>
               <ul class="dropdown-menu" role="menu">
                 <li>
@@ -46,7 +49,10 @@
                 </li>
                 <li>
                   <%= link_to me_path do %>
-                    <i class="fa fa-user"></i> Profile settings
+                    <i class="fa fa-user"></i> My dashboard
+                    <% if current_user.profiles.first.shot_invites_received.where(in_team: false).any? %>
+                      <span class="badge"> <%= current_user.profiles.first.shot_invites_received.where(in_team: false).count %> </span>
+                    <% end %>
                   <% end %>
                 </li>
                 <li>

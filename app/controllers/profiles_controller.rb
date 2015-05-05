@@ -46,6 +46,11 @@ class ProfilesController < ApplicationController
         end
       end
     end
+    @highfives = Highfive.where(receiver_id: @profile.id)
+    @badges = []
+    @highfives.select('DISTINCT ON(badge_id)*').each do |highfive|
+      @badges << highfive.badge
+    end
   end
 
   def invite
