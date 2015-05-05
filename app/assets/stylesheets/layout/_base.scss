@@ -192,6 +192,7 @@ h3 {
 .buttons {
   float: right;
   margin: 20px;
+  display: block;
 }
 
 .clear {
@@ -227,4 +228,11 @@ h3 {
 
 .popover {
   border-radius: 5px;
+}
+
+.buttons-centered {
+  text-align: center;
+  padding: 10px;
+  display: inline;
+
 }
