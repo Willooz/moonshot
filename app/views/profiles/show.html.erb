@@ -20,7 +20,10 @@
 </div>
 
 <div id="badges">
-  <%= link_to "Give badges", give_badges_path(params[:id]), class: "btn btn-right btn-primary" %>
+  <div class="buttons">
+    <%= link_to "Give badges", give_badges_path(params[:id]), class: "btn btn-right btn-primary" %>
+  </div>
+  <div class="clear"></div>
   <% unless @highfives.empty? %>
       <% @badges.each do |badge| %>
         <%= render partial: "people_badges", locals: {badge: badge} %>

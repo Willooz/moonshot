@@ -1,3 +1,3 @@
 <% badge.highfives.where("receiver_id = ?", @profile.id).each do |highfive| %>
-  <p> Given for <%= Shot.find(highfive.shot_id).title %> by <%= highfive.giver.user.name %> </p>
+  <p> Given for <%= Shot.find(highfive.shot_id).title %> by <%= highfive.giver.user.name %> on <%= highfive.created_at.strftime("%b%e, %Y")%> </p>
 <% end %>
