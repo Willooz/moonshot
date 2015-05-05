@@ -59,7 +59,7 @@ class ShotsController < ApplicationController
   private
 
   def shot_params
-    params.require(:shot).permit(:title, :description, :account_id, :baseline_value, :target_value, :accomplished, :deadline)
+    params.require(:shot).permit(:title, :description, :account_id, :baseline_value, :target_value, :accomplished, :deadline, :unit)
   end
 
 

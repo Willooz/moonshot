@@ -120,7 +120,8 @@ Shot.create(title: "Eat a metric ton of cupcakes",
             target_value: 2000000,
             deadline: (Time.now + 900000).to_date,
             accomplished: false,
-            account_id: 1
+            account_id: 1,
+            unit: "metric tons"
             )
 
 Shot.create(title: "Save all Chinese people",
@@ -130,6 +131,7 @@ Shot.create(title: "Save all Chinese people",
             deadline: (Time.now + 1000000).to_date,
             accomplished: false,
             account_id: 1
+            unit: "Chinese saved"
             )
 
 Shot.create(title: "Repair the Stark Tower",
@@ -138,7 +140,8 @@ Shot.create(title: "Repair the Stark Tower",
             target_value: 6,
             deadline: (Time.now + 400000).to_date,
             accomplished: false,
-            account_id: 1
+            account_id: 1,
+            unit: "bricks laid"
             )
 
 Shot.create(title: "Find Loki's Spies",
@@ -147,7 +150,8 @@ Shot.create(title: "Find Loki's Spies",
             target_value: 19,
             deadline: (Time.now + 400000).to_date,
             accomplished: false,
-            account_id: 1
+            account_id: 1,
+            unit: "spies uncovered and punished"
             )
 
 Shot.create(title: "Destroy Magneto's bases",
@@ -156,7 +160,8 @@ Shot.create(title: "Destroy Magneto's bases",
             target_value: 50,
             deadline: (Time.now + 1500000).to_date,
             account_id: 2,
-            accomplished: false
+            accomplished: false,
+            unit: "bases"
             )
 
 ShotInvite.create( shot_id: 1,
