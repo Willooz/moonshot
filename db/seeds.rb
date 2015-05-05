@@ -133,7 +133,7 @@ Shot.create(title: "Save all Chinese people",
             target_value: 1000000000,
             deadline: (Time.now + 1000000).to_date,
             accomplished: false,
-            account_id: 1
+            account_id: 1,
             unit: "Chinese saved"
             )
 
