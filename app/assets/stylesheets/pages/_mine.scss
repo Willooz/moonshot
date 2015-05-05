@@ -1,16 +1,21 @@
 .mine-card  {
-  width: 60%;
+  width: 80%;
 }
 
-#my-badges {
+#my_badges {
   display: none;
   padding-bottom: 20px;
 }
 
-#my-current_shots {
+#my_current_shots {
 
 }
 
 #my_pending_shots {
   display: none;
+}
+
+.submit-tags {
+  display: inline;
+  padding: 2px;
 }
