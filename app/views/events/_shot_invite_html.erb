@@ -1,0 +1,19 @@
+<div class="list-card linked-card">
+  <div class="card-left accepted-invite">
+    <%= image_tag shot_invite.invitee.picture, size: "100x100", alt: "Profile pic", class: "img-circle" %>
+  </div>
+  <div class="card-middle">
+    <h4>
+      <%= "#{shot_invite.invitee} joined the team working on #{shot_invite.shot.title}"%>
+    </h4>
+    <h5>
+      <%= "invited by shot_invite.inviter "%>
+    </h5>
+    <p>
+
+    </p>
+  </div>
+  <div class="card-right">
+    <%= highfive.created_at.to_date%>
+  </div>
+</div>
