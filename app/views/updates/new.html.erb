@@ -1,6 +1,6 @@
 <div class="page-title">
   <h1>Update <strong><%= @shot.title %></strong></h1>
-  <%= link_to "Back", shots_path, class: "btn btn-right btn-default" %>
+  <%= link_to "Back", shot_path(@shot), class: "btn btn-right btn-default" %>
 </div>
 
 <div class="page-content">
@@ -11,10 +11,10 @@
       <div class="row">
         <div class="col-xs-4">
           <label><%= "Last update" %></label>
-          <input class="form-control" id="disabledInput" type="text" placeholder=<%= "#{@shot.baseline_value}" %> disabled>
+          <input class="form-control" id="disabledInput" type="text" placeholder=<%= "#{@shot.updates.last.current_value}" %> disabled>
         </div>
         <div class="col-xs-4">
-          <%= f.input :current_value, label: 'Update value', placeholder: "#{@shot.baseline_value}" %>
+          <%= f.input :current_value, label: 'Update value', placeholder: "#{@shot.updates.last.current_value}" %>
         </div>
         <div class="col-xs-4">
           <label><%= "Target Value" %></label>
