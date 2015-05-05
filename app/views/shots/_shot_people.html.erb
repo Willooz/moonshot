@@ -11,7 +11,9 @@
   </div>
 
   <div class="card-right">
-    <%= link_to "Give badges", badges_path(@shot, profile.id), class: "btn btn-right btn-primary" %>
+    <% unless current_profile == profile %>
+      <%= link_to "Give badges", badges_path(@shot, profile.id), class: "btn btn-right btn-primary" %>
+    <% end %>
   </div>
 
 </div>

@@ -29,7 +29,6 @@ class ShotInvitesController < ApplicationController
       shot_invite.save
       if shot_invite.save
         flash[:notice] = "You successfully invited new teammates"
-        event = shot_invite.events.create(shot_id: shot.id)
       end
     end
     redirect_to shot_path(shot)

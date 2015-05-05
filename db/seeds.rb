@@ -114,16 +114,18 @@ Profile.create(account_id:    2,
                   role:       "Favored Ally",
                   owner:      false )
 
-shot = Shot.create(title: "Eat a metric ton of cupcakes",
+shot = Shot.create(title: "Eat a ton of cupcakes",
             description: "Loki has hidden tiny soldiers in cupcakes all over America. We need to eat all of them to make sure cupcakes are safe for children to eat.",
             baseline_value: 0,
-            target_value: 200000,
+            target_value: 200,
             deadline: (Time.now + 900000).to_date,
             accomplished: false,
-            account_id: 1
+            account_id: 1,
+            unit: "metric tons"
             )
 
 shot.created_at = Time.now - 1010000
+shot.save
 
 Shot.create(title: "Save all Chinese people",
             description: "Spring rolls are in trouble. Dr. Doom is trying to hypnotize all of China to do his bidding. We have to fly over there and save all of them.",
@@ -131,7 +133,8 @@ Shot.create(title: "Save all Chinese people",
             target_value: 1000000000,
             deadline: (Time.now + 1000000).to_date,
             accomplished: false,
-            account_id: 1
+            account_id: 1,
+            unit: "Chinese saved"
             )
 
 Shot.create(title: "Repair the Stark Tower",
@@ -140,7 +143,8 @@ Shot.create(title: "Repair the Stark Tower",
             target_value: 6,
             deadline: (Time.now + 400000).to_date,
             accomplished: false,
-            account_id: 1
+            account_id: 1,
+            unit: "bricks laid"
             )
 
 Shot.create(title: "Find Loki's Spies",
@@ -149,7 +153,8 @@ Shot.create(title: "Find Loki's Spies",
             target_value: 19,
             deadline: (Time.now + 400000).to_date,
             accomplished: false,
-            account_id: 1
+            account_id: 1,
+            unit: "spies uncovered and punished"
             )
 
 Shot.create(title: "Destroy Magneto's bases",
@@ -158,7 +163,8 @@ Shot.create(title: "Destroy Magneto's bases",
             target_value: 50,
             deadline: (Time.now + 1500000).to_date,
             account_id: 2,
-            accomplished: false
+            accomplished: false,
+            unit: "bases"
             )
 
 ShotInvite.create( shot_id: 1,
@@ -222,6 +228,7 @@ update = Update.create( shot_id: 1,
                 current_value: 15 )
 
 update.created_at = Time.now - 1000000
+update.save
 
 update = Update.create( shot_id: 1,
                 profile_id: 4,
@@ -229,6 +236,7 @@ update = Update.create( shot_id: 1,
                 current_value: 20 )
 
 update.created_at = Time.now - 900000
+update.save
 
 update = Update.create( shot_id: 1,
                 profile_id: 4,
@@ -236,6 +244,7 @@ update = Update.create( shot_id: 1,
                 current_value: 35 )
 
 update.created_at = Time.now - 800000
+update.save
 
 update = Update.create( shot_id: 1,
                 profile_id: 3,
@@ -243,6 +252,7 @@ update = Update.create( shot_id: 1,
                 current_value: 56 )
 
 update.created_at = Time.now - 700000
+update.save
 
 update = Update.create( shot_id: 1,
                 profile_id: 1,
@@ -250,6 +260,7 @@ update = Update.create( shot_id: 1,
                 current_value: 94 )
 
 update.created_at = Time.now - 600000
+update.save
 
 update = Update.create( shot_id: 1,
                 profile_id: 4,
@@ -257,6 +268,7 @@ update = Update.create( shot_id: 1,
                 current_value: 103 )
 
 update.created_at = Time.now - 500000
+update.save
 
 update = Update.create( shot_id: 1,
                 profile_id: 3,
@@ -264,6 +276,7 @@ update = Update.create( shot_id: 1,
                 current_value: 120 )
 
 update.created_at = Time.now - 400000
+update.save
 
 update = Update.create( shot_id: 1,
                 profile_id: 1,
@@ -271,6 +284,7 @@ update = Update.create( shot_id: 1,
                 current_value: 145 )
 
 update.created_at = Time.now - 300000
+update.save
 
 update = Update.create( shot_id: 1,
                 profile_id: 4,
@@ -278,6 +292,7 @@ update = Update.create( shot_id: 1,
                 current_value: 175 )
 
 update.created_at = Time.now - 200000
+update.save
 
 update = Update.create( shot_id: 1,
                 profile_id: 3,
@@ -285,6 +300,7 @@ update = Update.create( shot_id: 1,
                 current_value: 198 )
 
 update.created_at = Time.now - 100000
+update.save
 
 
 Badge.create(
