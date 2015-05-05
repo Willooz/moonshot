@@ -26,9 +26,9 @@
         <%=  render partial: "shots/small_shot", locals: {shot: accepted_shot, invitees: @invitees} %>
       <% end %>
       <% else %>
-      <p>You do not have any shots in progress. Would you like to create a new one?</p>
-      <%= link_to "Create a new shot", new_shot_path, class:"btn btn-primary" %>
-    <% end %>
+        <p>You do not have any shots in progress. Would you like to create a new one?</p>
+        <%= link_to "Create a new shot", new_shot_path, class:"btn btn-primary" %>
+      <% end %>
   </div>
 
 
@@ -39,37 +39,42 @@
             <%=  render partial: "shots/small_shot", locals: {shot: pending_shot} %>
 
             <% pending_shot.shot_invites.where(invitee_id: current_user.id).each do |invite| %>
-
-            <div class="buttons-centered">
-                <%= form_tag(shot_invite_accept_path(pending_shot, invite), method: :patch, remote:true) do  %>
-                <%= hidden_field_tag "shot_invite_id", invite.id %>
-                <%= submit_tag "Accept this invite", id:"accept#{pending_shot.id}", class: "btn btn-primary" %>
-              <% end %>
-
-                <%= form_tag(shot_invite_decline_path(pending_shot, invite), method: :delete, remote:true) do  %>
-                <%= submit_tag "Decline this invite", id:"delete#{pending_shot.id}", class: "btn btn-primary"  %>
-              <% end %>
-            </div>
-
+              <div class="buttons-centered">
+                <div class="submit-tags">
+                  <%= form_tag(shot_invite_accept_path(pending_shot, invite), method: :patch, remote:true) do  %>
+                    <%= hidden_field_tag "shot_invite_id", invite.id %>
+                    <%= submit_tag "Accept", id:"accept#{pending_shot.id}", class: "btn btn-primary" %>
+                  <% end %>
+                </div>
+                <div class="submit-tags">
+                  <%= form_tag(shot_invite_decline_path(pending_shot, invite), method: :delete, remote:true) do  %>
+                    <%= submit_tag "Decline", id:"delete#{pending_shot.id}", class: "btn btn-primary"  %>
+                  <% end %>
+                </div>
+              </div>
           <% end %>
         </div>
-
-    <div class="clear"></div>
-
-      <% end %>
       <% end %>
 
+      <div class="clear"></div>
+
+      <% else %>
+        <div class="page-content">
+          <p> You don't have any pending shots yet.</p>
+        </div>
+      <% end %>
   </div>
 
 
-  <div id="my-badges">
-     <% unless @highfives.empty? %>
+  <div id="my_badges">
+    <% unless @highfives.empty? %>
       <% @badges.each do |badge| %>
         <%= render partial: "people_badges", locals: {badge: badge} %>
       <% end %>
-
     <% else %>
-      <p> Sorry, you do not have any badges yet.</p>
+      <div class="page-content">
+        <p> You don't have any badges yet.</p>
+      </div>
     <% end %>
   </div>
 
