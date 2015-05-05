@@ -40,17 +40,19 @@
 
             <% pending_shot.shot_invites.where(invitee_id: current_user.id).each do |invite| %>
               <div class="buttons-centered">
-                <div class="submit-tags">
+                <ul class="list-inline">
+                <li>
                   <%= form_tag(shot_invite_accept_path(pending_shot, invite), method: :patch, remote:true) do  %>
                     <%= hidden_field_tag "shot_invite_id", invite.id %>
                     <%= submit_tag "Accept", id:"accept#{pending_shot.id}", class: "btn btn-primary" %>
                   <% end %>
-                </div>
-                <div class="submit-tags">
+                  </li>
+                  <li>
                   <%= form_tag(shot_invite_decline_path(pending_shot, invite), method: :delete, remote:true) do  %>
                     <%= submit_tag "Decline", id:"delete#{pending_shot.id}", class: "btn btn-primary"  %>
                   <% end %>
-                </div>
+                  </li>
+               </ul>
               </div>
           <% end %>
         </div>
