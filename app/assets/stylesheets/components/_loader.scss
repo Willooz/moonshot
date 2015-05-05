@@ -4,44 +4,43 @@
   top: -70px;
   position: relative;
   left: 30px;
-
 }
-  .circle-container{
-    width: 100px;
-    height: 100px;
-    // padding:25px 25px 25px 0px;
-    margin: 25px 25px 25px 0px;
-    background: transparent;
-    position: relative;
-    h3 {
-      position: absolute;
-      z-index: 5000;
-      padding-left: 15%;
-      padding-top: 20%;
-      color: white;
-      font-size: 50px;
-      display: none;
-      span {
-        font-size: 20px;
-      }
-    }
-  }
-  .circle{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-image: image-url("moon_small.png");
+
+.circle-container{
+  width: 100px;
+  height: 100px;
+  // padding:25px 25px 25px 0px;
+  margin: 25px 25px 25px 0px;
+  background: transparent;
+  position: relative;
+  h3 {
     position: absolute;
-    overflow: hidden;
-    text-align: center;
-    z-index: 1000;
-
-
-    .bar{
-      height: 100%;
-      position: absolute;
-      top: 0px;
-      background-color: rgba(255, 255, 0, 0.4);
-      z-index: 2000;
+    z-index: 5000;
+    padding-left: 15%;
+    padding-top: 20%;
+    color: white;
+    font-size: 50px;
+    display: none;
+    span {
+      font-size: 20px;
     }
   }
+}
+
+.circle{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-image: image-url("moon_small.png");
+  position: absolute;
+  overflow: hidden;
+  text-align: center;
+  z-index: 1000;
+  .bar{
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    background-color: rgba(255, 255, 0, 0.4);
+    z-index: 2000;
+  }
+}
