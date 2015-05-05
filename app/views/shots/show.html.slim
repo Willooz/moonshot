@@ -15,26 +15,28 @@
     li role="presentation"
       = link_to "TIMELINE", "#", id: "timeline_link"
 
-div id="overview" class="page-content"
-  h2 Objective
-  p
-    span
-      i class="fa fa-bullseye"
-      = " #{@shot.target_value} "
-    span
-      i class="fa fa-calendar"
-      = " #{@shot.deadline}"
-  p = @shot.description
+div id="overview"
+  div class="page-content"
+    h2 Objective
+    p
+      span
+        i class="fa fa-bullseye"
+        = " #{@shot.target_value} "
+      span
+        i class="fa fa-calendar"
+        = " #{@shot.deadline}"
+    p = @shot.description
 
-  h2 Team
-  .team
-    - @invitees.each do |invitee|
-      = link_to people_show_path(invitee)
-        = image_tag(invitee.user.picture.url, size: "50x50", class: "img-circle")
-    - if @profile.shots.include?(@shot)
-      = link_to "Invite a new mate", new_shot_invite_path, class: "btn btn-right btn-primary"
+    h2 Team
+    .team
+      - @invitees.each do |invitee|
+        = link_to people_show_path(invitee)
+          = image_tag(invitee.user.picture.url, size: "50x50", class: "img-circle")
+      - if @profile.shots.include?(@shot)
+        = link_to "Invite a new mate", new_shot_invite_path, class: "btn btn-right btn-primary"
 
-  h2 Status
+    h2 Status
+
   .graph
     .graph-left
       h2 = "#{@shot.latest_value}"
@@ -45,8 +47,7 @@ div id="people"
     = render partial: "shot_people", locals: { profile: profile }
 
 div id="timeline"
-  - @shot.updates.each do |update|
-    = render partial: "shot_timeline", locals: { update: update }
+  = render partial: "shot_timeline", locals: { events: @shot.events.order(created_at: :desc) }
 
 
 

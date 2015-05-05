@@ -16,11 +16,11 @@
     </p>
   </div>
   <div class="card-right">
-    <% if shot.invitees.count > 4 %>
-      <p> +<%= (shot.invitees.count - 4) %></p>
+    <% if shot.invitees.count > 3 %>
+      <p> +<%= (shot.invitees.count - 3) %></p>
     <% end %>
 
-    <% shot.invitees.take(4).each do |invitee| %>
+    <% shot.invitees.take(3).each do |invitee| %>
       <%= image_tag(invitee.user.picture.url, size: "50x50", class: "img-circle") %>
     <% end %>
   </div>

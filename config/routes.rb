@@ -45,7 +45,7 @@ Rails.application.routes.draw do
   post 'shots/:id/invite_many', to: 'shot_invites#create_many', as: :shot_invite_create_many
   patch 'shots/:id/accept', to: 'shot_invites#update', as: :shot_invite_accept
   delete 'shots/:id/decline', to: 'shot_invites#destroy', as: :shot_invite_decline
-  get 'event/index', to: 'events#index'
+  get 'feed', to: 'events#index'
 
 
 
