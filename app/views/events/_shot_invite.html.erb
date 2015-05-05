@@ -1,19 +1,13 @@
-<div class="list-card linked-card">
-  <div class="card-left accepted-invite">
+<div class="list-card shot-join linked-card">
+  <div class="card-left">
     <%= image_tag shot_invite.invitee.user.picture, size: "100x100", alt: "Profile pic", class: "img-circle" %>
   </div>
   <div class="card-middle">
-    <h5>
-      <%= "#{shot_invite.invitee.name} joined the team working on #{shot_invite.shot.title}"%>
-    </h5>
-    <h5>
-      <%= "invited by #{shot_invite.inviter.name}."%>
-    </h5>
+    <h4><%= link_to "New shot member", shot_path(shot_invite.shot), class: "label label-warning" %></h4>
     <p>
-
+      <%= "#{shot_invite.invitee.name} joined the team working on " %><strong><%= shot_invite.shot.title %></strong>
+      <br>
+      <span class="subtext"><i class="fa fa-calendar"></i> <%= shot_invite.updated_at.strftime("on %m/%d at %I:%M%p") %></span>
     </p>
-  </div>
-  <div class="card-right">
-    <%= image_tag(shot_invite.inviter.user.picture.url, size: "50x50", class: "img-circle") %>
   </div>
 </div>

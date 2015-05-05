@@ -13,14 +13,17 @@
     margin: 25px 25px 25px 0px;
     background: transparent;
     position: relative;
-    h3{
+    h3 {
       position: absolute;
       z-index: 5000;
-      padding-left: 25%;
-      padding-top: 40%;
+      padding-left: 15%;
+      padding-top: 20%;
       color: white;
-      font-size: 20px;
+      font-size: 50px;
       display: none;
+      span {
+        font-size: 20px;
+      }
     }
   }
   .circle{

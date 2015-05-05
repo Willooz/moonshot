@@ -1,19 +1,14 @@
-<div class="list-card linked-card">
-  <div class="card-left highfive">
-    <%= image_tag highfive.badge.picture, size: "100x100", alt: "Badge", class: "img-circle" %>
+<div class="list-card shot-highfive linked-card">
+  <div class="card-left">
+      <%= image_tag highfive.receiver.user.picture, size: "100x100", alt: "Profile Picture", class: "img-circle" %>
   </div>
   <div class="card-middle">
     <h4>
-      <%= "#{highfive.giver.name} gave a badge to #{highfive.receiver.name}"%>
-    </h4>
-    <h5>
-      <%= "for his work on #{highfive.shot.title}"%>
-    </h5>
+      <%= link_to "New Badge", people_show_path(highfive.receiver), class: "label label-info" %></h4>
     <p>
-
+      <%= "#{highfive.receiver.name} received the badge " %><strong><%= highfive.badge.title %></strong><%= " from #{highfive.giver.name}" %>
+      <br>
+      <span class="subtext"><i class="fa fa-calendar"></i> <%= highfive.created_at.strftime("on %m/%d at %I:%M%p") %></span>
     </p>
-  </div>
-  <div class="card-right">
-    <%= highfive.created_at.to_date%>
   </div>
 </div>
