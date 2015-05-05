@@ -6,8 +6,7 @@
  * ------------------------------------- */
 
 body {
-  background: image-url("darkpurple_gradient.png") no-repeat fixed center;
-  // $base-moonshot;
+  background: $background;
   color: $gray;
   font-family: $font-family-base;
   font-size: $base-size;

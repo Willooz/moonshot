@@ -1,7 +1,11 @@
 <div class="list-card linked-card">
   <div class="card-left">
     <div class="circle-container">
-      <h3><%= "#{shot.percentage_done}" %><span> % </span></h3>
+      <% if shot.percentage_done < 10 %>
+        <h3>&nbsp;<%= "#{shot.percentage_done}" %><span> % </span></h3>
+      <% else %>
+        <h3><%= "#{shot.percentage_done}" %><span> % </span></h3>
+      <% end %>
       <div class="circle" %>>
         <%= content_tag(:div, nil, class: "bar", data: {completion_rate: "#{shot.percentage_done}"}) %>
       </div>

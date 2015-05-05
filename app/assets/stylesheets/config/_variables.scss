@@ -25,12 +25,23 @@ $orange: #E67E22;
 $green: #32B796;
 $purple: #6452BD;
 
+// tchret theme
+// $special-text-color: #FF648D;  /*Bright Red-Pink*/
+// $light-text-color: #5894DA;  /*Light Ocean Blue*/
+// $dark-text-color: #35516B;  /*Dark Ocean Blue*/
+// $light-bg-color: #F7EEFC;
+// $dark-bg-color: #322468;
+// $background: white;
+
+
 // Light Blue Scheme
 // $special-text-color: #FF648D;  /* Bright Red-Pink */
-// $light-text-color: #5894DA;  Light Ocean Blue
-// $dark-text-color: #35516B;  /* Dark Ocean Blue */
+// $light-text-color: #5894DA;  /*Light Ocean Blue*/
+// $dark-text-color: #35516B;
 // $light-bg-color: #A1DEEE;
 // $dark-bg-color: #71B1C7;
+// $background: image-url("lightblue_gradient.png") no-repeat fixed center;
+
 
 // Dark Purple Scheme
 $special-text-color: #FF6464;  /* Light Orange-Red */
@@ -38,6 +49,7 @@ $light-text-color: #BC91ED;  /* Light Mauve */
 $dark-text-color: #58356B;  /* Dark Ocean Blue */
 $light-bg-color: #BC82D7;
 $dark-bg-color: #322468;
+$background: image-url("darkpurple_gradient.png") no-repeat fixed center;
 
 
 // Gray scale
