@@ -18,8 +18,8 @@
 
         <ul class="list-inline super-nav">
           <% if user_signed_in? %>
-            <%= link_to me_shots_path do %>
-              <li><span>MY SHOTS</span></li>
+            <%= link_to feed_path do %>
+              <li><span>ACTIVITY FEED</span></li>
             <% end %>
             <%= link_to shots_path do %>
               <li><span>SHOTS</span></li>

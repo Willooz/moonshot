@@ -1,8 +1,6 @@
 <div class="page-title">
-<!--   <div id="profile-picture">
-    <%= image_tag @user.picture.url %>
-  </div> -->
-  <div id="profile-details"><h1> <%= @user.name %> </h1></div>
+  <%= image_tag @user.picture.url, size: "50x50", class: "img-circle" %>
+  <h1> <%= @user.name.upcase %> </h1>
   <%= link_to "Invite to a shot", invite_teammember_path(@profile), class: "btn btn-right btn-primary" %>
   <div class="clear"></div>
 </div>
@@ -22,20 +20,12 @@
 </div>
 
 <div id="badges">
+  <%= link_to "Give badges", give_badges_path(params[:id]), class: "btn btn-right btn-primary" %>
   <% unless @highfives.empty? %>
-    <%= link_to "Give badges", give_badges_path(params[:id]), class: "btn btn-right btn-primary" %>
       <% @badges.each do |badge| %>
-        <div class=<%= "padded badge#{badge.id}"%>>
-          <div class="badge-image" data-toggle="popover" data-trigger="hover" title="<%= badge.title %>" data-content="<%= render partial: 'popover', locals: {badge: badge}%>">
-            <%= image_tag badge.picture, size: "100x100" %>
-          </div>
-          <div class="badge-text"> x<%= badge.highfives.where("receiver_id = ?", @profile.id).count %></div>
-          <div class="clear"></div>
-        </div>
+        <%= render partial: "people_badges", locals: {badge: badge} %>
       <% end %>
-
   <% else %>
-    <%= link_to "Give badges", give_badges_path(params[:id]), class: "btn btn-right btn-primary" %>
     <p> This user does not have any badges yet. Do you want to give him any?</p>
   <% end %>
 

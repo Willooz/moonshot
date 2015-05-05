@@ -9,6 +9,10 @@
     display: block;
     float: left;
   }
+  img {
+    margin: -5px 20px 0px 0px;
+    float: left;
+  }
 }
 
 .page-menu {
@@ -24,7 +28,7 @@
 
 .page-content {
   width: 100%;
-  padding: 50px;
+  padding: 20px 50px;
 }
 
 .page-foot {
