@@ -1,16 +1,20 @@
-<h1>Events#index</h1>
-<p>Find me in app/views/events/index.html.erb</p>
+<div class="page-title">
+  <h1>Moonshot feed of <%= @account.name %></h1>
+</div>
 
 <% @events.each do |event| %>
   <% case event.trigger_type %>
     <% when "Highfive" %>
       <%= render partial: 'highfive', locals: { highfive: event.trigger } %>
     <% when "ShotInvite" %>
-      <p>Shot Invites! Come and play</p>
+      <%= render partial: 'shot_invite', locals: { shot_invite: event.trigger } %>
     <% when "Update" %>
-      <p>Shot was updated!</p>
+      <%= render partial: 'update', locals: { update: event.trigger } %>
     <% when "Shot" %>
-      <p>New shot!</p>
+      <%= render partial: 'shot_creation', locals: { shot: event.trigger } %>
   <% end %>
-
 <% end %>
+
+<div class="page-foot">
+  <%= link_to "Back to top", "#title", class: "btn btn-default" %>
+</div>

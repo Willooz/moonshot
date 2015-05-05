@@ -9,44 +9,45 @@
 .page-menu
   ul class="nav nav-tabs"
     li role="presentation" class="active"
-      = link_to "Overview", "#", id: "overview_link"
+      = link_to "OVERVIEW", "#", id: "overview_link"
     li role="presentation"
-      = link_to "Team badges", "#", id: "people_link"
+      = link_to "TEAM", "#", id: "people_link"
     li role="presentation"
-      = link_to "Timeline", "#", id: "timeline_link"
+      = link_to "TIMELINE", "#", id: "timeline_link"
 
-div id="overview" class="page-content"
-  h2 Objective
-  p
-    span
-      i class="fa fa-bullseye"
-      = " #{@shot.target_value} "
-    span
-      i class="fa fa-calendar"
-      = " #{@shot.deadline}"
-  p = @shot.description
+div id="overview"
+  div class="page-content"
+    h2 Objective
+    p
+      span
+        i class="fa fa-bullseye"
+        = " #{@shot.target_value} "
+      span
+        i class="fa fa-calendar"
+        = " #{@shot.deadline}"
+    p = @shot.description
 
-  h2 Team
-  .team
-    - @invitees.each do |invitee|
-      = link_to people_show_path(invitee)
-        = image_tag(invitee.user.picture.url, size: "50x50", class: "img-circle")
-    - if @profile.shots.include?(@shot)
-      = link_to "Invite a new mate", new_shot_invite_path, class: "btn btn-right btn-primary"
+    h2 Team
+    .team
+      - @invitees.each do |invitee|
+        = link_to people_show_path(invitee)
+          = image_tag(invitee.user.picture.url, size: "50x50", class: "img-circle")
+      - if @profile.shots.include?(@shot)
+        = link_to "Invite a new mate", new_shot_invite_path, class: "btn btn-right btn-primary"
 
-  h2 Status
+    h2 Status
+
   .graph
     .graph-left
       h2 = "#{@shot.latest_value}"
     .graph-right
 
-div id="people" class="page-content"
+div id="people"
   - @shot.invitees.each do |profile|
     = render partial: "shot_people", locals: { profile: profile }
 
-div id="timeline" class="page-content"
-  - @shot.updates.each do |update|
-    = render partial: "shot_timeline", locals: { update: update }
+div id="timeline"
+  = render partial: "shot_timeline", locals: { events: @shot.events.order(created_at: :desc) }
 
 
 

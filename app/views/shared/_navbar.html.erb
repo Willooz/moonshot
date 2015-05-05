@@ -18,8 +18,8 @@
 
         <ul class="list-inline super-nav">
           <% if user_signed_in? %>
-            <%= link_to me_shots_path do %>
-              <li><span>MY SHOTS</span></li>
+            <%= link_to feed_path do %>
+              <li><span>ACTIVITY FEED</span></li>
             <% end %>
             <%= link_to shots_path do %>
               <li><span>SHOTS</span></li>
@@ -46,12 +46,12 @@
                 </li>
                 <li>
                   <%= link_to me_path do %>
-                    <i class="fa fa-user"></i> <%= t ".profile", default: "Profile settings" %>
+                    <i class="fa fa-user"></i> Profile settings
                   <% end %>
                 </li>
                 <li>
                   <%= link_to account_path do %>
-                    <i class="fa fa-home"></i>  <%= t ".profile", default: "Account Settings" %>
+                    <i class="fa fa-home"></i> Account settings
                   <% end %>
                 </li>
                 <li>

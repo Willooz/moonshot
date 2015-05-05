@@ -1,0 +1,23 @@
+<div class="list-card">
+  <div class="card-left">
+    <div class="badge-image" data-toggle="popover" data-trigger="hover" title="<%= badge.title %>" data-content="<%= render partial: 'profiles/popover', locals: {badge: badge}%>">
+      <%= image_tag badge.picture, size: "100x100", class: "img-circle" %>
+    </div>
+  </div>
+
+  <div class="card-middle">
+    <div class="badge-text"> x<%= badge.highfives.where("receiver_id = ?", @profile.id).count %></div>
+  </div>
+
+  <div class="card-right">
+  </div>
+</div>
+
+
+
+<!-- <div class=<%= "padded badge#{badge.id}"%>>
+
+
+  <div class="clear"></div>
+</div>
+ -->

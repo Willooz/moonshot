@@ -1,0 +1,51 @@
+.list-card {
+  margin: 0;
+  width: 100%;
+  height: 150px;
+  padding: 0px 50px;
+  border-bottom: 1px solid $gray-lighter;
+  // background: LightCoral;
+  .card-left {
+    width: 125px;
+    height: 100%;
+    float: left;
+    display: inline-block;
+    // background: LightBlue;
+    img {
+      margin: 25px 25px 25px 0px;
+    }
+  }
+  .card-middle {
+    height: 100%;
+    width: 525px;
+    float: left;
+    padding: 35px 0px;
+    display: inline-block;
+    // background: LightGreen;
+    span {
+      margin-right: 20px;
+    }
+    img {
+      margin: 15px 0px;
+    }
+  }
+  .card-right {
+    height: 100%;
+    width: 250px;
+    display: inline-block;
+    // background: LightCoral;
+    img {
+      margin: 50px 0px 50px 10px;
+      float: right;
+    }
+    p {
+      margin: 50px 0px;
+      display: inline-block;
+      float: right;
+    }
+    .btn {
+      margin: 50px 0px;
+      float: right;
+    }
+  }
+}

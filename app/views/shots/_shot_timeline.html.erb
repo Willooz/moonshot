@@ -1,15 +1,12 @@
-<div class="list-card">
-
-  <div class="card-left">
-    <p>Something ?</p>
-  </div>
-
-  <div class="card-middle">
-    <h4><%= update.description %></h4>
-  </div>
-
-  <div class="card-right">
-    <p>Something ?</p>
-  </div>
-
-</div>
+<% events.each do |event| %>
+  <% case event.trigger_type %>
+    <% when "Highfive" %>
+      <%= render partial: 'events/highfive', locals: { highfive: event.trigger } %>
+    <% when "ShotInvite" %>
+      <%= render partial: 'events/shot_invite', locals: { shot_invite: event.trigger } %>
+    <% when "Update" %>
+      <%= render partial: 'events/update', locals: { update: event.trigger } %>
+    <% when "Shot" %>
+      <%= render partial: 'events/shot_creation', locals: { shot: event.trigger } %>
+  <% end %>
+<% end %>
