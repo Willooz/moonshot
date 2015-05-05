@@ -1,0 +1,10 @@
+<div class="circle-container">
+  <% if percentage < 10 %>
+    <h3>&nbsp;<%= "#{percentage}" %><span> % </span></h3>
+  <% else %>
+    <h3><%= "#{percentage}" %><span> % </span></h3>
+  <% end %>
+    <div class="circle" %>>
+    <%= content_tag(:div, nil, class: "bar", data: {completion_rate: "#{percentage}"}) %>
+  </div>
+</div>

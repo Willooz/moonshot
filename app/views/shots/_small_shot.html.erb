@@ -1,15 +1,6 @@
 <div class="list-card linked-card">
   <div class="card-left">
-    <div class="circle-container">
-      <% if shot.percentage_done < 10 %>
-        <h3>&nbsp;<%= "#{shot.percentage_done}" %><span> % </span></h3>
-      <% else %>
-        <h3><%= "#{shot.percentage_done}" %><span> % </span></h3>
-      <% end %>
-      <div class="circle" %>>
-        <%= content_tag(:div, nil, class: "bar", data: {completion_rate: "#{shot.percentage_done}"}) %>
-      </div>
-    </div>
+    <%= render partial: "loader", locals: { percentage: shot.percentage_done } %>
   </div>
   <div class="card-middle">
     <h4>
