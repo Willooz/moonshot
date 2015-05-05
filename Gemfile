@@ -13,6 +13,8 @@ gem "pundit"
 gem "paperclip"
 gem "aws-sdk", "< 2.0"
 gem "chartkick"
+gem 'groupdate'
+gem 'active_median'
 
 gem "jquery-rails"
 gem "sass-rails", "~> 5.0"
