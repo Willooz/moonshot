@@ -9,6 +9,11 @@ class ShotsController < ApplicationController
         @invitees << invite.invitee
       end
     end
+    @data = {}
+    @data[@shot.created_at] = @shot.baseline_value
+    @shot.updates.each do |update|
+      @data[update.created_at] = update.current_value
+    end
   end
 
   def index

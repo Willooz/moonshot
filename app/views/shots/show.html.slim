@@ -38,9 +38,7 @@ div id="overview"
     h2 Status
 
   .graph
-    .graph-left
-      h2 = render partial: "graph", locals: { shot: @shot }
-    .graph-right
+    = render "graph", data: @data, shot: @shot
 
 div id="people"
   - @shot.invitees.each do |profile|
