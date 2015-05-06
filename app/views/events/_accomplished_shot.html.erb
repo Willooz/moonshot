@@ -9,16 +9,4 @@
       <%= "#{profile.name} just completed the " %><strong><%= shot.title %></strong> shot! Bravo  to the team!
     </p>
   </div>
-  <div class="card-right">
-    <% if shot.invitees.count > 3 %>
-      <% shot.invitees.take(3).each do |invitee| %>
-        <%= image_tag invitee.user.picture(:thumb), size: "50x50", alt: "Profile picture", class: "img-circle" %>
-      <% end %>
-      <h3> + <%= shot.invitees.count - 3 %> </h3>
-    <% else %>
-      <% shot.invitees.each do |invitee| %>
-        <%= image_tag invitee.user.picture(:thumb), size: "50x50", alt: "Profile picture", class: "img-circle" %>
-      <% end %>
-    <% end %>
-  </div>
 </div>
