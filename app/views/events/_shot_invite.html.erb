@@ -2,7 +2,7 @@
   <div class="card-left">
     <%= image_tag shot_invite.invitee.user.picture, size: "100x100", alt: "Profile pic", class: "img-circle" %>
   </div>
-  <div class="card-middle">
+  <div class="card-feed">
     <h4><%= link_to "New shot member", shot_path(shot_invite.shot), class: "label label-warning" %></h4>
     <p>
       <%= "#{shot_invite.invitee.name} joined the team working on " %><strong><%= shot_invite.shot.title %></strong>
