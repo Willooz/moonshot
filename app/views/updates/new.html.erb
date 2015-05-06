@@ -5,9 +5,12 @@
 
 <div class="page-content">
   <%= simple_form_for(@update, method: :post, url: new_update_path) do |f| %>
-    <%= f.error_notification %>
-    <%= f.input :description %>
     <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12">
+          <%= f.error_notification %>
+        </div>
+      </div>
       <div class="row">
         <div class="col-xs-4">
           <label><%= "Last update" %></label>
@@ -22,10 +25,19 @@
         </div>
       </div>
     </div>
-    <%= f.hidden_field :profile_id, value: current_user.profiles.first.id %>
-    <%= f.hidden_field :shot_id, value: @shot.id %>
-    <br>
-    <%= f.button :submit, "Update shot", class: "btn btn-primary" %>
+    <div class="row">
+      <div class="col-xs-12">
+        <%= f.input :description, placeholder: "Write a few words about this update..." %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 centered">
+        <%= f.hidden_field :profile_id, value: current_user.profiles.first.id %>
+        <%= f.hidden_field :shot_id, value: @shot.id %>
+        <br>
+        <%= f.button :submit, "Update shot", class: "btn btn-primary" %>
+      </div>
+    </div>
   <% end %>
 </div>
 
