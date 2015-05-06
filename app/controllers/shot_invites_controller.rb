@@ -40,7 +40,9 @@ class ShotInvitesController < ApplicationController
   def update
     @invite = ShotInvite.find(params[:shot_invite_id])
     @invite.update_attribute(:in_team, true)
-    @invite.events.create(shot_id: params[:shot_id])
+    @shot = Shot.find(params[:shot_id])
+    event = @invite.events.new(shot: @shot)
+    event.save!
 
   end
 

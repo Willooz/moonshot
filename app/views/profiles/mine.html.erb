@@ -44,6 +44,7 @@
                 <li>
                   <%= form_tag(shot_invite_accept_path(pending_shot, invite), method: :patch, remote:true) do  %>
                     <%= hidden_field_tag "shot_invite_id", invite.id %>
+                    <%= hidden_field_tag "shot_id", pending_shot.id %>
                     <%= submit_tag "Accept", id:"accept#{pending_shot.id}", class: "btn btn-primary" %>
                   <% end %>
                   </li>
