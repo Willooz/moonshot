@@ -41,9 +41,7 @@ class ShotInvitesController < ApplicationController
     @invite = ShotInvite.find(params[:shot_invite_id])
     @invite.update_attribute(:in_team, true)
     @shot = Shot.find(params[:shot_id])
-    event = @invite.events.new(shot: @shot)
-    event.save!
-
+    event = @invite.events.create!(shot: @shot)
   end
 
   def destroy

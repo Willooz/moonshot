@@ -6,7 +6,7 @@
     <h4>
       <%= link_to "New shot!", shot_path(shot), class: "label label-primary" %></h4>
     <p>
-      <%= "#{shot.invitees.first.name} started a new shot " %><strong><%= shot.title %></strong>
+      <%= "#{shot.shot_invites.first.invitee.name} started a new shot " %><strong><%= shot.title %></strong>
       <br>
       <span class="subtext"><i class="fa fa-calendar"></i> <%= shot.created_at.strftime("on %m/%d at %I:%M%p") %></span>
     </p>
