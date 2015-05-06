@@ -5,20 +5,24 @@
 
 // Typography and background
 $font-family-sans-serif:  $font-family-base;
-$body-bg:                 lighten(#000, 93.5%);
 $font-size-base:          $base-size;
 $line-height-base:        $base-height;
 $headings-font-family:    $font-family-head;
 
 // Semantic color scheme
-$brand-primary:   $dark-text-color;
+$brand-primary:   $special;
 $brand-success:   $green;
 $brand-info:      $blue;
 $brand-danger:    $red;
 $brand-warning:   $orange;
-$brand-white:     white;
+$brand-white:     $white;
 $base-moonshot: #282058;
-$btn-default-color: $gray-light;
+
+
+// Default Buttons
+$btn-default-color: $light-text-color;
+$btn-default-bg: $white;
+$btn-default-border: $light-text-color;
 
 // General radius (for buttons, inputs, popover...)
 $border-radius-base: $box-corner-radius;
@@ -33,8 +37,15 @@ $link-color: $dark-text-color;
 // Grid padding
 $grid-gutter-width: 15px;
 
-// Navs padding
+// Nav tabs
 $nav-link-padding: 10px 24px;
+$nav-tabs-border-color: $light-text-color;
+$nav-tabs-link-hover-border-color: $hover-color;
+$nav-tabs-active-link-hover-border-color: $light-text-color;
+$nav-tabs-active-link-hover-bg: $white;
+$nav-tabs-active-link-hover-color: $special;
+
+
 
 // Dropdowns
 $dropdown-link-color: $gray-light;

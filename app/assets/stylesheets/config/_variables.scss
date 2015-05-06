@@ -33,16 +33,19 @@ $purple: #6452BD;
 // $dark-bg-color: #322468;
 // $background: white;
 
-$spindle: #B7C8DB;
-$san-juan: #35516B;
-$hopbush: #CB6999;
+$primary: #C6CBDA;
+$dark-primary: #C6C0D3;
+$special: #FF815C;
+$white: #FFFFFF;
+
 // Light Blue Scheme
-$special-text-color: $hopbush;
-$light-text-color: $spindle;
-$dark-text-color: $san-juan;
-$hover-color: lighten($spindle, 15%);
-$dark-bg-color: $spindle;
-$background: $spindle;
+$special-text-color: $special;
+$light-text-color: $primary;
+$dark-text-color: darken($primary, 40%);
+
+$hover-color: lighten($primary, 15%);
+$dark-bg-color: $dark-primary;
+$background: $primary;
 
 
 

@@ -5,7 +5,7 @@ $navbar-color: $light-text-color;
 $navbar-hover-color: $dark-text-color;
 $navbar-font-size: 18px;
 $navbar-letter-spacing: $letter-spacing;
-$navbar-bg: white;
+$navbar-bg: $white;
 
 /* -------------------------------------
  * Box model
@@ -58,23 +58,23 @@ $navbar-profile-radius: 50%;
     margin-right: 20px;
     margin-bottom: 0px;
     padding-top: -10px;
-    border-bottom: 5px solid transparent;
+    // border-bottom: 5px solid transparent;
     display: inline-block;
     font-family: $font-family-title;
-    // span{
-    //   padding: 10px 10px;
-    //   border-radius: 3px;
-    //   transition: background-color 0.1s ease;
-    // }
+    span{
+      padding: 10px 10px;
+      border-radius: 3px;
+      transition: background-color 0.1s ease;
+    }
 
     transition: border-bottom 0.1s ease;
-    transition: color 0.3s ease;
+    transition: color 0.1s ease;
     &:hover {
-      border-bottom: 5px solid $special-text-color;
-      // color: white;
-      // span{
-      //   background-color: $dark-bg-color;
-      // }
+      // border-bottom: 5px solid $special-text-color;
+      color: $dark-text-color;
+      span{
+        background-color: $light-text-color;
+      }
 
     }
   }
