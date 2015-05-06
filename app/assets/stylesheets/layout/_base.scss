@@ -51,9 +51,7 @@ h3 {
 }
 
 .alert {
-  margin-left: auto;
-  margin-right: auto;
-  width: 1000px;
+  width: 100%;
   border-radius: $box-corner-radius;
 }
 
@@ -131,4 +129,9 @@ h3 {
   padding: 10px;
   display: inline;
 
+}
+
+.flashes {
+  margin: 0 auto;
+  width: 1000px;
 }

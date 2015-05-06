@@ -33,17 +33,20 @@ class ShotsController < ApplicationController
   def create
     @shot = Shot.new(shot_params)
     @shot[:account_id] = current_account.id
-    @shot.save
-    @shot.events.create(trigger: @shot)
-
-    new_shot_invite = @shot.shot_invites.build(
-      inviter: current_profile,
-      invitee: current_profile,
-      in_team: true
-      )
-    new_shot_invite.save
-    flash[:notice] = "Shot successfully created"
-    redirect_to shots_path
+    if @shot.save
+      new_shot_invite = @shot.shot_invites.build(
+        inviter: current_profile,
+        invitee: current_profile,
+        in_team: true
+        )
+      new_shot_invite.save
+      event = @shot.events.create(trigger: @shot)
+      flash[:notice] = "Shot successfully created."
+      redirect_to shots_path
+    else
+      flash[:alert] = "Oups, something went wrong, please try again."
+      render 'new'
+    end
   end
 
   def edit
