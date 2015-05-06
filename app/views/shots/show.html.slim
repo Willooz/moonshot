@@ -19,10 +19,10 @@ div id="overview"
   div class="page-content"
     h2 Objective
     p
-      span
+      span class="iconified"
         i class="fa fa-bullseye"
-        = " #{@shot.target_value} "
-      span
+        = " #{@shot.target_value} #{@shot.unit}"
+      span class="iconified"
         i class="fa fa-calendar"
         = " #{@shot.deadline}"
     p = @shot.description
@@ -34,8 +34,6 @@ div id="overview"
           = image_tag(invitee.user.picture.url, size: "50x50", class: "img-circle")
       - if @profile.shots.include?(@shot)
         = link_to "Invite a new mate", new_shot_invite_path, class: "btn btn-right btn-primary"
-
-    h2 Status
 
   .graph
     = render "graph", data: @data, shot: @shot

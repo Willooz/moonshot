@@ -312,7 +312,7 @@ Badge.create(
 Badge.create(
     title: "Diplomat",
     description: "Someone who built bridges and reconciled differences",
-    picture: "badges/original/diplomat.png"
+    picture: "badges/diplomat.png"
   )
 
 Badge.create(

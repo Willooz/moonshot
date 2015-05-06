@@ -58,23 +58,23 @@ $navbar-profile-radius: 50%;
     margin-right: 20px;
     margin-bottom: 0px;
     padding-top: -10px;
-    border-bottom: 3px solid transparent;
+    border-bottom: 5px solid transparent;
     display: inline-block;
     font-family: $font-family-title;
-    span{
-      padding: 10px 10px;
-      border-radius: 3px;
-      transition: background-color 0.3s ease;
-    }
+    // span{
+    //   padding: 10px 10px;
+    //   border-radius: 3px;
+    //   transition: background-color 0.1s ease;
+    // }
 
-    transition: border-bottom 0.3s ease;
+    transition: border-bottom 0.1s ease;
     transition: color 0.3s ease;
     &:hover {
-      border-bottom: 3px solid $gray-lighter;
-      color: white;
-      span{
-        background-color: $dark-bg-color;
-      }
+      border-bottom: 5px solid $special-text-color;
+      // color: white;
+      // span{
+      //   background-color: $dark-bg-color;
+      // }
 
     }
   }
