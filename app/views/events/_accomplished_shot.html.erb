@@ -11,16 +11,4 @@
       <span class="subtext"><i class="fa fa-calendar"></i> <%= update.created_at.strftime("on %m/%d at %I:%M%p") %></span>
     </p>
   </div>
-  <div class="card-right">
-    <% if update.shot.invitees.count > 3 %>
-      <% update.shot.invitees.take(3).each do |invitee| %>
-        <%= image_tag invitee.user.picture(:thumb), size: "50x50", alt: "Profile picture", class: "img-circle" %>
-      <% end %>
-      <h3> + <%= update.shot.invitees.count - 3 %> </h3>
-    <% else %>
-      <% update.shot.invitees.each do |invitee| %>
-        <%= image_tag invitee.user.picture(:thumb), size: "50x50", alt: "Profile picture", class: "img-circle" %>
-      <% end %>
-    <% end %>
-  </div>
 </div>
