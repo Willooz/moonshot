@@ -1,9 +1,13 @@
 /* -------------------------------------
  * You killer button SASS module
  * ------------------------------------- */
- .btn {
+.btn {
   font-family: $font-family-button;
   font-size: $button-size;
   letter-spacing: $letter-spacing;
   padding: 10px 16px;
+}
+
+.iconified {
+  margin-right: 15px;
 }
