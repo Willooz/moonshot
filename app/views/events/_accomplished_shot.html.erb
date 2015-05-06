@@ -1,0 +1,24 @@
+<div class="list-card shot-creation linked-card">
+  <div class="card-left">
+      <%= image_tag "jim.gif", size: "100x100", alt: "Jim's victorious dance", class: "img-circle" %>
+  </div>
+  <div class="card-middle">
+    <h4>
+      <%= link_to "Shot accomplished!", shot_path(shot), class: "label label-danger" %></h4>
+    <p>
+      <%= "#{profile.name} just completed the " %><strong><%= shot.title %></strong> shot! Bravo  to the team!
+    </p>
+  </div>
+  <div class="card-right">
+    <% if shot.invitees.count > 3 %>
+      <% shot.invitees.take(3).each do |invitee| %>
+        <%= image_tag invitee.user.picture(:thumb), size: "50x50", alt: "Profile picture", class: "img-circle" %>
+      <% end %>
+      <h3> + <%= shot.invitees.count - 3 %> </h3>
+    <% else %>
+      <% shot.invitees.each do |invitee| %>
+        <%= image_tag invitee.user.picture(:thumb), size: "50x50", alt: "Profile picture", class: "img-circle" %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

@@ -7,6 +7,11 @@ class UpdatesController < ApplicationController
   def create
     @update = Update.create(update_params)
     @shot = Shot.find(params[:id])
+    if @shot.target_value > @shot.baseline_value
+      @shot.accomplished = true if @update.current_value >= @shot.target_value
+    else
+      @shot.accomplished = true if @update.current_value <= @shot.target_value
+    end
     @account = current_account
     @update.events.create(shot_id: @shot.id)
     redirect_to shot_path(@shot)
