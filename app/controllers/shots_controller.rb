@@ -17,7 +17,7 @@ class ShotsController < ApplicationController
   end
 
   def index
-    @shots = current_account.shots
+    @shots = current_account.shots.order(created_at: :desc)
     @account = current_account
     @profile = current_profile
   end
