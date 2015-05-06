@@ -14,14 +14,23 @@
       <div class="row">
         <div class="col-xs-4">
           <label><%= "Last update" %></label>
-          <input class="form-control" id="disabledInput" type="text" placeholder=<%= "#{@shot.updates.last.current_value}" %> disabled>
+          <% if @shot.updates.any? %>
+            <input class="form-control" id="disabledInput" type="text" placeholder=<%= "#{@shot.updates.last.current_value} #{@shot.unit}" %> disabled>
+          <% else %>
+            <input class="form-control" id="disabledInput" type="text" placeholder=<%= "#{@shot.baseline_value} #{@shot.unit}" %> disabled>
+          <% end %>
         </div>
+
         <div class="col-xs-4">
-          <%= f.input :current_value, label: 'Update value', placeholder: "#{@shot.updates.last.current_value}" %>
+          <% if @shot.updates.any? %>
+            <%= f.input :current_value, label: 'Update value', placeholder: "#{@shot.updates.last.current_value}" %>
+          <% else %>
+            <%= f.input :current_value, label: 'Update value', placeholder: "#{@shot.baseline_value}" %>
+          <% end %>
         </div>
         <div class="col-xs-4">
           <label><%= "Target Value" %></label>
-          <input class="form-control" id="disabledInput" type="text" placeholder=<%= "#{@shot.target_value}" %> disabled>
+          <input class="form-control" id="disabledInput" type="text" placeholder=<%= "#{@shot.target_value } #{@shot.unit}" %> disabled>
         </div>
       </div>
     </div>
