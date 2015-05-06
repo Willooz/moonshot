@@ -10,7 +10,7 @@
       <%= render partial: 'shot_invite', locals: { shot_invite: event.trigger } %>
     <% when "Update" %>
       <% if event.trigger.current_value == event.shot.target_value %>
-        <%= render partial: 'accomplished_shot', locals: { shot: event.shot, profile: event.trigger.profile } %>
+        <%= render partial: 'accomplished_shot', locals: { update: event.trigger } %>
       <% else %>
        <%= render partial: 'update', locals: { update: event.trigger } %>
       <% end %>
