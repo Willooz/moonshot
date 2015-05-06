@@ -48,5 +48,5 @@ div id="timeline"
   = render partial: "shot_timeline", locals: { events: @shot.events.order(created_at: :desc) }
 
 .page-foot
-  = link_to "Back to top", "#title", class: "btn btn-default"
+  = link_to "Back to top", "#title", class: "btn btn-default btn-back"
 
