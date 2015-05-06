@@ -67,12 +67,12 @@ h3 {
 }
 
 .highlighted {
-  border: 1px solid $light-bg-color;
+  border: 1px solid $hover-color;
   transition: border 0.1s ease;
 }
 
 .selected {
-  background: lighten($light-bg-color, 15%);
+  background: $hover-color;
   // transition: background 0.1s ease;
 }
 

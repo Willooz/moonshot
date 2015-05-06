@@ -5,7 +5,7 @@
   padding: 0px 50px;
   border-top: 1px solid $gray-lighter;
   border-bottom: 1px solid $gray-lighter;
-  background: lighten($light-bg-color, 15%);
+  background: $hover-color;
 }
 
 .graphy-thingy {

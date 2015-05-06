@@ -1,12 +1,14 @@
-<div class="list-card shot-creation linked-card">
+<div class="list-card shot-update linked-card">
   <div class="card-left">
       <%= image_tag "jim.gif", size: "100x100", alt: "Jim's victorious dance", class: "img-circle" %>
   </div>
   <div class="card-middle">
     <h4>
-      <%= link_to "Shot accomplished!", shot_path(shot), class: "label label-danger" %></h4>
+      <%= link_to "Shot accomplished!", shot_path(update.shot), class: "label label-success" %></h4>
     <p>
-      <%= "#{profile.name} just completed the " %><strong><%= shot.title %></strong> shot! Bravo  to the team!
+      <strong><%= update.shot.title %></strong> was accomplished! Bravo to the team!
+      <br>
+      <span class="subtext"><i class="fa fa-calendar"></i> <%= update.created_at.strftime("on %m/%d at %I:%M%p") %></span>
     </p>
   </div>
 </div>
