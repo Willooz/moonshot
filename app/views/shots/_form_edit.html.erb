@@ -1,0 +1,35 @@
+<%= simple_form_for(@shot, method: :patch, url: new_update_path(@shot)) do |f| %>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <%= f.error_notification %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-4">
+        <%= f.input :baseline_value, required: true %>
+      </div>
+      <div class="col-xs-4">
+       <%= f.input :target_value, required: true %>
+      </div>
+      <div class="col-xs-4">
+        <%= f.input :unit, required: true, label: 'Metric' %>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="col-xs-8">
+       <%= f.input :title, required: true, autofocus: true %>
+      </div>
+      <div class="col-xs-4">
+        <%= f.input :deadline, required: true, as: :string, input_html: {class: "datepicker"} %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <%= f.input :description, required: true %>
+      </div>
+    </div>
+  </div>
+  <%= f.button :submit, t('.sign_up', default: "Update this shot"), class: "btn btn-primary" %>
+<% end %>
