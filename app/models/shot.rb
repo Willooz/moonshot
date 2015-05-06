@@ -13,6 +13,7 @@ class Shot < ActiveRecord::Base
   validates :baseline_value, presence: true, numericality: true
   validates :target_value  , presence: true, numericality: true
   validates :title,          presence: true
+  validates :unit,           presence: true
   validates :deadline,       presence: true
 
   def percentage_done

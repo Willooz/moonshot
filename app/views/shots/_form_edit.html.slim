@@ -1,8 +1,0 @@
-= simple_form_for(@shot, method: :patch, url: new_update_path(@shot)) do |f|
-  = f.error_notification
-  = f.input :title, required: true, autofocus: true
-  = f.input :description, required: true
-  = f.input :deadline, required: true
-  = f.input :baseline_value, required: true
-  = f.input :target_value, required: true
-  = f.button :submit, t('.sign_up', default: "Update this shot"), class: "btn btn-primary"

@@ -1,0 +1,42 @@
+<%= simple_form_for(@shot, method: :post, url: shot_create_path) do |f| %>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <%= f.error_notification %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-8">
+       <%= f.input :title, required: true, autofocus: true, placeholder: "Grow twitter followers to 10000" %>
+      </div>
+      <div class="col-xs-4">
+        <%= f.input :deadline, required: true, as: :string, input_html: {class: "datepicker"} %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-4">
+        <%= f.input :baseline_value, required: true, placeholder: "1000" %>
+      </div>
+      <div class="col-xs-4">
+       <%= f.input :target_value, required: true, placeholder: "1000" %>
+      </div>
+      <div class="col-xs-4">
+        <%= f.input :unit, required: true, label: 'Metric', placeholder: "followers" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <%= f.input :description, required: true %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="centered">
+          <% btn_text = @shot.id.nil? ? "Create this Shot" : "Update this Shot" %>
+          <br>
+          <%= f.button :submit, btn_text, class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
