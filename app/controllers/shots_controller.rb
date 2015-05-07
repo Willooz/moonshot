@@ -2,7 +2,7 @@ class ShotsController < ApplicationController
   before_action :set_shot, only: [:show, :edit, :update, :destroy]
 
   def show
-    @profile = current_profile
+    @current_profile = current_profile
     @invitees = []
     @shot.shot_invites.each do |invite|
       if invite.in_team && invite.shot.deadline > Time.now
