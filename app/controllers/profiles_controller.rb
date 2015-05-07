@@ -8,8 +8,8 @@ class ProfilesController < ApplicationController
     @current_profile = current_profile
     @profile = Profile.find(params[:id])
     @user = @profile.user
-    @account = Account.find(current_user.profiles.last.account_id)
-    incoming_invites = ShotInvite.where(invitee_id: current_profile.id)
+    @account = current_account
+    incoming_invites = ShotInvite.where(invitee_id: @profile.id)
     @accepted_shots = []
     @all_shots = []
     incoming_invites.each do |invite|
