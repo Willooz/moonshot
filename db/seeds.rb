@@ -136,7 +136,6 @@ User.create(email: "wasp@marvel.com",
 
 
 
-
 Profile.create(account_id: 1,
                   user_id:    1,
                   role:       "Smasher",
