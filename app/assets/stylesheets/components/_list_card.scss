@@ -52,5 +52,12 @@
 }
 
 .card-feed {
-  width: 775px;
+  width: 700px;
+  height: 100%;
+  float: left;
+  padding: 20px 20px;
+  display: inline-block;
+    img {
+      margin: 15px 0px;
+    }
 }

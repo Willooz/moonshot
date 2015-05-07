@@ -32,51 +32,63 @@
       </div>
 
 
+
       <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          <% if user_signed_in? %>
-            <li class="dropdown">
-              <%= link_to "#", {class: "dropdown-toggle", "data-toggle" => "dropdown", "role" => "button", "aria-expanded" => "false"} do %>
-                <%= image_tag current_user.picture.url, class: "img-avatar" %>
-                <% if current_profile.shot_invites_received.where(in_team: false).any?%>
-                  <span class="invite_count"> <%= current_profile.shot_invites_received.where(in_team: false).count %> </span>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <% if user_signed_in? %>
+
+              <li>
+                <%= link_to new_shot_path do %>
+                  <span class="btn btn-primary">Create new shot</span>
                 <% end %>
-              <% end %>
-              <ul class="dropdown-menu" role="menu">
-                <li>
-                  <!-- Add user name as header in dropdown -->
-                </li>
-                <li>
-                  <%= link_to me_path do %>
-                    <i class="fa fa-user"></i> My dashboard
-                    <% if current_profile.shot_invites_received.where(in_team: false).any? %>
-                      <span class="badge"> <%= current_profile.shot_invites_received.where(in_team: false).count %> </span>
+              </li>
+
+              <li class="dropdown">
+                <%= link_to "#", {class: "dropdown-toggle", "data-toggle" => "dropdown", "role" => "button", "aria-expanded" => "false"} do %>
+                  <%= image_tag current_user.picture.url, class: "img-avatar" %>
+                  <% if current_profile.shot_invites_received.where(in_team: false).any?%>
+                    <span class="invite_count"> <%= current_profile.shot_invites_received.where(in_team: false).count %> </span>
+                  <% end %>
+                <% end %>
+                <ul class="dropdown-menu" role="menu">
+                  <li>
+                    <!-- Add user name as header in dropdown -->
+                  </li>
+                  <li>
+                    <%= link_to me_path do %>
+                      <i class="fa fa-user"></i> My dashboard
+                      <% if current_profile.shot_invites_received.where(in_team: false).any? %>
+                        <span class="badge"> <%= current_profile.shot_invites_received.where(in_team: false).count %> </span>
+                      <% end %>
                     <% end %>
-                  <% end %>
-                </li>
-                <li>
-                  <%= link_to account_path do %>
-                    <i class="fa fa-home"></i> Account settings
-                  <% end %>
-                </li>
-                <li>
-                  <%= link_to destroy_user_session_path, method: :delete do %>
-                    <i class="fa fa-sign-out"></i>  Sign out of Moonshot
-                  <% end %>
-                </li>
-              </ul>
-            </li>
-          <% else %>
-            <li>
-              <%= link_to "Sign up", new_user_registration_path %>
-            </li>
-            <li>
-              <%= link_to "Sign in", new_user_session_path %>
-            </li>
-          <% end %>
-        </ul>
-      </div><!-- /.navbar-collapse -->
+                  </li>
+                  <li>
+                    <%= link_to account_path do %>
+                      <i class="fa fa-home"></i> Account settings
+                    <% end %>
+                  </li>
+                  <li>
+                    <%= link_to destroy_user_session_path, method: :delete do %>
+                      <i class="fa fa-sign-out"></i>  Sign out of Moonshot
+                    <% end %>
+                  </li>
+                </ul>
+              </li>
+
+
+
+            <% else %>
+              <li>
+                <%= link_to "Sign up", new_user_registration_path %>
+              </li>
+              <li>
+                <%= link_to "Sign in", new_user_session_path %>
+              </li>
+            <% end %>
+          </ul>
+        </div><!-- /.navbar-collapse -->
   </div>
   </div><!-- /.container-fluid -->
 </nav>
