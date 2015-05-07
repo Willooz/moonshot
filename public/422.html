@@ -4,39 +4,48 @@
   <meta charset="utf-8" />
   <meta name="ROBOTS" content="NOODP" />
   <meta name="viewport" content="initial-scale=1" />
-  <title>The change you wanted was rejected (422)</title>
+  <title>Sorry, you cannot do whatever it is you're trying to do</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
   body {
-    background-color: #EFEFEF;
-    color: #2E2F30;
+    background-color: white;
+    color: #58356B;
     text-align: center;
-    font-family: arial, sans-serif;
+    font-family: helvetica, sans-serif;
     margin: 0;
   }
 
+  div.logo {
+    padding: 20px;
+  }
+
   div.dialog {
-    width: 95%;
+    width: 100%;
     max-width: 33em;
     margin: 4em auto 0;
   }
 
   div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
+
+    padding: 10px;
     background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+    border-radius: 4px;
+
+  }
+
+  a {
+    text-decoration: none;
+    color: #C47FF2;
+  }
+
+  a:hover {
+    color: #FF815C;
+    text-decoration: none;
   }
 
   h1 {
     font-size: 100%;
-    color: #730E15;
+    color: #503062;
     line-height: 1.5em;
   }
 
@@ -44,26 +53,22 @@
     margin: 0 0 1em;
     padding: 1em;
     background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
+
     color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
   </style>
 </head>
 
 <body>
+  <div class="logo">
+    <img src="https://dl.dropboxusercontent.com/u/411033/logo.svg">
+  </div>
     <div class="dialog">
     <div>
-      <h1>The change you wanted was rejected.</h1>
-      <p>Maybe you tried to change something you didn't have access to.</p>
+      <h1>Sorry, you cannot do whatever it is you're trying to do</h1>
+      <p>No panic, it's not the end of the world. Why don't you check out the <a href="/">homepage</a> instead?</p>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
+    <img src="https://dl.dropboxusercontent.com/u/411033/spaceinvader.png">
   </div>
 </body>
 </html>
