@@ -6,7 +6,10 @@
  * ------------------------------------- */
 
 body {
-  background: $background;
+  background: linear-gradient(45deg, darken($background, 15%), $background);
+  background: -webkit-linear-gradient(45deg, darken($background, 15%), $background); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(45deg, darken($background, 15%), $background); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(45deg, darken($background, 15%), $background); /* For Firefox 3.6 to 15 */
   color: $gray;
   font-family: $font-family-base;
   font-size: $base-size;

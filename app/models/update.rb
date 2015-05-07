@@ -10,7 +10,7 @@ class Update < ActiveRecord::Base
       diff = tg - self.shot.baseline_value
       (((bl.to_f - self.shot.baseline_value) / diff) * 100).round
     else
-      diff = self.baseline_value - tg
+      diff = self.shot.baseline_value - tg
       (((self.shot.baseline_value - bl) / diff) * 100).round
     end
   end
