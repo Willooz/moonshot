@@ -9,7 +9,6 @@
 .circle-container{
   width: 100px;
   height: 100px;
-  // padding:25px 25px 25px 0px;
   margin: 25px 25px 25px 0px;
   background: transparent;
   position: relative;
@@ -31,7 +30,7 @@
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background-image: image-url("moon_small.png");
+  background-image: image-url("moon_grey.png");
   position: absolute;
   overflow: hidden;
   text-align: center;
@@ -40,7 +39,7 @@
     height: 100%;
     position: absolute;
     top: 0px;
-    background-color: rgba(255, 255, 0, 0.4);
+    background-color: RGBA(255, 129, 92, 0.5);
     z-index: 2000;
   }
 }
