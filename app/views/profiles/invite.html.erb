@@ -1,40 +1,40 @@
-<h2 class="text-center">Invite <%=@invitee.name %> to work on a shot with you </h2>
+<%= form_tag send_invites_path(@invitee), method: :post %>
+  <%= hidden_field_tag 'inviter_id', @inviter.id %>
+  <%= hidden_field_tag 'invitee_id', @invitee.id %>
 
-<div class="form">
-  <%= form_tag send_invites_path(@invitee), method: :post %>
-  <div class="buttons">
-    <%= link_to "Cancel", invite_teammember_path(@invitee), class: "btn btn-default" %>
-    <%= submit_tag "Send invites", class: "btn btn-primary" %>
-    <%= hidden_field_tag 'inviter_id', @inviter.id %>
-    <%= hidden_field_tag 'invitee_id', @invitee.id %>
-
+  <div class="page-title">
+    <h1>Invite <%=@invitee.name %> to work on a shot</h1>
+    <%= submit_tag "Invite", class: "btn btn-right btn-primary" %>
+      <%= link_to "Cancel", invite_teammember_path(@invitee), class: "btn btn-right btn-default" %>
   </div>
-  <div class="clear"></div>
-  <hr>
+<hr>
+
 
   <% unless @shots.empty? %>
-    <% @shots.each do |shot| %>
-    <div class="col-xs-12 col-md-4">
-      <div class="square-card">
-        <%= check_box_tag "shots[#{shot.id}]", true, false, class: 'hide' %>
-        <div class="circle-container">
-          <h3><%= "#{shot.percentage_done} %" %></h3>
-          <div class="circle" id=<%="circle#{shot.id}"%>>
-            <%= content_tag(:div, nil, class: "bar", data: {completion_rate: "#{shot.percentage_done}"}) %>
+    <div class="page-content">
+      <% @shots.each do |shot| %>
+        <div class="col-xs-12 col-md-4">
+          <div class="square-card-invite">
+            <div class="circle-container-invite">
+              <% if shot.percentage_done < 10 %>
+                <h3>&nbsp;<%= "#{shot.percentage_done}" %><span> % </span></h3>
+              <% else %>
+                <h3><%= "#{shot.percentage_done}" %><span> % </span></h3>
+              <% end %>
+                <div class="circle" %>>
+                <%= content_tag(:div, nil, class: "bar", data: {completion_rate: "#{shot.percentage_done}"}) %>
+              </div>
+            </div>
+            <%= check_box_tag "shots[#{shot.id}]", true, false, class: 'hide' %>
+              <h4> <%= shot.title %> </h4>
           </div>
         </div>
-          <h4>
-            <%= shot.title %>
-          </h4>
-          <p>
-            <i class="fa fa-bullseye"></i><%= " #{shot.target_value}" %>
-            <i class="fa fa-calendar"></i><%= " #{shot.deadline}" %>
-          </p>
-      </div>
-    </div>
-  <% end %>
-<% end%>
-<div class="clear"></div>
-</div>
+      <% end %>
+    
+    <div class="clear"></div>
+  <% end%>
+ </div>
+  
+
 
 

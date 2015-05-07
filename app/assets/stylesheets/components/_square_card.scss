@@ -12,3 +12,19 @@
   p.description {
   }
 }
+
+.square-card-invite {
+  margin: 0 17%;
+  width: 180px;
+  height: 100%;
+  padding: 10px;
+  border: 1px solid white;
+  text-align: center;
+  display: inline-block;
+  float: left;
+
+}
+
+.square-card-invite:hover {
+  border: 1px solid #D3D3D3;
+}

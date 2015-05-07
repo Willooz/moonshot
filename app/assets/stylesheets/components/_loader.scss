@@ -26,6 +26,26 @@
   }
 }
 
+.circle-container-invite {
+  width: 100px;
+  height: 100px;
+  margin: 25px auto;
+  background: transparent;
+  position: relative;
+  h3 {
+    position: absolute;
+    z-index: 5000;
+    padding-left: 15%;
+    padding-top: 20%;
+    color: white;
+    font-size: 50px;
+    display: none;
+    span {
+      font-size: 20px;
+    }
+  }  
+}
+
 .circle{
   width: 100px;
   height: 100px;
