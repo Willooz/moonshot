@@ -22,8 +22,10 @@
       <%=  render partial: "shots/small_shot", locals: {shot: accepted_shot, invitees: @invitees} %>
     <% end %>
   <% else %>
-    <p>You do not have any shots in progress. Would you like to create a new one?</p>
-    <%= link_to "Create a new shot", new_shot_path, class:"btn btn-primary" %>
+    <div class="list-card no-current-shots">
+      <p>You do not have any shots in progress. Would you like to create a new one?</p>
+      <%= link_to "Create a new shot", new_shot_path, class:"btn btn-primary" %>
+    </div>
   <% end %>
 </div>
 
