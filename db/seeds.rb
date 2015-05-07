@@ -350,3 +350,5 @@ Badge.create(
     picture: "badges/mr_meticulous.png"
   )
 
+
+
