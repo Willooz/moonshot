@@ -1,6 +1,5 @@
 <div class="page-title">
   <h1>Update <strong><%= @shot.title %></strong></h1>
-  <%= link_to "Back", shot_path(@shot), class: "btn btn-right btn-default" %>
 </div>
 
 <div class="page-content">
@@ -45,6 +44,7 @@
         <%= f.hidden_field :shot_id, value: @shot.id %>
         <br>
         <%= f.button :submit, "Update shot", class: "btn btn-primary" %>
+        <%= link_to "Cancel", shots_path, class: "btn btn-default" %>
       </div>
     </div>
   <% end %>

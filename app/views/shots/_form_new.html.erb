@@ -35,6 +35,7 @@
           <% btn_text = @shot.id.nil? ? "Create this Shot" : "Update this Shot" %>
           <br>
           <%= f.button :submit, btn_text, class: "btn btn-primary" %>
+          <%= link_to "Cancel", shots_path, class: "btn btn-default" %>
         </div>
       </div>
     </div>
