@@ -6,7 +6,7 @@
  * ------------------------------------- */
 
 body {
-  background: $background;
+  background: linear-gradient(45deg, darken($background, 15%), $background);
   color: $gray;
   font-family: $font-family-base;
   font-size: $base-size;
