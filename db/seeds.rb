@@ -34,85 +34,266 @@ User.create(email: "thor@marvel.com",
             password: "12345678",
             picture: File.new("app/assets/images/seed_profiles/original/thor.jpg"))
 
-User.create(email: "jeangrey@marvel.com",
-            name: "Jean Grey",
-            password: "12345678",
-            picture: File.new("app/assets/images/seed_profiles/original/jeangrey.jpg"))
-
 User.create(email: "wolverine@marvel.com",
             name: "Wolverine",
             password: "12345678",
             picture: File.new("app/assets/images/seed_profiles/original/wolverine.jpg"))
 
-User.create(email: "storm@marvel.com",
-            name: "Storm",
+User.create(email: "thevision@marvel.com",
+            name: "The Vision",
             password: "12345678",
-            picture: File.new("app/assets/images/seed_profiles/original/storm.jpg"))
+            picture: File.new("app/assets/images/seed_profiles/original/vision.jpg"))
 
-User.create(email: "mystique@marvel.com",
-            name: "Mystique",
+User.create(email: "ant-man@marvel.com",
+            name: "Ant-Man",
             password: "12345678",
-            picture: File.new("app/assets/images/seed_profiles/original/mystique.jpg"))
+            picture: File.new("app/assets/images/seed_profiles/original/antman.jpg"))
 
-User.create(email: "professor-x@marvel.com",
-            name: "Professor X",
+User.create(email: "blackpanther@marvel.com",
+            name: "Black Panther",
             password: "12345678",
-            picture: File.new("app/assets/images/seed_profiles/original/professorx.jpg"))
+            picture: File.new("app/assets/images/seed_profiles/original/blackpanther.jpg"))
+
+User.create(email: "cap@marvel.com",
+            name: "Captain America",
+            password: "12345678",
+            picture: File.new("app/assets/images/seed_profiles/original/captainamerica.jpg"))
+
+User.create(email: "agent-coulson@marvel.com",
+            name: "Agent Coulson",
+            password: "12345678",
+            picture: File.new("app/assets/images/seed_profiles/original/coulson.jpg"))
+
+User.create(email: "drax@marvel.com",
+            name: "Drax the Destroyer",
+            password: "12345678",
+            picture: File.new("app/assets/images/seed_profiles/original/drax.jpg"))
+
+User.create(email: "firebird@marvel.com",
+            name: "Firebird",
+            password: "12345678",
+            picture: File.new("app/assets/images/seed_profiles/original/firebird.jpg"))
+
+User.create(email: "gamora@marvel.com",
+            name: "Gamora",
+            password: "12345678",
+            picture: File.new("app/assets/images/seed_profiles/original/gamora.jpg"))
+
+User.create(email: "groot@marvel.com",
+            name: "Groot",
+            password: "12345678",
+            picture: File.new("app/assets/images/seed_profiles/original/groot.jpg"))
+
+User.create(email: "hawkeye@marvel.com",
+            name: "Hawkeye",
+            password: "12345678",
+            picture: File.new("app/assets/images/seed_profiles/original/hawkeye.jpg"))
+
+User.create(email: "agent-hill@marvel.com",
+            name: "Agent Hill",
+            password: "12345678",
+            picture: File.new("app/assets/images/seed_profiles/original/hill.jpg"))
+
+User.create(email: "msmarvel@marvel.com",
+            name: "Miss Marvel",
+            password: "12345678",
+            picture: File.new("app/assets/images/seed_profiles/original/msmarvel.jpg"))
+
+User.create(email: "nickfury@marvel.com",
+            name: "Nick Fury",
+            password: "12345678",
+            picture: File.new("app/assets/images/seed_profiles/original/nickfury.jpg"))
+
+User.create(email: "quicksilver@marvel.com",
+            name: "Quicksilver",
+            password: "12345678",
+            picture: File.new("app/assets/images/seed_profiles/original/quicksilver.jpg"))
+
+User.create(email: "rocket@marvel.com",
+            name: "Rocket",
+            password: "12345678",
+            picture: File.new("app/assets/images/seed_profiles/original/rocket.jpg"))
+
+User.create(email: "scarletwitch@marvel.com",
+            name: "Scarlet Witch",
+            password: "12345678",
+            picture: File.new("app/assets/images/seed_profiles/original/scarletwitch.jpg"))
+
+User.create(email: "shehulk@marvel.com",
+            name: "She-Hulk",
+            password: "12345678",
+            picture: File.new("app/assets/images/seed_profiles/original/shehulk.jpg"))
+
+User.create(email: "starlord@marvel.com",
+            name: "Starlord",
+            password: "12345678",
+            picture: File.new("app/assets/images/seed_profiles/original/starlord.jpg"))
+
+User.create(email: "wasp@marvel.com",
+            name: "The Wasp",
+            password: "12345678",
+            picture: File.new("app/assets/images/seed_profiles/original/wasp.jpg"))
+
+
+
+
 
 Profile.create(account_id: 1,
                   user_id:    1,
                   role:       "Smasher",
+                  team:       "Engineering",
                   owner:      true )
 
 Profile.create(account_id: 1,
                   user_id:    2,
                   role:       "Playboy Millionaire",
+                  team:       "Engineering",
                   owner:      false )
 
 Profile.create(account_id: 1,
                   user_id:    3,
                   role:       "Lethal Spy",
+                  team:       "Corporate",
                   owner:      false )
 
 Profile.create(account_id:    1,
                   user_id:    4,
                   role:       "Friendly Neighborhood Savior",
+                  team:       "Sales",
                   owner:      false )
 
 Profile.create(account_id:    1,
                   user_id:    5,
                   role:       "God of Thunder",
+                  team:       "Sales",
                   owner:      false )
 
-Profile.create(account_id:    2,
+Profile.create(account_id:    1,
                   user_id:    6,
-                  role:       "Telekinetist",
-                  owner:      false )
-
-Profile.create(account_id:    2,
-                  user_id:    7,
                   role:       "Savage Warrior",
+                  team:       "Corporate",
                   owner:      false )
 
-Profile.create(account_id:    2,
+Profile.create(account_id:    1,
+                  user_id:    7,
+                  role:       "Altruist Android",
+                  team:       "Engineering",
+                  owner:      false )
+
+Profile.create(account_id:    1,
                   user_id:    8,
-                  role:       "Weather Manipulator",
+                  role:       "Head of Engineering",
+                  team:       "Engineering",
                   owner:      false )
 
-Profile.create(account_id:    2,
+Profile.create(account_id:    1,
                   user_id:    9,
-                  role:       "Shapeshifter",
+                  role:       "Master Fighter",
+                  team:       "Sales",
                   owner:      false )
 
-Profile.create(account_id:    2,
+Profile.create(account_id:    1,
                   user_id:    10,
-                  role:       "Mindreader",
-                  owner:      true )
-
-Profile.create(account_id:    2,
-                  user_id:    4,
-                  role:       "Favored Ally",
+                  role:       "True Patriot",
+                  team:       "Corporate",
                   owner:      false )
+
+Profile.create(account_id:    1,
+                  user_id:    11,
+                  role:       "Head of Corporate",
+                  team:       "Corporate",
+                  owner:      false )
+
+Profile.create(account_id:    1,
+                  user_id:    12,
+                  role:       "Zealous Salesman",
+                  team:       "Sales",
+                  owner:      false )
+
+Profile.create(account_id:    1,
+                  user_id:    13,
+                  role:       "Power Source",
+                  team:       "Engineering",
+                  owner:      false )
+
+Profile.create(account_id:    1,
+                  user_id:    14,
+                  role:       "Sneaky Marketer",
+                  team:       "Sales",
+                  owner:      false )
+
+Profile.create(account_id:    1,
+                  user_id:    15,
+                  role:       "I AM GROOT",
+                  team:       "Sales",
+                  owner:      false )
+
+Profile.create(account_id:    1,
+                  user_id:    16,
+                  role:       "Accurate Analyst",
+                  team:       "Corporate",
+                  owner:      false )
+
+Profile.create(account_id:    1,
+                  user_id:    17,
+                  role:       "Reliable Ally",
+                  team:       "Corporate",
+                  owner:      false )
+
+Profile.create(account_id:    1,
+                  user_id:    18,
+                  role:       "Charismatic Field Operator",
+                  team:       "Sales",
+                  owner:      false )
+
+Profile.create(account_id:    1,
+                  user_id:    19,
+                  role:       "Head of S.H.I.E.L.D",
+                  team:       "Corporate",
+                  owner:      false )
+
+
+Profile.create(account_id:    1,
+                  user_id:    20,
+                  role:       "Speedster",
+                  team:       "Sales",
+                  owner:      false )
+
+
+Profile.create(account_id:    1,
+                  user_id:    21,
+                  role:       "Space Raccoon",
+                  team:       "Sales",
+                  owner:      false )
+
+
+Profile.create(account_id:    1,
+                  user_id:    22,
+                  role:       "Lab Assistant",
+                  team:       "Engineering",
+                  owner:      false )
+
+Profile.create(account_id:    1,
+                  user_id:    23,
+                  role:       "Head of Sales",
+                  team:       "Sales",
+                  owner:      false )
+
+Profile.create(account_id:    1,
+                  user_id:    24,
+                  role:       "Maverick",
+                  team:       "Sales",
+                  owner:      false )
+
+Profile.create(account_id:    1,
+                  user_id:    25,
+                  role:       "Lab Analyst",
+                  team:       "Engineering",
+                  owner:      false )
+
+
+
+
 
 shot = Shot.create(title: "Eat a ton of cupcakes",
             description: "Loki has hidden tiny soldiers in cupcakes all over America. We need to eat all of them to make sure cupcakes are safe for children to eat.",
