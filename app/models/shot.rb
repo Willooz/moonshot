@@ -1,11 +1,11 @@
 class Shot < ActiveRecord::Base
 
   belongs_to :account
-  has_many :shot_invites
+  has_many :shot_invites, dependent: :destroy
   has_many :accepted_shot_invites, -> { where in_team: true }, class_name: 'ShotInvite'
   has_many :invitees, class_name: "Profile", foreign_key: "invitee_id", through: :accepted_shot_invites
   has_many :inviters, class_name: "Profile", foreign_key: "inviter_id", through: :shot_invites
-  has_many :updates
+  has_many :updates, dependent: :destroy
   has_many :highfives
   has_many :badges, through: :highfives
   has_many :events
