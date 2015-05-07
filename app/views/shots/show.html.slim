@@ -1,6 +1,6 @@
 .page-title
   h1 = @shot.title
-  - if @profile.shots.include?(@shot)
+  - if @current_profile.shots.include?(@shot)
     = link_to "Update shot", new_update_path(@shot), class: "btn btn-right btn-primary"
     = link_to "Close shot", shots_path, class: "btn btn-right btn-default"
   -else
@@ -32,7 +32,7 @@ div id="overview"
       - @invitees.each do |invitee|
         = link_to people_show_path(invitee)
           = image_tag(invitee.user.picture.url, size: "50x50", class: "img-circle")
-      - if @profile.shots.include?(@shot)
+      - if @current_profile.shots.include?(@shot)
         = link_to "Invite a new mate", new_shot_invite_path, class: "btn btn-right btn-primary"
 
   .graph
@@ -40,7 +40,7 @@ div id="overview"
 
 div id="people"
   - @shot.invitees.each do |profile|
-    = render partial: "shot_people", locals: { profile: profile }
+    = render partial: "shot_people", locals: { mate: profile, current_profile: @current_profile, invitees: @shot.invitees }
 
 div id="timeline"
   = render partial: "shot_timeline", locals: { events: @shot.events.order(created_at: :desc) }
