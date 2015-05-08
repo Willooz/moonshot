@@ -34,9 +34,10 @@ class ProfilesController < ApplicationController
     @user = current_user
     @profile = current_profile
     @account = @profile.account
+    @shots_pending = []
+    @shots_accepted = []
     if @profile.shot_invites_received.any?
-      @shots_pending = []
-      @shots_accepted = []
+
       @profile.shot_invites_received.each do |invite|
         if invite.in_team && invite.shot.deadline > Time.now
          @shots_accepted << invite.shot
