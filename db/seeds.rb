@@ -289,6 +289,129 @@ Profile.create(account_id:    1,
                   team:       "Engineering",
                   owner:      false )
 
+Shot.create(title: "Release Marvel films",
+            description: "We need to tell our stories to the world. Let's make big Hollywood blockbusters about our lives.",
+            baseline_value: 0,
+            target_value: 12,
+            deadline: (Time.now + 400000).to_date,
+            accomplished: false,
+            account_id: 1,
+            unit: "films released"
+            )
+
+ShotInvite.create( shot_id: 1,
+                    inviter_id: 2,
+                    in_team: true,
+                    invitee_id: 2 )
+
+ShotInvite.create( shot_id: 1,
+                    inviter_id: 2,
+                    in_team: true,
+                    invitee_id: 1 )
+
+ShotInvite.create( shot_id: 1,
+                    inviter_id: 2,
+                    in_team: true,
+                    invitee_id: 5 )
+
+ShotInvite.create( shot_id: 1,
+                    inviter_id: 2,
+                    in_team: true,
+                    invitee_id: 7 )
+
+ShotInvite.create( shot_id: 1,
+                    inviter_id: 2,
+                    in_team: true,
+                    invitee_id: 10 )
+
+update = Update.create( shot_id: 1,
+                profile_id: 2,
+                description: "Iron Man",
+                current_value: 1 )
+
+update.created_at = Time.now - 221356800
+update.save
+
+update = Update.create( shot_id: 1,
+                profile_id: 2,
+                description: "Incredible Hulk",
+                current_value: 2 )
+
+update.created_at = Time.now - 217779525
+update.save
+
+update = Update.create( shot_id: 1,
+                profile_id: 2,
+                description: "Iron Man 2",
+                current_value: 3 )
+
+update.created_at = Time.now - 157904325
+update.save
+
+update = Update.create( shot_id: 1,
+                profile_id: 2,
+                description: "Thor",
+                current_value: 4 )
+
+update.created_at = Time.now - 126454725
+update.save
+
+update = Update.create( shot_id: 1,
+                profile_id: 2,
+                description: "Captain America: The First Avenger",
+                current_value: 5 )
+
+update.created_at = Time.now - 119801925
+update.save
+
+update = Update.create( shot_id: 1,
+                profile_id: 2,
+                description: "The Avengers",
+                current_value: 6 )
+
+update.created_at = Time.now - 95005125
+update.save
+
+update = Update.create( shot_id: 1,
+                profile_id: 2,
+                description: "Iron Man 3",
+                current_value: 7 )
+
+update.created_at = Time.now - 63555525
+update.save
+
+update = Update.create( shot_id: 1,
+                profile_id: 2,
+                description: "Thor: The Dark World",
+                current_value: 8 )
+
+update.created_at = Time.now - 47225925
+update.save
+
+update = Update.create( shot_id: 1,
+                profile_id: 2,
+                description: "Captain America: The Winter Soldier",
+                current_value: 9 )
+
+update.created_at = Time.now - 34525125
+update.save
+
+update = Update.create( shot_id: 1,
+                profile_id: 2,
+                description: "Guardians of the Galaxy",
+                current_value: 10 )
+
+update.created_at = Time.now - 24243525
+update.save
+
+update = Update.create( shot_id: 1,
+                profile_id: 2,
+                description: "Avengers: Age of Ultron",
+                current_value: 11 )
+
+update.created_at = Time.now - 656325
+update.save
+
 
 Badge.create(
     title: "Fighter",
